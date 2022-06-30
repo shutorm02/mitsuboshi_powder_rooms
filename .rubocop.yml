@@ -1,0 +1,31 @@
+inherit_from: .rubocop_todo.yml
+require:
+  - rubocop-rails
+  - rubocop-rspec
+
+Style/AsciiComments:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 20
+
+Layout/IndentationConsistency:
+  EnforcedStyle: indented_internal_methods
+
+AllCops:
+  TargetRubyVersion: 3.1
+  NewCops: enable
+  Exclude:
+    - 'bin/**'
+    - 'node_modules/**/*'
+    - 'config/**/*'
+    - 'config.ru'
+    - 'db/schema.rb'
+    - 'db/seeds.rb'
+    - 'Gemfile'

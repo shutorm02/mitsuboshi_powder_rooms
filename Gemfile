@@ -41,6 +41,14 @@ group :development do
   gem 'listen', '~> 3.3'
   gem 'spring'
   gem 'foreman'
+
+  gem 'rubocop', require: false
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec'
+  gem 'bullet'
+  gem 'solargraph'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
