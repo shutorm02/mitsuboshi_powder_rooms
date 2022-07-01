@@ -1,6 +1,11 @@
 {
   "name": "mitsuboshi-powder-rooms",
   "private": true,
+  "scripts": {
+      "lint": "eslint 'app/javascript/**/*.{js,vue}' --fix",
+      "format": "prettier './**/*.{js,vue}' --write",
+      "fix": "npm run lint && npm run format"
+  },
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
