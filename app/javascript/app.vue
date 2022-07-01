@@ -11,7 +11,7 @@ export default {
   setup() {
     const message = ref('Hello World')
     return { message }
-  }
+  },
 }
 </script>
 
