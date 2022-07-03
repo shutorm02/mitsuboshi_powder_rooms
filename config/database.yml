@@ -16,4 +16,6 @@ test:
 
 production:
   <<: *default
-  database: db/mitsuboshiProduction.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
