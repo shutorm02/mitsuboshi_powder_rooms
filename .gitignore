@@ -34,3 +34,7 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+.rspec
+/spec/tmp
+/vendor/bundle
