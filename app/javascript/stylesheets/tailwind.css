@@ -4,7 +4,7 @@
 
 @layer components {
   .custom-icon {
-    @apply w-5 h-5;
+    @apply w-5 h-5 text-white;
   }
 }
 
