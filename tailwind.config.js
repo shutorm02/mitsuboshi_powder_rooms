@@ -8,6 +8,9 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      fontFamily: {
+        custom: ["Yusei Magic"],
+      },
       colors: {
         'thema': '#FFF5E9',
         'fitting-pink': '#EABEBF',
