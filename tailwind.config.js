@@ -9,11 +9,12 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        custom: ["Yusei Magic"],
+        custom: ['Yusei Magic', 'sans-serif'],
       },
       colors: {
         'thema': '#FFF5E9',
         'fitting-pink': '#EABEBF',
+        'fitting-pink-hover': '#EEB2B4',
         'powder-pink': '#D6A3DC',
         'baby-blue': '#A5DEE5',
         'twitter-blue': '#1DA1F2',
