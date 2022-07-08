@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        custom: ['Yusei Magic', 'sans-serif'],
+        yusei: ['Yusei Magic', 'sans-serif'],
       },
       colors: {
         'thema': '#FFF5E9',
