@@ -1,0 +1,20 @@
+ja:
+  activerecord:
+    models:
+      user: 'ユーザー'
+      spot: 'スポット'
+      feedback : '評価'
+    attributes:
+      user:
+        name: 'アカウント名'
+        email: 'メールアドレス'
+        password: 'パスワード'
+        password_confirmation: 'パスワード確認'
+        avator: 'アバター'
+      spot:
+        name: 'スポット名'
+        address: '住所'
+      feedback:
+        number_of_stars: '総合点'
+        feedback_comment: '評価コメント'
+
