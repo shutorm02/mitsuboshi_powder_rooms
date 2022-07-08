@@ -4,7 +4,7 @@
 
 @layer components {
   .custom-icon {
-    @apply w-5 h-5 text-white;
+    @apply w-5 h-5 text-white hover:text-mitsuboshi-blue py-1 px-3;
   }
 }
 
