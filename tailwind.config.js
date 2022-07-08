@@ -12,7 +12,7 @@ module.exports = {
         yusei: ['Yusei Magic', 'sans-serif'],
       },
       colors: {
-        'thema': '#FFF5E9',
+        thema: '#FFF5E9',
         'fitting-pink': '#EABEBF',
         'fitting-pink-hover': '#EEB2B4',
         'powder-pink': '#D6A3DC',
@@ -21,7 +21,7 @@ module.exports = {
         'mitsuboshi-blue': '#75CCE8',
         'mitsuboshi-yellow': '#F7DB70',
         'mitsuboshi-gray': '#E5E5E5',
-      }
+      },
     },
   },
   variants: {
