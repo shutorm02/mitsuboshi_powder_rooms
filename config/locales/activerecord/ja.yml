@@ -10,6 +10,7 @@ ja:
         email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: 'パスワード確認'
+        avator: 'アバター'
       spot:
         name: 'スポット名'
         address: '住所'
