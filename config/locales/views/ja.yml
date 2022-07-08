@@ -1,0 +1,21 @@
+ja:
+  defaults:
+    login: 'ログイン'
+    register: '登録'
+    logout: 'ログアウト'
+    home: 'ホーム'
+    mypage: 'マイページ'
+    search: '検索'
+    post: '投稿'
+    terms: '利用規約'
+    privacy: 'プライバシーポリシー'
+    contact: 'お問い合わせ'
+  users:
+    new:
+      title: 'ユーザー登録'
+      to_login_page: 'ログインページへ'
+  user_sessions:
+    new:
+      title: 'ログイン'
+      to_register_page: '登録ページへ'
+      password_forget: 'パスワードをお忘れの方はこちら'
