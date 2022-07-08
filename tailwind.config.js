@@ -9,10 +9,11 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        josefin: ['Josefin Sans', 'sans-serif'],
         yusei: ['Yusei Magic', 'sans-serif'],
       },
       colors: {
-        thema: '#FFF5E9',
+        'base-color': '#FFF5E9',
         'fitting-pink': '#EABEBF',
         'fitting-pink-hover': '#EEB2B4',
         'powder-pink': '#D6A3DC',
