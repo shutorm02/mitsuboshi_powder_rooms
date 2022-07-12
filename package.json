@@ -16,8 +16,6 @@
     "autoprefixer": "^9",
     "postcss": "^7",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
-    "vue": "^3.2.36",
-    "vue-loader": "^17.0.0",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12"
   },
