@@ -42,3 +42,4 @@ yarn-debug.log*
 .rspec
 /spec/tmp
 /vendor/bundle
+.env
