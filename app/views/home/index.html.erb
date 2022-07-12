@@ -1,4 +1,20 @@
-<%= javascript_pack_tag 'hello_vue.js' %>
-<div id='vue-app'></div>
-<p class="text-3xl font-bold underline">Tailwind and Rails!</p>
+<div id="app">
+  {{ message }}
+</div>
 
+<script type="module">
+  import { 
+    ref,
+    createApp
+  } from "https://unpkg.com/vue@3.2.36/dist/vue.esm-browser.prod.js"
+  
+  const app = createApp({
+    setup() {
+      const message = ref("Hello World")
+      return {
+      message
+      }
+    },
+  })
+  app.mount("#app");
+</script>
