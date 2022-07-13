@@ -1,0 +1,34 @@
+<div id="google-map">
+  <h1>Google Map</h1>
+  <div ref="map" style="height: 500px; width: 800px;"></div>
+</div>
+
+<script type="module">
+  import { 
+    ref,
+    createApp
+  } from "https://unpkg.com/vue@3.2.36/dist/vue.esm-browser.prod.js"
+  
+  const app = createApp({
+    data() {
+      return {
+        myLatLng: { lat: 35.1239654 , lng: 136.9417741 },
+      }
+    },
+    mounted() {
+      const script = document.createElement('script')
+      script.src = "https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initMap"
+      script.async = true
+      document.head.appendChild(script)
+
+      window.initMap = () => {
+        const map = new window.google.maps.Map(this.$refs.map, {
+          center: this.myLatLng,
+          zoom: 15,
+        })
+        new window.google.maps.Marker({ position: this.myLatLng, map })
+      }
+    }
+  })
+  app.mount("#google-map")
+</script>
