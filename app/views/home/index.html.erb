@@ -1,5 +1,6 @@
-<div id="app">
-  {{ message }}
+<div id="google-map">
+  <h1>Google Map</h1>
+  <div ref="map" style="height:500px;width:800px;"></div>
 </div>
 
 <script type="module">
@@ -9,12 +10,22 @@
   } from "https://unpkg.com/vue@3.2.36/dist/vue.esm-browser.prod.js"
   
   const app = createApp({
-    setup() {
-      const message = ref("Hello World")
+    data(){
       return {
-      message
+        map: '',
       }
     },
+    mounted(){
+      let timer = setInterval(() => {
+        if(window.google){
+          clearInterval(timer)
+          this.map = new window.google.maps.Map(this.$refs.map, {
+            center: {lat: -34.397, lng: 150.644},
+            zoom: 8
+          })
+        }
+      }, 500)
+    }
   })
-  app.mount("#app");
+  app.mount("#google-map")
 </script>
