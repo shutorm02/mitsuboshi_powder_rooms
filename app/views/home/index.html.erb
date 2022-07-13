@@ -12,7 +12,7 @@
   const app = createApp({
     data() {
       return {
-        myLatLng: { lat: -34.397, lng: 150.644 },
+        myLatLng: { lat: 35.1239654 , lng: 136.9417741 },
       }
     },
     mounted() {
@@ -24,7 +24,7 @@
       window.initMap = () => {
         const map = new window.google.maps.Map(this.$refs.map, {
           center: this.myLatLng,
-          zoom: 8,
+          zoom: 15,
         })
         new window.google.maps.Marker({ position: this.myLatLng, map })
       }
