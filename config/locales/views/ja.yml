@@ -10,6 +10,7 @@ ja:
     terms: '利用規約'
     privacy: 'プライバシーポリシー'
     contact: 'お問い合わせ'
+    here: 'こちら'
   users:
     new:
       title: 'ユーザー登録'
@@ -17,5 +18,5 @@ ja:
   user_sessions:
     new:
       title: 'ログイン'
-      to_register_page: '登録ページへ'
-      password_forget: 'パスワードをお忘れの方はこちら'
+      to_register_page: 'ユーザー登録の方は'
+      password_forget: 'パスワードをお忘れの方は'
