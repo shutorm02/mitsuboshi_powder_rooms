@@ -10,9 +10,11 @@
     <%= javascript_pack_tag 'application' %>
   </head>
 
-  <body>
+  <body class="bg-base-color">
     <%= render 'shared/before_login_header' %>
-    <%= yield %>
+    <div class="container mx-auto mt-24 px-5 flex">
+      <%= yield %>
+    </div>
     <%= render 'shared/footer' %>
     <%= render 'shared/bottom_navbar' %>
   </body>
