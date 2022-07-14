@@ -25,10 +25,12 @@
       <% end %>
       <ul class="flex flex-row-reverse">
         <li>
-          <i class="custom-icon fa-solid fa-right-to-bracket"></i>
-        </li>
-        <li>
-          <i class="custom-icon fa-solid fa-circle-question"></i>
+          <%= link_to login_path do %>
+            <div class="group inline-block text-center mx-3">
+              <i class="custom-icon fa-solid fa-right-to-bracket group-hover:text-mitsuboshi-blue"></i>
+              <p class="icon-text group-hover:text-mitsuboshi-blue"><%= t 'defaults.login' %></p>
+            </div>
+          <% end %>
         </li>
       </ul>
     </div>
