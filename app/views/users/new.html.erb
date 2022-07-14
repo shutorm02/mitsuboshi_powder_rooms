@@ -1,0 +1,28 @@
+<div class="w-full max-w-sm my-24">
+  <h1 class="font-bold mb-6"><%= t('.title') %></h1>
+    <%= form_with model: @user, local: true do |f| %>
+      <div class="mb-4">
+        <%= f.label :name, class: 'block mb-1 pr-4' %>
+        <%= f.text_field :name, class: 'w-full rounded py-1 px-2' %>
+      </div>
+      <div class="mb-4">
+        <%= f.label :email, class: 'block mb-1 pr-4' %>
+        <%= f.email_field :email, class: 'w-full rounded py-1 px-2' %>
+      </div>
+      <div class="mb-4">
+        <%= f.label :password, class: 'block mb-1 pr-4' %>
+        <%= f.password_field :password, class: 'w-full rounded py-1 px-2' %>
+      </div>
+      <div class="mb-4">
+        <%= f.label :password_confirmation, class: 'block mb-1 pr-4' %>
+        <%= f.password_field :password_confirmation, class: 'w-full rounded py-1 px-2' %>
+      </div>
+      <div class="my-8 md:text-center">
+        <%= f.submit t('defaults.register'), class: 'btn nomal-btn' %>
+      </div>
+    <% end %>
+    <div class="mt-6 text-center">
+      <%= link_to t('.to_login_page'), login_path %>
+    </div>
+</div>
+

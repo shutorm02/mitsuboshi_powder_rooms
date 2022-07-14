@@ -25,10 +25,12 @@
       <% end %>
       <ul class="flex flex-row-reverse">
         <li>
-          <i class="custom-icon fa-solid fa-right-from-bracket"></i>
-        </li>
-        <li>
-          <i class="custom-icon fa-solid fa-circle-question"></i>
+          <%= link_to logout_path, method: :delete do %>
+            <div class="group inline-block text-center mx-3">
+              <i class="custom-icon fa-solid fa-right-from-bracket group-hover:text-mitsuboshi-blue"></i>
+              <p class="icon-text group-hover:text-mitsuboshi-blue"><%= t 'defaults.logout' %></p>
+            </div>
+          <% end %>
         </li>
       </ul>
     </div>

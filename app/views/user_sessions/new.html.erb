@@ -1,0 +1,27 @@
+<div class="w-full max-w-sm my-24">
+  <h1 class="font-bold mb-6"><%= t('.title') %></h1>
+    <%= form_with url: login_path, local: true do |f| %>
+      <div class="mb-4">
+        <%= f.label :email, User.human_attribute_name(:email), class: 'block mb-1 pr-4' %>
+        <%= f.email_field :email, class: 'w-full rounded py-1 px-2' %>
+      </div>
+      <div class="mb-4">
+        <%= f.label :password, User.human_attribute_name(:password), class: 'block mb-1 pr-4' %>
+        <%= f.password_field :password, class: 'w-full rounded py-1 px-2' %>
+      </div>
+      <div class="my-8 md:text-center">
+        <%= f.submit t('defaults.login'), class: 'btn nomal-btn' %>
+      </div>
+    <% end %>
+    <div class="mt-6 text-center">
+      <div class="mb-2">
+        <%= t('.to_register_page') %>
+        <%= link_to t('defaults.here'), new_user_path, class: 'underline' %>
+      </div>
+      <div>
+        <%= t('.password_forget') %>
+        <a href="#", class="underline"><%= t('defaults.here') %></a>
+      </div>
+    </div>
+</div>
+
