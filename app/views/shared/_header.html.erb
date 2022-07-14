@@ -25,7 +25,9 @@
       <% end %>
       <ul class="flex flex-row-reverse">
         <li>
-          <i class="custom-icon fa-solid fa-right-from-bracket"></i>
+          <%= link_to logout_path, method: :delete do %>
+            <i class="custom-icon fa-solid fa-right-from-bracket"></i>
+          <% end %>
         </li>
         <li>
           <i class="custom-icon fa-solid fa-circle-question"></i>
