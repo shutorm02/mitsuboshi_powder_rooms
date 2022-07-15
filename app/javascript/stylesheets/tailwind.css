@@ -5,7 +5,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer base {
   html {
     font-family: Josefin Sans, sans-serif;
@@ -19,12 +18,26 @@
   .nomal-btn {
     @apply bg-mitsuboshi-blue hover:bg-baby-blue;
   }
-
   .custom-icon {
     @apply w-5 h-5 text-white py-1 px-3 hover:text-mitsuboshi-blue;
   },
   .icon-text {
     @apply font-yusei text-xs text-white;
+  }
+  .alert {
+    @apply p-4 mb-4;
+  }
+  .alert-success {
+    @apply text-green-700 bg-green-100 rounded-lg;
+  }
+  .alert-info {
+    @apply text-blue-700 bg-blue-100 rounded-lg;
+  }
+  .alert-warning {
+    @apply text-yellow-700 bg-yellow-100 rounded-lg; 
+  }
+  .alert-danger {
+    @apply text-red-700 bg-red-100 rounded-lg;
   }
 }
 
