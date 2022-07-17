@@ -73,4 +73,5 @@ RSpec.configure do |config|
       Bullet.end_request
     end
   end
+  config.include LoginMacros
 end
