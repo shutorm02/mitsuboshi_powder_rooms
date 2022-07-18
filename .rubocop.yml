@@ -2,8 +2,103 @@ inherit_from: .rubocop_todo.yml
 require:
   - rubocop-rails
   - rubocop-rspec
+  - rubocop-performance
+
+AllCops:
+  Exclude:
+    - "tmp/**/*"
+    - "vendor/**/*"
+    - "db/**/*"
+    - "bin/**/*"
+    - "node_modules/**/*"
+    - "config/**/*"
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  NewCops: enable
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Rails:
+  Enabled: true
+
+Rails/FilePath:
+  Enabled: false
+
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/LineLength:
+  Max: 120
+  AllowedPatterns:
+    - '\A#.+'
+  Exclude:
+    - "config/initializers/*"
+
+Layout/MultilineMethodCallIndentation:
+  Exclude:
+    - "spec/**/*"
+
+Lint/AmbiguousBlockAssociation:
+  IgnoredMethods: [change]
+
+Lint/EmptyBlock:
+  Exclude:
+    - "spec/models/**/*"
+
+Metrics/AbcSize:
+  Max: 30 # default 15
+
+Metrics/BlockLength:
+  Exclude:
+    - "config/routes.rb"
+    - "spec/**/*"
+    - "lib/tasks/auto_annotate_models.rake"
+    - "config/environments/development.rb"
+
+Metrics/MethodLength:
+  CountComments: false
+  Max: 20
+
+Naming/AccessorMethodName:
+  Exclude:
+    - "app/controllers/**/*"
+
+RSpec/ContextWording:
+  Enabled: false
+
+RSpec/DescribedClass:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/ExpectInHook:
+  Enabled: false
+
+# An instance variable can be used when needed, but use let when possible.
+RSpec/InstanceVariable:
+  Enabled: false
+
+RSpec/MessageSpies:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Max: 5
+
+Style/AndOr:
+  Enabled: true
 
 Style/AsciiComments:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
   Enabled: false
 
 Style/Documentation:
@@ -12,20 +107,18 @@ Style/Documentation:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
-Metrics/MethodLength:
-  Max: 20
+Style/HashEachMethods:
+  Enabled: true
+Style/HashTransformKeys:
+  Enabled: true
+Style/HashTransformValues:
+  Enabled: true
 
-Layout/IndentationConsistency:
-  EnforcedStyle: indented_internal_methods
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
 
-AllCops:
-  TargetRubyVersion: 3.1
-  NewCops: enable
-  Exclude:
-    - 'bin/**'
-    - 'node_modules/**/*'
-    - 'config/**/*'
-    - 'config.ru'
-    - 'db/schema.rb'
-    - 'db/seeds.rb'
-    - 'Gemfile'
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma

@@ -33,10 +33,11 @@ gem 'sorcery'
 gem 'pry-byebug'
 
 group :development, :test do
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'sqlite3'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
-  gem 'sqlite3'
+  gem 'faker'
 end
 
 group :development do
@@ -46,13 +47,20 @@ group :development do
   gem 'spring'
   gem 'foreman'
 
-  gem 'rubocop', require: false
   gem 'rubocop-rails', require: false
-  gem 'rubocop-rspec'
+  gem 'rubocop-rspec', require: false
+  gem 'rubocop-performance', require: false
+
   gem 'bullet'
   gem 'solargraph'
   gem 'better_errors'
   gem 'binding_of_caller'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'webdrivers'
+  gem 'rspec_junit_formatter'
 end
 
 group :production do
@@ -60,4 +68,4 @@ group :production do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
