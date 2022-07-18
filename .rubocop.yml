@@ -11,11 +11,18 @@ AllCops:
     - "db/**/*"
     - "bin/**/*"
     - "node_modules/**/*"
+    - "config/**/*"
   DisplayCopNames: true
   DisplayStyleGuide: true
   NewCops: enable
 
 Bundler/OrderedGems:
+  Enabled: false
+
+Rails:
+  Enabled: true
+
+Rails/FilePath:
   Enabled: false
 
 Layout/FirstArrayElementIndentation:
@@ -64,11 +71,30 @@ Naming/AccessorMethodName:
   Exclude:
     - "app/controllers/**/*"
 
-Rails/HasManyOrHasOneDependent:
-  Exclude:
-    - "app/models/product_type.rb"
-    - "app/models/social_service.rb"
-    - "app/models/product_category.rb"
+RSpec/ContextWording:
+  Enabled: false
+
+RSpec/DescribedClass:
+  Enabled: false
+
+RSpec/ExampleLength:
+  Enabled: false
+
+RSpec/ExpectInHook:
+  Enabled: false
+
+# An instance variable can be used when needed, but use let when possible.
+RSpec/InstanceVariable:
+  Enabled: false
+
+RSpec/MessageSpies:
+  Enabled: false
+
+RSpec/MultipleExpectations:
+  Enabled: false
+
+RSpec/NestedGroups:
+  Max: 5
 
 Style/AndOr:
   Enabled: true
