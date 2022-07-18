@@ -59,10 +59,6 @@ Metrics/BlockLength:
     - "lib/tasks/auto_annotate_models.rake"
     - "config/environments/development.rb"
 
-Metrics/ClassLength:
-  Exclude:
-    - "app/forms/product_form.rb"
-
 Metrics/MethodLength:
   CountComments: false
   Max: 20
