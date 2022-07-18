@@ -33,7 +33,7 @@ Layout/FirstHashElementIndentation:
 
 Layout/LineLength:
   Max: 120
-  IgnoredPatterns:
+  AllowedPatterns:
     - '\A#.+'
   Exclude:
     - "config/initializers/*"
