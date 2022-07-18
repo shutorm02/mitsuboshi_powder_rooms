@@ -34,9 +34,10 @@ gem 'pry-byebug'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rspec-rails'
-  gem 'factory_bot_rails'
   gem 'sqlite3'
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec'
+  gem 'rubocop-performance'
 end
 
 group :development do
@@ -46,9 +47,6 @@ group :development do
   gem 'spring'
   gem 'foreman'
 
-  gem 'rubocop', require: false
-  gem 'rubocop-rails', require: false
-  gem 'rubocop-rspec'
   gem 'bullet'
   gem 'solargraph'
   gem 'better_errors'
@@ -56,8 +54,12 @@ group :development do
 end
 
 group :test do
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
   gem 'capybara'
   gem 'webdrivers'
+  gem 'rspec_junit_formatter'
+  gem 'faker'
 end
 
 group :production do
