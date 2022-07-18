@@ -2,8 +2,81 @@ inherit_from: .rubocop_todo.yml
 require:
   - rubocop-rails
   - rubocop-rspec
+  - rubocop-performance
+
+AllCops:
+  Exclude:
+    - "tmp/**/*"
+    - "vendor/**/*"
+    - "db/**/*"
+    - "bin/**/*"
+    - "node_modules/**/*"
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  NewCops: enable
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Layout/FirstArrayElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/FirstHashElementIndentation:
+  EnforcedStyle: consistent
+
+Layout/LineLength:
+  Max: 120
+  IgnoredPatterns:
+    - '\A#.+'
+  Exclude:
+    - "config/initializers/*"
+
+Layout/MultilineMethodCallIndentation:
+  Exclude:
+    - "spec/**/*"
+
+Lint/AmbiguousBlockAssociation:
+  IgnoredMethods: [change]
+
+Lint/EmptyBlock:
+  Exclude:
+    - "spec/models/**/*"
+
+Metrics/AbcSize:
+  Max: 30 # default 15
+
+Metrics/BlockLength:
+  Exclude:
+    - "config/routes.rb"
+    - "spec/**/*"
+    - "lib/tasks/auto_annotate_models.rake"
+    - "config/environments/development.rb"
+
+Metrics/ClassLength:
+  Exclude:
+    - "app/forms/product_form.rb"
+
+Metrics/MethodLength:
+  CountComments: false
+  Max: 20
+
+Naming/AccessorMethodName:
+  Exclude:
+    - "app/controllers/**/*"
+
+Rails/HasManyOrHasOneDependent:
+  Exclude:
+    - "app/models/product_type.rb"
+    - "app/models/social_service.rb"
+    - "app/models/product_category.rb"
+
+Style/AndOr:
+  Enabled: true
 
 Style/AsciiComments:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
   Enabled: false
 
 Style/Documentation:
@@ -12,20 +85,18 @@ Style/Documentation:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
-Metrics/MethodLength:
-  Max: 20
+Style/HashEachMethods:
+  Enabled: true
+Style/HashTransformKeys:
+  Enabled: true
+Style/HashTransformValues:
+  Enabled: true
 
-Layout/IndentationConsistency:
-  EnforcedStyle: indented_internal_methods
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
 
-AllCops:
-  TargetRubyVersion: 3.1
-  NewCops: enable
-  Exclude:
-    - 'bin/**'
-    - 'node_modules/**/*'
-    - 'config/**/*'
-    - 'config.ru'
-    - 'db/schema.rb'
-    - 'db/seeds.rb'
-    - 'Gemfile'
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
