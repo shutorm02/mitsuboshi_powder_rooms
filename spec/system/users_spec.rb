@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Users", type: :system do
+RSpec.describe 'Users', type: :system do
   describe 'ユーザー新規登録' do
     context 'フォームの入力値が正常' do
       it 'ユーザーの新規登録が成功する' do
@@ -11,7 +11,7 @@ RSpec.describe "Users", type: :system do
         fill_in 'パスワード確認', with: 'password'
         click_button '登録'
         expect(page).to have_content 'ユーザー登録が完了しました'
-        expect(current_path).to eq login_path
+        expect(page).to have_current_path login_path, ignore_query: true
       end
     end
 
@@ -25,7 +25,7 @@ RSpec.describe "Users", type: :system do
         click_button '登録'
         expect(page).to have_content 'ユーザー登録に失敗しました'
         expect(page).to have_content 'アカウント名を入力してください'
-        expect(current_path).to eq users_path
+        expect(page).to have_current_path users_path, ignore_query: true
       end
     end
 
@@ -39,7 +39,7 @@ RSpec.describe "Users", type: :system do
         click_button '登録'
         expect(page).to have_content 'ユーザー登録に失敗しました'
         expect(page).to have_content 'メールアドレスを入力してください'
-        expect(current_path).to eq users_path
+        expect(page).to have_current_path users_path, ignore_query: true
       end
     end
 
@@ -49,12 +49,12 @@ RSpec.describe "Users", type: :system do
         visit new_user_path
         fill_in 'アカウント名', with: 'user_test'
         fill_in 'メールアドレス', with: exsited_user.email
-        fill_in 'パスワード', with: 'password' 
+        fill_in 'パスワード', with: 'password'
         fill_in 'パスワード確認', with: 'password'
         click_button '登録'
         expect(page).to have_content 'ユーザー登録に失敗しました'
         expect(page).to have_content 'メールアドレスはすでに存在します'
-        expect(current_path).to eq users_path
+        expect(page).to have_current_path users_path, ignore_query: true
       end
     end
   end
