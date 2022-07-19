@@ -1,0 +1,2 @@
+class TargetPerson < ApplicationRecord
+end
