@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :equipment_detail do
-    content { "MyString" }
+    content { 'MyString' }
   end
 end
