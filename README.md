@@ -66,15 +66,20 @@
 - コメントの検索、一覧、詳細、編集、削除
 - 管理ユーザーの一覧、詳細、編集、削除
 
+## バージョン情報
+- Ruby 3.1.2
+- Rails 6.1.6
+- Vue 3.2.36
+
 ## 画面遷移図
 URLは[こちら](https://www.figma.com/file/xYW06Nc9itu7CjivC8X40y/%E4%B8%89%E3%81%A4%E6%98%9F%E3%83%88%E3%82%A4%E3%83%AC?node-id=0%3A1)
 
 ## ER図
-![9f2d84f2fd044f62835c597c6e732fed](https://user-images.githubusercontent.com/93573830/175477351-1fdb95b8-3694-49da-a29b-330dc7bcf694.png)
+[![Image from Gyazo](https://i.gyazo.com/65035a499d21877a800b724a89a588e0.png)](https://gyazo.com/65035a499d21877a800b724a89a588e0)
 
 ## 開発スケジュール
 企画〜技術調査：6/25〆切<br>
 README〜ER図作成：6/25 〆切<br>
-メイン機能実装：6/25 - 7/31<br>
-β版をRUNTEQ内リリース（MVP）：8/15〆切<br>
+メイン機能実装：6/25 - 8/15<br>
+β版をRUNTEQ内リリース（MVP）：8/20〆切<br>
 本番リリース：8月末<br>
