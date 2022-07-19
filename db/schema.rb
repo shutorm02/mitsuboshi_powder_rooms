@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_18_092330) do
+ActiveRecord::Schema.define(version: 2022_07_19_054629) do
+
+  create_table "equipment", force: :cascade do |t|
+    t.integer "spot_id", null: false
+    t.integer "equipment_detail_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["equipment_detail_id"], name: "index_equipment_on_equipment_detail_id"
+    t.index ["spot_id", "equipment_detail_id"], name: "index_equipment_on_spot_id_and_equipment_detail_id", unique: true
+    t.index ["spot_id"], name: "index_equipment_on_spot_id"
+  end
+
+  create_table "equipment_details", force: :cascade do |t|
+    t.string "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "spots", force: :cascade do |t|
     t.string "name", null: false
@@ -35,5 +51,7 @@ ActiveRecord::Schema.define(version: 2022_07_18_092330) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
+  add_foreign_key "equipment", "equipment_details"
+  add_foreign_key "equipment", "spots"
   add_foreign_key "spots", "users"
 end
