@@ -6,5 +6,6 @@ class CreateEquipment < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
+    add_index :equipment, [:spot_id, :equipment_detail_id], unique: true
   end
 end
