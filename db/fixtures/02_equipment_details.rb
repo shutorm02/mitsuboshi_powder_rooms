@@ -1,4 +1,4 @@
-EquipmentDetails.seed(:id,
+EquipmentDetail.seed(:id,
   { id: 1, content: 'パウダールーム', target_person_id: 2 },
   { id: 2, content: 'フィッティングルーム', target_person_id: 2 },
   { id: 3, content: 'ベビーキープ', target_person_id: 3 },
