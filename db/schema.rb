@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_19_064243) do
+ActiveRecord::Schema.define(version: 2022_07_20_012658) do
 
   create_table "equipment", force: :cascade do |t|
     t.integer "spot_id", null: false
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 2022_07_19_064243) do
     t.string "content", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "target_person_id"
+    t.index ["target_person_id"], name: "index_equipment_details_on_target_person_id"
   end
 
   create_table "spots", force: :cascade do |t|
@@ -37,6 +39,12 @@ ActiveRecord::Schema.define(version: 2022_07_19_064243) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_spots_on_user_id"
+  end
+
+  create_table "target_people", force: :cascade do |t|
+    t.string "target", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -53,5 +61,6 @@ ActiveRecord::Schema.define(version: 2022_07_19_064243) do
 
   add_foreign_key "equipment", "equipment_details"
   add_foreign_key "equipment", "spots"
+  add_foreign_key "equipment_details", "target_people"
   add_foreign_key "spots", "users"
 end
