@@ -31,6 +31,7 @@ gem 'rails-i18n', '~> 6.0'
 gem 'dotenv-rails'
 gem 'sorcery'
 gem 'pry-byebug'
+gem 'seed-fu'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
