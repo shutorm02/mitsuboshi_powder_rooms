@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_07_20_012658) do
+ActiveRecord::Schema.define(version: 2022_07_20_080818) do
 
   create_table "equipment", force: :cascade do |t|
     t.integer "spot_id", null: false
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2022_07_20_012658) do
     t.string "target", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["target"], name: "index_target_people_on_target", unique: true
   end
 
   create_table "users", force: :cascade do |t|
