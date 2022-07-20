@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :target_person do
-    people { 'MyString' }
+    target { 'MyString' }
   end
 end
