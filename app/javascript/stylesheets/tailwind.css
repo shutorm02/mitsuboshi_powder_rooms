@@ -9,6 +9,7 @@
   html {
     font-family: Josefin Sans, sans-serif;
     font-size: 14px;
+    color: #2d3748;
   }
 }
 @layer components {
