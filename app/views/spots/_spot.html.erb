@@ -10,9 +10,9 @@
       </div>
       <p class="pt-2"><%= spot.address %></p>
     </div>
-    <div class="px-6 pb-2">
+    <div class="flex flex-wrap px-6 pb-2">
       <% spot.equipment_details.each do |equipment_details| %>
-        <span class="inline-block rounded-full px-3 py-1 text-sm font-semibold mr-2 mb-2 bg-gray-200 text-white">
+        <span class="custom-tag bg-gray-200">
           <%= equipment_details.content %>
         </span>
       <% end %>
