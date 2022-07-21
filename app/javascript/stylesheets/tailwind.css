@@ -25,6 +25,9 @@
   .icon-text {
     @apply font-yusei text-xs text-white;
   }
+  .custom-tag {
+    @apply inline-block rounded-full px-2 pt-2 pb-1 text-sm font-semibold mr-2 mb-2 text-white;
+  }
   .alert {
     @apply p-4 mb-4;
   }
