@@ -9,10 +9,12 @@
           </div>
         </li>
         <li>
-          <div class="group inline-block text-center mx-3 pt-2">
-            <i class="custom-icon fa-solid fa-magnifying-glass group-hover:text-mitsuboshi-blue"></i>
-            <p class="icon-text group-hover:text-mitsuboshi-blue"><%= t 'defaults.search' %></p>
-          </div>
+          <%= link_to spots_path do %>
+            <div class="group inline-block text-center mx-3 pt-2">
+              <i class="custom-icon fa-solid fa-magnifying-glass group-hover:text-mitsuboshi-blue"></i>
+              <p class="icon-text group-hover:text-mitsuboshi-blue"><%= t 'defaults.search' %></p>
+            </div>
+          <% end %>
         </li>
         <li>
           <div class="group inline-block text-center mx-3 pt-2">
