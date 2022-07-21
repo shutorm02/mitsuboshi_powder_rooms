@@ -31,3 +31,6 @@ ja:
   spots:
     index:
       no_result: 'スポット情報がありません'
+      map_view: 'マップ表示'
+      list_view: 'リスト表示'
+
