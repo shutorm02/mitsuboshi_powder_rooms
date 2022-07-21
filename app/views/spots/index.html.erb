@@ -1,0 +1,8 @@
+<div class="w-full max-w-md my-24">
+  <% if @spots.present? %>
+    <%= render @spots %>
+  <% else %>
+    <p><%= t('.no_result') %></p>
+  <% end %>
+  <%= paginate @spots %>
+</div>
