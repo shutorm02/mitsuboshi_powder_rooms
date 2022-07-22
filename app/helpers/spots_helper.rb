@@ -1,13 +1,14 @@
 module SpotsHelper
   def tag_color(equipment_detail)
-    if equipment_detail.target_person_id == 1
-      return 'powder-pink'
-    elsif equipment_detail.target_person_id == 2
-      return 'powder-pink'
-    elsif equipment_detail.target_person_id == 3
-      return 'baby-blue'
-    else equipment_detail.target_person_id == 4 
-      return 'fitting-pink'
+    case equipment_detail.target_person_id
+    when 1, 2
+      'powder-pink'
+    when 3
+      'baby-blue'
+    when 4
+      'fitting-pink'
+    else
+      'mitsuboshi-gray'
     end
   end
 end
