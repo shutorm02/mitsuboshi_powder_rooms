@@ -28,3 +28,9 @@ ja:
       fail: 'ログインに失敗しました'
     destroy:
       success: 'ログアウトしました'
+  spots:
+    index:
+      no_result: '登録されているスポットがありません'
+      map_view: 'マップ表示'
+      list_view: 'リスト表示'
+

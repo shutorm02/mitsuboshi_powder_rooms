@@ -1,0 +1,24 @@
+<div class="max-w-md bg-white rounded-2xl overflow-hidden shadow-lg mb-5">
+  <div id="spot-id-<%= spot.id %>">
+    <div class="px-6 py-4">
+      <div class="flex flex-row items-center text-xl">
+        <i class="fa-solid fa-location-dot text-fitting-pink pb-1 pr-1.5"></i>
+        <div class="font-bold tracking-wider"><%= spot.name %></div>
+      </div>
+      <div class="flex flex-row ml-5 mb-2">
+        <i class="fas fa-star text-mitsuboshi-yellow pr-0.5"></i>
+        <i class="fas fa-star text-mitsuboshi-yellow pr-0.5"></i>
+        <i class="far fa-star text-mitsuboshi-yellow pr-0.5"></i>
+        <p class="text-sm">(〇〇件の評価)</p>
+      </div>
+      <p class="ml-5 pt-2"><%= spot.address %></p>
+    </div>
+    <div class="flex flex-wrap text-sm ml-4 px-6 pb-2">
+      <% spot.equipment_details.each do |equipment_detail| %>
+        <span class="equipment-tag bg-<%= tag_color(equipment_detail) %>">
+          <%= equipment_detail.content %>
+        </span>
+      <% end %>
+    </div>
+  </div>
+</div>

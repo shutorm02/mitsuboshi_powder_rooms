@@ -32,6 +32,7 @@ gem 'dotenv-rails'
 gem 'sorcery'
 gem 'pry-byebug'
 gem 'seed-fu'
+gem 'kaminari'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]

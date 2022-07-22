@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :spot do
-    name { 'MyString' }
-    address { 'MyString' }
-    latitude { 1.5 }
-    longitude { 1.5 }
-    user { nil }
+    sequence(:name) { |n| "〇〇駅#{n}番ホーム" }
+    sequence(:address) { |n| "東京都文京区#{n}番地" }
+    latitude { Faker::Address.latitude }
+    longitude { Faker::Address.longitude }
+    association :user
   end
 end
