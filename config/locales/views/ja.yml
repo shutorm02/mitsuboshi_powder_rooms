@@ -11,6 +11,9 @@ ja:
     privacy: 'プライバシーポリシー'
     contact: 'お問い合わせ'
     here: 'こちら'
+    message:
+      created: "%{item}を作成しました"
+      not_created: "%{item}を作成できませんでした"
   users:
     new:
       title: 'ユーザー登録'
