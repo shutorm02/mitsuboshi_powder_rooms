@@ -23,10 +23,12 @@
           </div>
         </li>
         <li>
-          <div class="group inline-block text-center mx-3 pt-2">
-            <i class="custom-icon fa-solid fa-plus group-hover:text-mitsuboshi-blue"></i>
-            <p class="icon-text group-hover:text-mitsuboshi-blue"><%= t 'defaults.post' %></p>
-          </div>
+          <%= link_to new_spot_path do %>
+            <div class="group inline-block text-center mx-3 pt-2">
+              <i class="custom-icon fa-solid fa-plus group-hover:text-mitsuboshi-blue"></i>
+              <p class="icon-text group-hover:text-mitsuboshi-blue"><%= t 'defaults.post' %></p>
+            </div>
+          <% end %>
         </li>
       </ul>
     </div>
