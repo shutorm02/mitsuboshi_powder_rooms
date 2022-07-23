@@ -14,10 +14,13 @@
 }
 @layer components {
   .btn {
-    @apply text-white font-bold rounded shadow py-2 px-4 w-32;
+    @apply text-center rounded shadow py-2 px-4 w-32;
   }
   .nomal-btn {
-    @apply bg-mitsuboshi-blue hover:bg-baby-blue;
+    @apply font-bold text-white bg-mitsuboshi-blue hover:bg-baby-blue;
+  }
+  .cancel-btn {
+    @apply border border-mitsuboshi-gray bg-white hover:bg-mitsuboshi-gray;
   }
   .custom-icon {
     @apply w-5 h-5 text-white py-1 px-3 hover:text-mitsuboshi-blue;
