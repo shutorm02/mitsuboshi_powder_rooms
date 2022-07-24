@@ -13,14 +13,6 @@
       </div>
       <%= f.text_field :address, class: 'w-full rounded py-1 px-2' %>
     </div>
-    <div class="mb-4">
-      <%= f.label :latitude, class: 'block mb-1 pr-4' %>
-      <%= f.text_field :latitude, size: 10, class: 'w-full rounded py-1 px-2' %>
-    </div>
-    <div class="mb-4">
-      <%= f.label :longitude, class: 'block mb-1 pr-4' %>
-      <%= f.text_field :longitude, size: 10, class: 'w-full rounded py-1 px-2' %>
-    </div>
     <div class="my-8 flex justify-center">
       <span class="btn cancel-btn mr-3"><%= t('defaults.cancel') %></span>
       <%= f.submit t('defaults.post'), class: 'btn nomal-btn' %>
