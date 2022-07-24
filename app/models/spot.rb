@@ -8,6 +8,6 @@ class Spot < ApplicationRecord
   validates :latitude, presence: true
   validates :longitude, presence: true
 
-  geocoder_by :address
+  geocoded_by :address
   after_validation :geocode, if: :address_changed?
 end
