@@ -15,7 +15,11 @@
     </div>
     <div class="mb-4">
       <%= f.label :equipment_detail_ids, class: 'block mb-1 pr-4' %>
-      <%= f.collection_check_boxes :equipment_detail_ids, EquipmentDetail.all, :id, :content, include_hidden: false %>
+      <%= f.collection_check_boxes(:equipment_detail_ids, EquipmentDetail.all, :id, :content, include_hidden: false) do |b| %>
+        <div class="flex">
+          <%= b.label { b.check_box + b.text } %>
+        </div>
+      <% end %>
     </div>
     <div class="my-8 flex justify-center">
       <span class="btn cancel-btn mr-3"><%= t('defaults.cancel') %></span>
