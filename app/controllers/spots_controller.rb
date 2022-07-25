@@ -6,7 +6,7 @@ class SpotsController < ApplicationController
   end
 
   def new
-    @form = SpotsForm.new(spot_params)
+    @form = SpotsForm.new
   end
 
   def create
