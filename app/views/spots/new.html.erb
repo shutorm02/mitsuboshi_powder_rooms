@@ -13,6 +13,10 @@
       </div>
       <%= f.text_field :address, class: 'w-full rounded py-1 px-2' %>
     </div>
+    <div class="mb-4">
+      <%= f.label :equipment_detail_ids, class: 'block mb-1 pr-4' %>
+      <%= f.collection_check_boxes :equipment_detail_ids, EquipmentDetail.all, :id, :content %>
+    </div>
     <div class="my-8 flex justify-center">
       <span class="btn cancel-btn mr-3"><%= t('defaults.cancel') %></span>
       <%= f.submit t('defaults.post'), class: 'btn nomal-btn' %>
