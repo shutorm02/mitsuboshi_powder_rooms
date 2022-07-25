@@ -20,8 +20,10 @@ class SpotsForm
       spot = Spot.new(spot_params)
       spot.save!
 
-      equipment_detail_ids.each do |equipment_detail_id|
-        spot.equipments.create!(equipment_detail_id: equipment_detail_id)
+      if equipment_detail_ids.present?
+        equipment_detail_ids.each do |equipment_detail_id|
+          spot.equipments.create!(equipment_detail_id: equipment_detail_id)
+        end
       end
     end
 
