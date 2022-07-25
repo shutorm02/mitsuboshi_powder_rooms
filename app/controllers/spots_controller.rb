@@ -6,12 +6,13 @@ class SpotsController < ApplicationController
   end
 
   def new
-    @spot = Spot.new
+    @form = SpotsForm.new(spot_params)
   end
 
   def create
-    @spot = current_user.spots.build(spot_params)
-    if @spot.save
+    @form = SpotsForm.new(spot_params)
+
+    if @form.save
       redirect_to spots_path, success: t('defaults.message.created', item: Spot.model_name.human)
     else
       flash.now['danger'] = t('defaults.message.not_created', item: Spot.model_name.human)
@@ -22,6 +23,10 @@ class SpotsController < ApplicationController
   private
 
   def spot_params
-    params.require(:spot).permit(:name, :address)
+    params.require(:spots_form).permit(
+      :name,
+      :address,
+      { equipment_detail_ids: [] }
+    ).merge(user_id: current_user.id)
   end
 end
