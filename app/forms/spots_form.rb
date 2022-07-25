@@ -8,8 +8,8 @@ class SpotsForm
   attribute :equipment_detail_ids
 
   with_options presence: true do
-    validates :name, uniqueness: true
-    validates :address, uniqueness: true
+    validates :name
+    validates :address
     validates :user_id
   end
 
