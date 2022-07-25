@@ -7,10 +7,15 @@ ja:
     mypage: 'マイページ'
     search: '検索'
     post: '投稿'
+    cancel: 'キャンセル'
     terms: '利用規約'
     privacy: 'プライバシーポリシー'
     contact: 'お問い合わせ'
     here: 'こちら'
+    message:
+      require_login: 'ログインしてください'
+      created: "%{item}を作成しました"
+      not_created: "%{item}を作成できませんでした"
   users:
     new:
       title: 'ユーザー登録'
@@ -33,4 +38,6 @@ ja:
       no_result: '登録されているスポットがありません'
       map_view: 'マップ表示'
       list_view: 'リスト表示'
+    new:
+      title: 'スポット情報'
 

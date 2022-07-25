@@ -1,0 +1,29 @@
+<div class="w-full max-w-sm my-24">
+  <h1 class="font-bold mb-6"><%= t('.title') %></h1>
+  <%= form_with model: @form, url: spots_path, local: true do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="mb-4">
+      <%= f.label :name, class: 'block mb-1 pr-4' %>
+      <%= f.text_field :name, class: 'w-full rounded py-1 px-2' %>
+    </div>
+    <div class="mb-4">
+      <div class="flex text-center mb-2 pr-4">
+        <%= f.label :address, class: 'my-auto pt-1 mr-2' %>
+        <span class="bg-white rounded border border-gray-200 align-middle px-3 pt-2 pb-1 text-sm mr-2 hover:bg-gray-200">現在地から住所を入力</span>
+      </div>
+      <%= f.text_field :address, class: 'w-full rounded py-1 px-2' %>
+    </div>
+    <div class="mb-4">
+      <%= f.label :equipment_detail_ids, class: 'block mb-1 pr-4' %>
+      <%= f.collection_check_boxes(:equipment_detail_ids, EquipmentDetail.all, :id, :content, include_hidden: false) do |b| %>
+        <div class="flex">
+          <%= b.label { b.check_box + b.text } %>
+        </div>
+      <% end %>
+    </div>
+    <div class="my-8 flex justify-center">
+      <span class="btn cancel-btn mr-3"><%= t('defaults.cancel') %></span>
+      <%= f.submit t('defaults.post'), class: 'btn nomal-btn' %>
+    </div>
+  <% end %>
+</div>

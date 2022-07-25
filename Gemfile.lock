@@ -115,8 +115,14 @@ GEM
     faraday-net_http (2.0.3)
     ffi (1.15.5)
     foreman (0.87.2)
+    geocoder (1.8.0)
     globalid (1.0.0)
       activesupport (>= 5.0)
+    gon (6.4.0)
+      actionpack (>= 3.0.20)
+      i18n (>= 0.7)
+      multi_json
+      request_store (>= 1.0)
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.4)
@@ -239,6 +245,8 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     regexp_parser (2.5.0)
+    request_store (1.5.1)
+      rack (>= 1.4)
     reverse_markdown (2.1.1)
       nokogiri
     rexml (3.2.5)
@@ -380,6 +388,8 @@ DEPENDENCIES
   factory_bot_rails
   faker
   foreman
+  geocoder
+  gon
   jbuilder (~> 2.7)
   kaminari
   listen (~> 3.3)
