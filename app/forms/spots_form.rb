@@ -22,21 +22,21 @@ class SpotsForm
 
       if equipment_detail_ids.present?
         equipment_detail_ids.each do |equipment_detail_id|
-          spot.equipments.create!(equipment_detail_id: equipment_detail_id)
+          spot.equipments.create!(equipment_detail_id:)
         end
       end
     end
 
-   true 
+    true
   end
 
   private
 
   def spot_params
     {
-      name: name,
-      address: address,
-      user_id: user_id
+      name:,
+      address:,
+      user_id:,
     }
   end
 end

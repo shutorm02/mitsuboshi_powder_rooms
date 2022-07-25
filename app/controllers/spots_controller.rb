@@ -26,7 +26,7 @@ class SpotsController < ApplicationController
     params.require(:spots_form).permit(
       :name,
       :address,
-      { equipment_detail_ids: [] }
+      { equipment_detail_ids: [] },
     ).merge(user_id: current_user.id)
   end
 end
