@@ -6,6 +6,16 @@ module.exports = {
     './app/**/*.{vue,js,ts}',
   ],
   darkMode: false, // or 'media' or 'class'
+  safelist: [
+    'powder-pink',
+    'baby-pink',
+    'fitting-pink',
+    'mitsuboshi-gray',
+    'alert-success',
+    'alert-info',
+    'alert-warning',
+    'alert-danger',
+  ],
   theme: {
     extend: {
       fontFamily: {
