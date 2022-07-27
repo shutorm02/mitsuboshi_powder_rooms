@@ -15,7 +15,7 @@
     </div>
     <div class="flex flex-wrap text-sm ml-4 px-6 pb-2">
       <% spot.equipment_details.each do |equipment_detail| %>
-        <span class="equipment-tag bg-<%= tag_color(equipment_detail) %>">
+        <span class="equipment-tag <%= tag_color(equipment_detail) %>">
           <%= equipment_detail.content %>
         </span>
       <% end %>
