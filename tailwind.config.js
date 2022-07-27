@@ -11,10 +11,6 @@ module.exports = {
     'bg-baby-pink',
     'bg-fitting-pink',
     'bg-mitsuboshi-gray',
-    'alert-success',
-    'alert-info',
-    'alert-warning',
-    'alert-danger',
   ],
   theme: {
     extend: {
