@@ -7,10 +7,10 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   safelist: [
-    'powder-pink',
-    'baby-pink',
-    'fitting-pink',
-    'mitsuboshi-gray',
+    'bg-powder-pink',
+    'bg-baby-pink',
+    'bg-fitting-pink',
+    'bg-mitsuboshi-gray',
     'alert-success',
     'alert-info',
     'alert-warning',
