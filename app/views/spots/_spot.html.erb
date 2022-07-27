@@ -13,23 +13,6 @@
       </div>
       <p class="ml-5 pt-2"><%= spot.address %></p>
     </div>
-    <div class="flex flex-wrap text-sm ml-4 px-6 pb-2">
-      <% spot.equipment_details.each do |equipment_detail| %>
-        <% case equipment_detail.target_person_id %>
-        <% when 1, 2 %>
-          <span class="equipment-tag bg-powder-pink">
-            <%= equipment_detail.content %>
-          </span>
-        <% when 3 %>
-          <span class="equipment-tag bg-baby-blue">
-            <%= equipment_detail.content %>
-          </span>
-        <% else %>
-          <span class="equipment-tag bg-fitting-pink">
-            <%= equipment_detail.content %>
-          </span>
-        <% end %>
-      <% end %>
-    </div>
+    <%= render 'equipment_tags', spot: spot %>
   </div>
 </div>
