@@ -6,12 +6,6 @@ module.exports = {
     './app/**/*.{vue,js,ts}',
   ],
   darkMode: false, // or 'media' or 'class'
-  safelist: [
-    'bg-powder-pink',
-    'bg-baby-pink',
-    'bg-fitting-pink',
-    'bg-mitsuboshi-gray',
-  ],
   theme: {
     extend: {
       fontFamily: {
