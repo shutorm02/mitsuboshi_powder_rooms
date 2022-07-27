@@ -7,6 +7,7 @@ ja:
     mypage: 'マイページ'
     search: '検索'
     post: '投稿'
+    edit: '編集'
     cancel: 'キャンセル'
     terms: '利用規約'
     privacy: 'プライバシーポリシー'
@@ -44,5 +45,6 @@ ja:
     show:
       address: '住所'
       equipment_details: '設備詳細'
+      none: 'なし'
       
 
