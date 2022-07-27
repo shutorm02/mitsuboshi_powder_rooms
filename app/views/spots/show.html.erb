@@ -1,0 +1,54 @@
+<div class="w-full max-w-sm my-24">
+  <div class="flex flex-row items-center text-xl mb-2">
+    <i class="fa-solid fa-location-dot text-fitting-pink text-2xl pb-1 pr-1.5"></i>
+    <div class="font-bold tracking-wider"><%= @spot.name %></div>
+  </div>
+  <div class="flex flex-row ml-5 mb-2">
+    <i class="fas fa-star text-mitsuboshi-yellow text-xl pr-0.5"></i>
+    <i class="fas fa-star text-mitsuboshi-yellow text-xl pr-0.5"></i>
+    <i class="far fa-star text-mitsuboshi-yellow text-xl pr-0.5"></i>
+    <p>(〇〇<%= t('defaults.reviews') %>)</p>
+  </div>
+  <div class="border-t-2 border-bg-mitsuboshi-gray px-5">
+    <div class="my-5 py-4">
+      <p class="font-bold"><%= t('.address') %></p>
+      <p class="pl-2 py-2"><%= @spot.address %></p>
+      <div id="map"></div>
+    </div>
+    <div class="border-t-2 border-bg-mitsuboshi-gray py-4">
+      <p class="font-bold"><%= t('.equipment_details') %></p>
+      <div class="pl-2 pt-2">
+        <%= render 'equipment_tags', spot: @spot %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function initMap() {
+    const mySpot= { lat: gon.spot.latitude, lng: gon.spot.longitude }
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 15,
+      center: mySpot,
+    })
+    const marker = new google.maps.Marker({
+      position: mySpot,
+      map: map,
+    })
+  }
+
+  window.initMap = initMap
+
+</script>
+
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initMap"
+  defer
+></script>
+
+<style>
+  #map {
+    height: 250px;
+    width: 100%;
+  }
+</style>
