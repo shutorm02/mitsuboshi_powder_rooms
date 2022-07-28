@@ -7,11 +7,13 @@ ja:
     mypage: 'マイページ'
     search: '検索'
     post: '投稿'
+    edit: '編集'
     cancel: 'キャンセル'
     terms: '利用規約'
     privacy: 'プライバシーポリシー'
     contact: 'お問い合わせ'
     here: 'こちら'
+    reviews: '件の評価'
     message:
       require_login: 'ログインしてください'
       created: "%{item}を作成しました"
@@ -40,4 +42,9 @@ ja:
       list_view: 'リスト表示'
     new:
       title: 'スポット情報'
+    show:
+      address: '住所'
+      equipment_details: '設備詳細'
+      none: 'なし'
+      
 

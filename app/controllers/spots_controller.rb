@@ -1,5 +1,5 @@
 class SpotsController < ApplicationController
-  skip_before_action :require_login, only: %i[index]
+  skip_before_action :require_login, only: %i[index show]
 
   def index
     @spots = Spot.all.includes(:equipment_details).order(created_at: :desc).page(params[:page])
@@ -18,6 +18,11 @@ class SpotsController < ApplicationController
       flash.now['danger'] = t('defaults.message.not_created', item: Spot.model_name.human)
       render :new
     end
+  end
+
+  def show
+    @spot = Spot.find(params[:id])
+    gon.spot = @spot
   end
 
   private

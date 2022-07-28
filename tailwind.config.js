@@ -9,7 +9,6 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        josefin: ['Josefin Sans', 'sans-serif'],
         yusei: ['Yusei Magic', 'sans-serif'],
       },
       colors: {
