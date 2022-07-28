@@ -19,7 +19,7 @@ class SpotsController < ApplicationController
       render :new
     end
   end
-  
+
   def show
     @spot = Spot.find(params[:id])
     gon.spot = @spot
