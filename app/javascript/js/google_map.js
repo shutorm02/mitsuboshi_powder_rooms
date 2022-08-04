@@ -11,7 +11,7 @@ window.initMap = () => {
     35.6803997,
     139.7690174
   )
-  const map = new window.google.maps.Map(document.getElementById('map'), {
+  const map = new window.google.maps.Map(document.getElementById('spotsMap'), {
     center: defaultsLocation,
     zoom: 14,
   })
