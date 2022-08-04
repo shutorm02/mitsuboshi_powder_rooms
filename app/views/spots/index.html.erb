@@ -9,8 +9,8 @@
       <%= t('.list_view') %>
     </span>
   </div>
-  <div id="mapBody"></div>
-  <div id="listBody">
+  <div id="map" style="height:700px; width:100%;"></div>
+  <div id="list">
     <% if @spots.present? %>
       <%= render @spots %>
     <% else %>
