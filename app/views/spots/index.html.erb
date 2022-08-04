@@ -1,7 +1,6 @@
 <div class="w-full max-w-md my-10">
-  <div id="google-map"></div>
   <div class="pt-4 pb-2">
-    <span id="btnMap" class="inline-block bg-white rounded-full border border-gray-200 align-middle px-3 py-1 text-sm mr-2 mb-2 hover:bg-gray-200">
+    <span id="btnMap" class="hidden inline-block bg-white rounded-full border border-gray-200 align-middle px-3 py-1 text-sm mr-2 mb-2 hover:bg-gray-200">
       <i class="fa-solid fa-location-dot"></i>
       <%= t('.map_view') %>
     </span>
@@ -10,10 +9,14 @@
       <%= t('.list_view') %>
     </span>
   </div>
-  <% if @spots.present? %>
-    <%= render @spots %>
-  <% else %>
-    <p><%= t('.no_result') %></p>
-  <% end %>
-  <%= paginate @spots %>
+  <div id="mapBody"></div>
+  <div id="listBody">
+    <% if @spots.present? %>
+      <%= render @spots %>
+    <% else %>
+      <p><%= t('.no_result') %></p>
+    <% end %>
+    <%= paginate @spots %>
+  </div>
+  <%= javascript_pack_tag 'google_map' %>
 </div>
