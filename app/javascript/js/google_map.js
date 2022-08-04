@@ -1,5 +1,12 @@
-let map
+require('dotenv').config()
 
+const googleMapsApi = process.env.GOOGLE_MAPS_API_KEY
+const script = document.createElement('script')
+script.src = `https://maps.googleapis.com/maps/api/js?key=${googleMapsApi}`
+script.async = true
+document.head.appendChild(script)
+
+let map
 let timer = setInterval(() => {
   if (window.google) {
     clearInterval(timer)

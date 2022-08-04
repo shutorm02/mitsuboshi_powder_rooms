@@ -8,7 +8,6 @@ import * as ActiveStorage from '@rails/activestorage'
 import 'channels'
 import 'stylesheets/tailwind.css'
 import '@fortawesome/fontawesome-free/js/all'
-import 'js/google_map'
 
 Rails.start()
 ActiveStorage.start()
