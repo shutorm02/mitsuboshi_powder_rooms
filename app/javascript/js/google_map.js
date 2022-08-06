@@ -6,6 +6,8 @@ script.src = `https://maps.googleapis.com/maps/api/js?key=${googleMapsApi}&callb
 script.async = true
 document.head.appendChild(script)
 
+import iconCurrentLocation from '../images/icons/current_location.svg'
+
 window.initMap = () => {
   const defaultsLocation = new window.google.maps.LatLng(
     35.6803997,
@@ -15,8 +17,14 @@ window.initMap = () => {
     center: defaultsLocation,
     zoom: 14,
   })
+
   new window.google.maps.Marker({
     position: defaultsLocation,
     map,
+    icon: {
+      url: `${iconCurrentLocation}`,
+      scaledSize: new window.google.maps.Size(30, 46),
+    },
+    animation: window.google.maps.Animation.BOUNCE,
   })
 }
