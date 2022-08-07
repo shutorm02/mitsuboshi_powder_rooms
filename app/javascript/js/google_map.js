@@ -60,7 +60,7 @@ window.initMap = () => {
         map.setCenter(results[0].geometry.location)
         setCurrentLocation(results[0].geometry.location)
       } else {
-        alert('該該する結結果ありませんでした:' + status)
+        alert('該当する結果はありませんでした:' + status)
       }
     })
   })

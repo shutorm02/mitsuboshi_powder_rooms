@@ -8,11 +8,12 @@
       <i class="fas fa-list"></i>
       <%= t('.list_view') %>
     </span>
-    <input type="text" id="keyword" class="w-full flex rounded-full border border-gray-200 px-3 py-1 text-sm" placeholder='駅名・施設名で検索'></input>
-    <div class="my-8 flex justify-center">
-      <span id="clear" class="btn cancel-btn mr-3"><%= t('defaults.cancel') %></span>
-      <span id="search" class="btn nomal-btn mr-3"><%= t('defaults.search') %></span>
-    </div>
+    <div class="relative w-full">
+      <input type="text" id="keyword" class="block p-3.5 w-full text-sm rounded-lg border border-gray-200 focus:ring-blue-500 focus:border-blue-50" placeholder="駅名・施設名で検索">
+      <button id="search" class="absolute right-2.5 bottom-2 hover:bg-gray-200 focus:ring-2 focus:outline-none focus:ring-blue-300 rounded-lg text-sm px-3 py-2">
+        <i class="fas fa-search"></i>
+      </button>
+     </div>
   </div>
   <div id="spotsMap" style="height:700px; width:100%;"></div>
   <div id="spotsList" class="hidden">
