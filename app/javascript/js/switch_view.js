@@ -1,8 +1,8 @@
 window.onload = function () {
-  btnMap = document.getElementById('btnMap')
-  btnList = document.getElementById('btnList')
-  spotsMap = document.getElementById('spotsMap')
-  spotsList = document.getElementById('spotsList')
+  const btnMap = document.getElementById('btnMap')
+  const btnList = document.getElementById('btnList')
+  const spotsMap = document.getElementById('spotsMap')
+  const spotsList = document.getElementById('spotsList')
 
   btnMap.onclick = function () {
     btnMap.classList.toggle('hidden')
