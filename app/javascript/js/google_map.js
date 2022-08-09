@@ -27,29 +27,29 @@ window.initMap = () => {
     zoom: 14,
   })
 
-  for (let i = 0; i < spotData.length; i++) {
-    let id = spotData[i]['id']
-
-    spotLatLng = new window.google.maps.LatLng({
-      lat: spotData[i]['latitude'],
-      lng: spotData[i]['longitude'],
-    })
-
-    marker[i] = new window.google.maps.Marker({
-      position: spotLatLng,
-      map: map,
-    })
-
-    infoWindow[i] = new window.google.maps.InfoWindow({
-      content: `<a href='/spots/${id}'>${spotData[i]['name']}</a>`,
-    })
-
-    marker[i].addListener('click', function () {
-      infoWindow[i].open(map, marker[i])
-    })
-  }
+  createMarker()
 
   setCurrentLocation(defaultLocation)
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition((position) => {
+      let currentLocation = new window.google.maps.LatLng(
+        position.coords.latitude,
+        position.coords.longitude
+      )
+
+      map = new window.google.maps.Map(document.getElementById('spotsMap'), {
+        center: currentLocation,
+        zoom: 14,
+      })
+
+      setCurrentLocation(currentLocation)
+
+      createMarker()
+    })
+  } else {
+    alert('現在地を取得できませんでした。')
+  }
 
   geocoder = new window.google.maps.Geocoder()
 
@@ -79,4 +79,28 @@ function setCurrentLocation(setPlace) {
     },
     animation: window.google.maps.Animation.BOUNCE,
   })
+}
+
+function createMarker() {
+  for (let i = 0; i < spotData.length; i++) {
+    let id = spotData[i]['id']
+
+    spotLatLng = new window.google.maps.LatLng({
+      lat: spotData[i]['latitude'],
+      lng: spotData[i]['longitude'],
+    })
+
+    marker[i] = new window.google.maps.Marker({
+      position: spotLatLng,
+      map: map,
+    })
+
+    infoWindow[i] = new window.google.maps.InfoWindow({
+      content: `<a href='/spots/${id}'>${spotData[i]['name']}</a>`,
+    })
+
+    marker[i].addListener('click', function () {
+      infoWindow[i].open(map, marker[i])
+    })
+  }
 }
