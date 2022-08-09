@@ -7,7 +7,7 @@ scriptMaps.src = `https://maps.googleapis.com/maps/api/js?key=${googleMapsApi}&c
 scriptMaps.async = true
 document.head.appendChild(scriptMaps)
 
-let currentLocation
+let defaultLocation
 let map
 let spotLatLng
 let markerCurrentLocation
@@ -20,12 +20,10 @@ const spotData = gon.spots
 import iconCurrentLocation from '../images/icons/current_location.svg'
 
 window.initMap = () => {
-  geocoder = new window.google.maps.Geocoder()
-
-  currentLocation = new window.google.maps.LatLng(35.6803997, 139.7690174)
+  defaultLocation = new window.google.maps.LatLng(35.6803997, 139.7690174)
 
   map = new window.google.maps.Map(document.getElementById('spotsMap'), {
-    center: currentLocation,
+    center: defaultLocation,
     zoom: 14,
   })
 
@@ -51,7 +49,9 @@ window.initMap = () => {
     })
   }
 
-  setCurrentLocation(currentLocation)
+  setCurrentLocation(defaultLocation)
+
+  geocoder = new window.google.maps.Geocoder()
 
   document.getElementById('search').addEventListener('click', function () {
     const inputKeyword = document.getElementById('keyword').value
