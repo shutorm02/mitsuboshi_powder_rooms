@@ -7,9 +7,12 @@ scriptMaps.src = `https://maps.googleapis.com/maps/api/js?key=${googleMapsApi}&c
 scriptMaps.async = true
 document.head.appendChild(scriptMaps)
 
+let currentLocation
 let map
 let spotLatLng
+let markerCurrentLocation
 let geocoder
+
 const marker = []
 const infoWindow = []
 const spotData = gon.spots
@@ -19,12 +22,10 @@ import iconCurrentLocation from '../images/icons/current_location.svg'
 window.initMap = () => {
   geocoder = new window.google.maps.Geocoder()
 
-  const defaultsLocation = new window.google.maps.LatLng(
-    35.6803997,
-    139.7690174
-  )
+  currentLocation = new window.google.maps.LatLng(35.6803997, 139.7690174)
+
   map = new window.google.maps.Map(document.getElementById('spotsMap'), {
-    center: defaultsLocation,
+    center: currentLocation,
     zoom: 14,
   })
 
@@ -50,13 +51,15 @@ window.initMap = () => {
     })
   }
 
-  setCurrentLocation(defaultsLocation)
+  setCurrentLocation(currentLocation)
 
   document.getElementById('search').addEventListener('click', function () {
     const inputKeyword = document.getElementById('keyword').value
 
     geocoder.geocode({ address: inputKeyword }, function (results, status) {
       if (status == 'OK') {
+        markerCurrentLocation.setVisible(false)
+
         map.setCenter(results[0].geometry.location)
         setCurrentLocation(results[0].geometry.location)
       } else {
@@ -67,7 +70,7 @@ window.initMap = () => {
 }
 
 function setCurrentLocation(setPlace) {
-  new window.google.maps.Marker({
+  markerCurrentLocation = new window.google.maps.Marker({
     position: setPlace,
     map,
     icon: {
