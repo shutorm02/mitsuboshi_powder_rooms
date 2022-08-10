@@ -46,5 +46,10 @@ ja:
       address: '住所'
       equipment_details: '設備詳細'
       none: 'なし'
+  likes:
+    create:
+      success: 'お気に入りに追加しました'
+    destroy:
+      success: 'お気に入りから削除しました'
       
 
