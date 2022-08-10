@@ -44,7 +44,8 @@ module MitsuboshiPowderRooms
         view_specs: false,
         hepler_spec: false,
         routing_specs: false,
-        request_specs: false
+        request_specs: false,
+        assets: false
     end
   end
 end
