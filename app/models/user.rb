@@ -21,7 +21,7 @@ class User < ApplicationRecord
     id == object.user_id
   end
 
-  def likes(spot)
+  def like(spot)
     like_spots << spot
   end
 
