@@ -16,4 +16,20 @@ class User < ApplicationRecord
     general: 0,
     admin: 1,
   }
+
+  def own?(object)
+    id == object.user_id
+  end
+
+  def likes(spot)
+    like_spots << spot
+  end
+
+  def unlike(spot)
+    like_spots.destroy(spot)
+  end
+
+  def like?(spot)
+    like_spots.include?(spot)
+  end
 end
