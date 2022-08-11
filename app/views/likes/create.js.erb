@@ -1,1 +1,1 @@
-document.getElementById("js-like-button-for-spot-<%= @spot.id %>").replaceWith("<%= j(render('spots/unlike', spot: @spot) %>")
+$("#js-like-button-for-spot-<%= @spot.id %>").replaceWith("<%= j(render('spots/unlike', spot: @spot)) %>")
