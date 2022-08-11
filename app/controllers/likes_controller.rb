@@ -1,6 +1,6 @@
 class LikesController < ApplicationController
   def create
-    spot = Spot.find(params[:id])
+    spot = Spot.find(params[:spot_id])
     current_user.like(spot)
     redirect_back fallback_location: root_path, success: t('.success')
   end

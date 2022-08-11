@@ -1,4 +1,4 @@
-<%= link_to like_path(current_user.likes.find_by(spot_id: spot.id),
+<%= link_to like_path(current_user.likes.find_by(spot_id: spot.id)),
     method: :delete do %>
   <span class="absolute top-0 right-0 p-3 rounded rounded-full text-fitting-pink hover:bg-gray-200">
     <i class="fa fa-heart fa-lg"></i>
