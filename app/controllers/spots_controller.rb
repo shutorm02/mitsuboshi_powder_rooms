@@ -26,6 +26,10 @@ class SpotsController < ApplicationController
     gon.spot = @spot
   end
 
+  def likes
+    @like_spots = current_user.like_spots.include(:user).arder(created_at: :desc)
+  end
+
   private
 
   def spot_params

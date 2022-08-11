@@ -8,6 +8,7 @@ import * as ActiveStorage from '@rails/activestorage'
 import 'channels'
 import 'stylesheets/tailwind.css'
 import '@fortawesome/fontawesome-free/js/all'
+require('jquery')
 
 Rails.start()
 ActiveStorage.start()
