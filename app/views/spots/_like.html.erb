@@ -1,4 +1,7 @@
-<%= link_to likes_path(spot_id: spot.id), method: :post do %>
+<%= link_to likes_path(spot_id: spot.id), 
+            id: "js-like-button-for-spot-#{spot.id}",
+            method: :post,
+            remote: true do %>
   <span class="absolute top-0 right-0 p-3 rounded rounded-full hover:bg-gray-200">
     <i class="far fa-heart fa-lg"></i>
   </span>
