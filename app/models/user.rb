@@ -20,6 +20,10 @@ class User < ApplicationRecord
   def own?(object)
     id == object.user_id
   end
+  
+  def not_own(object)
+    id != object.user_id
+  end
 
   def like(spot)
     like_spots << spot
