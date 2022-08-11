@@ -35,6 +35,9 @@ ActiveRecord::Schema.define(version: 2022_08_10_020325) do
     t.integer "spot_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["spot_id"], name: "index_likes_on_spot_id"
+    t.index ["user_id", "spot_id"], name: "index_likes_on_user_id_and_spot_id", unique: true
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "spots", force: :cascade do |t|
@@ -72,5 +75,7 @@ ActiveRecord::Schema.define(version: 2022_08_10_020325) do
   add_foreign_key "equipment", "equipment_details"
   add_foreign_key "equipment", "spots"
   add_foreign_key "equipment_details", "target_people"
+  add_foreign_key "likes", "spots"
+  add_foreign_key "likes", "users"
   add_foreign_key "spots", "users"
 end
