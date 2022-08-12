@@ -24,6 +24,8 @@ class SpotsController < ApplicationController
   def show
     @spot = Spot.find(params[:id])
     gon.spot = @spot
+    @feedback = Feedback.new
+    @feedbacks = @spot.feedbacks.include(:user).order(created_at: :desc)
   end
 
   def likes
