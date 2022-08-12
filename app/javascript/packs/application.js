@@ -9,6 +9,7 @@ import 'channels'
 import 'stylesheets/tailwind.css'
 import '@fortawesome/fontawesome-free/js/all'
 require('jquery')
+require('js/jquery_raty.js')
 
 const images = require.context('../images/', true)
 const imagePath = (name) => images(name, true)
