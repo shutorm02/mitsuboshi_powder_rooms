@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(version: 2022_08_12_022607) do
   end
 
   create_table "feedbacks", force: :cascade do |t|
-    t.float "rate", null: false
+    t.float "rate", default: 0.0, null: false
     t.string "feedback_comment", null: false
     t.integer "user_id", null: false
     t.integer "spot_id", null: false
