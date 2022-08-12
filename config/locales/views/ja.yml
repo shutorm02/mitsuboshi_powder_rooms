@@ -46,4 +46,6 @@ ja:
       address: '住所'
       equipment_details: '設備詳細'
       none: 'なし'
+      feedbacks: '評価一覧'
+      give_feedback: '評価する'
 

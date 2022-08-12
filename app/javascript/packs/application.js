@@ -8,7 +8,7 @@ import * as ActiveStorage from '@rails/activestorage'
 import 'channels'
 import 'stylesheets/tailwind.css'
 import '@fortawesome/fontawesome-free/js/all'
-require('jquery')
+window.$ = window.jQuery = require('jquery')
 require('js/jquery_raty.js')
 
 const images = require.context('../images/', true)

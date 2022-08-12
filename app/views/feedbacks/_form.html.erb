@@ -1,1 +1,38 @@
-<p>コメントフォーム</p>
+<div class="border-t-2 border-bg-mitsuboshi-gray">
+  <div class="border-b-2 border-bg-mitsuboshi-gray pt-5 pb-2">
+    <div class="flex relative items-center text-xl mb-1">
+      <i class="fa-solid fa-location-dot text-fitting-pink text-2xl pr-1.5"></i>
+      <div class="font-bold tracking-wider"><%= @spot.name %></div>
+    </div>
+    <div class="flex flex-row ml-5">
+      <i class="fas fa-star text-mitsuboshi-yellow text-xl pr-0.5"></i>
+      <i class="fas fa-star text-mitsuboshi-yellow text-xl pr-0.5"></i>
+      <i class="far fa-star text-mitsuboshi-yellow text-xl pr-0.5"></i>
+      <p>(〇〇<%= t('defaults.reviews') %>)</p>
+    </div>
+  </div>
+  <div class="px-5 py-5">
+    <p class="font-bold"><%= t('spots.show.give_feedback') %></p>
+    <div class="flex justify-center mt-3 pb-5">
+      <button class="btn nomal-btn"><%= t('spots.show.give_feedback') %></button>
+    </div>
+    <%= form_with model: feedback, url: [spot, feedback], local: true do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <div id="star" class="flex">
+        <%= f.label :rate %>
+        <%= f.hidden_field :rate, id: :review_star %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+  $('#star').raty({
+    size     : 35,
+    starOff: '<%= asset_pack_path 'media/images/star-off.svg' %>',
+    starOn : '<%= asset_pack_path 'media/images/star-on.svg' %>',
+    starHalf: '<%= asset_pack_path 'media/images/star-half.svg' %>',
+    scoreName: 'feedback[rate]',
+    half: true,
+  })
+</script>
