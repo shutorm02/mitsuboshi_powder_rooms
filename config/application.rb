@@ -39,13 +39,14 @@ module MitsuboshiPowderRooms
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
 
     config.generators do |g|
-      g.test_framework :rspec
-      g.fixtures :true
-      g.view_specs :false
-      g.hepler_spec :false
-      g.routing_specs :false
-      g.request_specs :false
-      g.assets :false
+      g.assets false
+      g.helper false
+      g.test_framework :rspec,
+                        fixtures: true,
+                        view_specs: false,
+                        hepler_specs: false,
+                        routing_specs: false,
+                        request_specs: false
     end
   end
 end
