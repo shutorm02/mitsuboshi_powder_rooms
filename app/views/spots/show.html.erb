@@ -1,18 +1,6 @@
 <div class="w-full max-w-sm my-24">
   <div class="border-b-2 border-bg-mitsuboshi-gray pb-2">
-    <div class="flex relative items-center text-xl mb-1">
-      <i class="fa-solid fa-location-dot text-fitting-pink text-2xl pr-1.5"></i>
-      <div class="font-bold tracking-wider"><%= @spot.name %></div>
-      <% if logged_in? && current_user.not_own(@spot) %>
-        <%= render 'like_button', spot: @spot %>
-      <% end %>
-    </div>
-    <div class="flex flex-row ml-5">
-      <i class="fas fa-star text-mitsuboshi-yellow text-xl pr-0.5"></i>
-      <i class="fas fa-star text-mitsuboshi-yellow text-xl pr-0.5"></i>
-      <i class="far fa-star text-mitsuboshi-yellow text-xl pr-0.5"></i>
-      <p>(〇〇<%= t('defaults.reviews') %>)</p>
-    </div>
+    <%= render 'spot_title', { spot: @spot, feedback: @feedback } %>
   </div>
   <div class="px-5 py-5">
     <div class="mb-3">

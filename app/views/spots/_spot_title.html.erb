@@ -1,0 +1,32 @@
+<div class="flex relative items-center text-xl">
+  <i class="fa-solid fa-location-dot text-fitting-pink text-2xl pr-1.5"></i>
+  <div class="font-bold tracking-wider"><%= spot.name %></div>
+  <% if logged_in? && current_user.not_own(spot) %>
+    <%= render 'like_button', spot: spot %>
+  <% end %>
+</div>
+<div class="flex flex-row ml-5">
+  <div id="star-rate-average-<%= feedback.id %>" class="px-1"></div>
+  <p class="text-sm pt-1">( <%= spot.feedbacks.count %><%= t('defaults.reviews') %> )</p>
+</div>
+
+<script>
+  $('#star-rate-average-<%= feedback.id %>').raty({
+    starOff: '<%= asset_pack_path 'media/images/mini-star-off.svg' %>',
+    starOn : '<%= asset_pack_path 'media/images/mini-star-on.svg' %>',
+    starHalf: '<%= asset_pack_path 'media/images/mini-star-half.svg' %>',
+    scoreName: 'feedback[rate]',
+    half: true,
+    readOnly: true,
+    number: 3,
+    score: <%= spot.feedbacks.average(:rate).to_f.round(1) %>
+  })
+</script>
+
+<style>
+ #star-rate-average-<%= feedback.id %> img { 
+   display: inline;
+   margin: -2px;
+ } 
+</style>
+
