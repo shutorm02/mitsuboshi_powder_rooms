@@ -27,7 +27,7 @@
         <%= f.label :feedback_comment %>
       </div>
       <div class="flex justify-center">
-        <%= f.select :feedback_comment, [['キレイだった！', 'キレイだった！']], {}, class: 'p-2' %>
+        <%= f.select :feedback_comment, [['キレイだった！', 'キレイだった！']],{}, class: 'w-full p-2 border border-gray-200' %>
       </div>
       <div class="my-8 flex justify-center">
         <%= f.submit t('spots.show.give_feedback'), class: 'btn nomal-btn' %>
@@ -43,6 +43,19 @@
     starHalf: '<%= asset_pack_path 'media/images/star-half.svg' %>',
     scoreName: 'feedback[rate]',
     half: true,
-    number: 3
+    hints: ['Poor', 'Good', 'Excellent!'],
+    number: 3,
+  })
+
+  $('#star > img').click(function() {
+    let score = $(this).attr('alt')
+    let feedbackComments = $('#feedback_feedback_comment')
+    let commentValue = []
+    commentValue = ['もはやカワセミが住めるレベル', 'サイコー！']
+
+    $('#feedback_feedback_comment > option').remove()
+    $.each(commentValue, function(key, value) {
+      feedbackComments.append($('<option>').html(value).val(value))
+    })
   })
 </script>
