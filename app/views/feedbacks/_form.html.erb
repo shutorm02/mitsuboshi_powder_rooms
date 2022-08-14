@@ -13,14 +13,24 @@
   </div>
   <div class="px-5 py-5">
     <p class="font-bold"><%= t('spots.show.give_feedback') %></p>
-    <div class="flex justify-center mt-3 pb-5">
-      <button class="btn nomal-btn"><%= t('spots.show.give_feedback') %></button>
-    </div>
-    <%= form_with model: feedback, url: [spot, feedback], local: true do |f| %>
+    <%= form_with model: feedback, url: [spot, feedback] do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
-      <div id="star" class="flex">
-        <%= f.label :rate %>
-        <%= f.hidden_field :rate, id: :review_star %>
+      <div id="star" class="flex py-5">
+        <div>
+          <%= f.label :rate %>
+        </div>
+        <div class="flex ml-10">
+          <%= f.hidden_field :rate, id: :review_star %>
+        </div>
+      </div>
+      <div class="flex py-5">
+        <%= f.label :feedback_comment %>
+      </div>
+      <div class="flex justify-center">
+        <%= f.select :feedback_comment, [['キレイだった！', 'キレイだった！']], {}, class: 'p-2' %>
+      </div>
+      <div class="my-8 flex justify-center">
+        <%= f.submit t('spots.show.give_feedback'), class: 'btn nomal-btn' %>
       </div>
     <% end %>
   </div>
@@ -28,7 +38,6 @@
 
 <script>
   $('#star').raty({
-    size     : 35,
     starOff: '<%= asset_pack_path 'media/images/star-off.svg' %>',
     starOn : '<%= asset_pack_path 'media/images/star-on.svg' %>',
     starHalf: '<%= asset_pack_path 'media/images/star-half.svg' %>',
