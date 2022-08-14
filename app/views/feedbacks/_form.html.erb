@@ -48,14 +48,21 @@
   })
 
   $('#star > img').click(function() {
-    let score = $(this).attr('alt')
+    let score = $('#star > input').attr('value')
     let feedbackComments = $('#feedback_feedback_comment')
     let commentValue = []
-    commentValue = ['もはやカワセミが住めるレベル', 'サイコー！']
 
+      if (score == 3) {
+        commentValue = ['まさに三つ星！', 'もはやカワセミが住めるレベル', '掃除してくれる方に感謝しかない…！', '感動した！']
+      } else if (1 <= score && score < 3) {
+        commentValue = ['キレイだった！', '安心して入れる', '設備が多くてうれしい!']
+      } else {
+        commentValue = ['もうちょっとキレイだとうれしい...']
+      }
+    
     $('#feedback_feedback_comment > option').remove()
     $.each(commentValue, function(key, value) {
-      feedbackComments.append($('<option>').html(value).val(value))
+      $('#feedback_feedback_comment').append($('<option>').html(value).val(value))
     })
   })
 </script>
