@@ -6,12 +6,12 @@
   <% end %>
 </div>
 <div class="flex flex-row ml-5">
-  <div id="star-rate-average-<%= feedback.id %>" class="px-1"></div>
+  <div id="star-rate-average-<%= spot.id %>" class="px-1"></div>
   <p class="text-sm pt-1">( <%= spot.feedbacks.count %><%= t('defaults.reviews') %> )</p>
 </div>
 
 <script>
-  $('#star-rate-average-<%= feedback.id %>').raty({
+  $('#star-rate-average-<%= spot.id %>').raty({
     starOff: '<%= asset_pack_path 'media/images/mini-star-off.svg' %>',
     starOn : '<%= asset_pack_path 'media/images/mini-star-on.svg' %>',
     starHalf: '<%= asset_pack_path 'media/images/mini-star-half.svg' %>',
@@ -24,7 +24,7 @@
 </script>
 
 <style>
- #star-rate-average-<%= feedback.id %> img { 
+ #star-rate-average-<%= spot.id %> img { 
    display: inline;
    margin: -2px;
  } 

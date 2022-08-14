@@ -11,10 +11,8 @@
         <% end %>
       </div>
       <div class="flex flex-row ml-5">
-        <i class="fas fa-star text-mitsuboshi-yellow text-xl pr-0.5"></i>
-        <i class="fas fa-star text-mitsuboshi-yellow text-xl pr-0.5"></i>
-        <i class="far fa-star text-mitsuboshi-yellow text-xl pr-0.5"></i>
-        <p>(〇〇<%= t('defaults.reviews') %>)</p>
+        <div id="star-rate-average-<%= spot.id %>" class="px-1"></div>
+        <p class="text-sm pt-1">( <%= spot.feedbacks.count %><%= t('defaults.reviews') %> )</p>
       </div>
       <p class="ml-5 pt-3"><%= spot.address %></p>
     </div>
@@ -23,3 +21,23 @@
     </div>
   </div>
 </div>
+
+<script>
+  $('#star-rate-average-<%= spot.id %>').raty({
+    starOff: '<%= asset_pack_path 'media/images/mini-star-off.svg' %>',
+    starOn : '<%= asset_pack_path 'media/images/mini-star-on.svg' %>',
+    starHalf: '<%= asset_pack_path 'media/images/mini-star-half.svg' %>',
+    scoreName: 'feedback[rate]',
+    half: true,
+    readOnly: true,
+    number: 3,
+    score: <%= spot.feedbacks.average(:rate).to_f.round(1) %>
+  })
+</script>
+
+<style>
+ #star-rate-average-<%= spot.id %> img { 
+   display: inline;
+   margin: -2px;
+ } 
+</style>
