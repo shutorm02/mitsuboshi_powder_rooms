@@ -27,7 +27,7 @@
         <%= f.label :feedback_comment %>
       </div>
       <div class="flex justify-center">
-        <%= f.select :feedback_comment, [['キレイだった！', 'キレイだった！'], ['安心して入れる', '安心して入れる'], ['設備が多くてうれしい!', '設備が多くてうれしい！']], {}, class: 'w-full p-2 border border-gray-200' %>
+        <%= f.select :feedback_comment, [[]], {}, class: 'w-full p-2 border border-gray-200' %>
       </div>
       <div class="my-8 flex justify-center">
         <%= f.submit t('spots.show.give_feedback'), class: 'btn nomal-btn' %>
