@@ -4,8 +4,8 @@ class Feedback < ApplicationRecord
 
   validates :rate, numericality: {
     less_than_or_equal_to: 3,
-    greater_than_or_equal_to: 0.5
+    greater_than_or_equal_to: 0.5,
   }, presence: true
-  
+
   validates :feedback_comment, presence: true
 end
