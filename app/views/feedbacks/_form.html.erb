@@ -1,0 +1,68 @@
+<div class="border-t-2 border-bg-mitsuboshi-gray">
+  <div class="border-b-2 border-bg-mitsuboshi-gray pt-5 pb-2">
+    <div class="flex relative items-center text-xl mb-1">
+      <i class="fa-solid fa-location-dot text-fitting-pink text-2xl pr-1.5"></i>
+      <div class="font-bold tracking-wider"><%= @spot.name %></div>
+    </div>
+    <div class="flex flex-row ml-5">
+      <i class="fas fa-star text-mitsuboshi-yellow text-xl pr-0.5"></i>
+      <i class="fas fa-star text-mitsuboshi-yellow text-xl pr-0.5"></i>
+      <i class="far fa-star text-mitsuboshi-yellow text-xl pr-0.5"></i>
+      <p>(〇〇<%= t('defaults.reviews') %>)</p>
+    </div>
+  </div>
+  <div class="px-5 py-5">
+    <p class="font-bold"><%= t('spots.show.give_feedback') %></p>
+    <%= form_with model: feedback, url: [spot, feedback] do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      <div id="star" class="flex py-5">
+        <div>
+          <%= f.label :rate %>
+        </div>
+        <div class="flex ml-10">
+          <%= f.hidden_field :rate, id: :review_star %>
+        </div>
+      </div>
+      <div class="flex py-5">
+        <%= f.label :feedback_comment %>
+      </div>
+      <div class="flex justify-center">
+        <%= f.select :feedback_comment, [[]], {}, class: 'w-full p-2 border border-gray-200' %>
+      </div>
+      <div class="my-8 flex justify-center">
+        <%= f.submit t('spots.show.give_feedback'), class: 'btn nomal-btn' %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script>
+  $('#star').raty({
+    starOff: '<%= asset_pack_path 'media/images/star-off.svg' %>',
+    starOn : '<%= asset_pack_path 'media/images/star-on.svg' %>',
+    starHalf: '<%= asset_pack_path 'media/images/star-half.svg' %>',
+    scoreName: 'feedback[rate]',
+    half: true,
+    hints: ['Poor', 'Good', 'Excellent!'],
+    number: 3,
+  })
+
+  $('#star > img').click(function() {
+    let score = $('#star > input').attr('value')
+    let feedbackComments = $('#feedback_feedback_comment')
+    let commentValue = []
+
+      if (score == 3) {
+        commentValue = ['まさに三つ星！', 'もはやカワセミが住めるレベル', '掃除してくれる方に感謝しかない…！', '感動した！']
+      } else if (1 <= score && score < 3) {
+        commentValue = ['キレイだった！', '安心して入れる', '設備が多くてうれしい!']
+      } else {
+        commentValue = ['思ってたほどではなかったかも…']
+      }
+    
+    $('#feedback_feedback_comment > option').remove()
+    $.each(commentValue, function(key, value) {
+      $('#feedback_feedback_comment').append($('<option>').html(value).val(value))
+    })
+  })
+</script>

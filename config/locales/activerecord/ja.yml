@@ -15,7 +15,7 @@ ja:
         name: 'スポット名'
         address: '住所'
       feedback:
-        number_of_stars: '総合点'
+        rate: '総合点'
         feedback_comment: '評価コメント'
 
   activemodel:

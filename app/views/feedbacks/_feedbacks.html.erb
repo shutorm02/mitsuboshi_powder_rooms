@@ -1,0 +1,18 @@
+<div class="border-t-2 border-bg-mitsuboshi-gray">
+  <div class="px-5 py-5">
+    <p class="tracking-wider font-bold pb-2.5"><%= t('spots.show.feedbacks') %></p>
+    <div class="pt-2">
+      <% if @spot.feedbacks.present? %>
+        <%= render feedbacks %>
+      <% else %>
+        <%= t('spots.show.none') %> 
+      <% end %>
+    </div>
+  </div>
+  <% if logged_in? %>
+    <div class="flex justify-center mt-3 pb-5">
+      <button class="btn nomal-btn"><%= t('spots.show.give_feedback') %></button>
+    </div>
+  <% end %>
+</div>
+
