@@ -1,4 +1,4 @@
-# 三つ星トイレ
+![Untitled](https://user-images.githubusercontent.com/93573830/184815454-d0f44b93-821d-438c-893c-4632c9ce7f2d.png)
 
 ## サービス概要
 **たとえ家の外であっても、
@@ -75,11 +75,11 @@
 URLは[こちら](https://www.figma.com/file/xYW06Nc9itu7CjivC8X40y/%E4%B8%89%E3%81%A4%E6%98%9F%E3%83%88%E3%82%A4%E3%83%AC?node-id=0%3A1)
 
 ## ER図
-[![Image from Gyazo](https://i.gyazo.com/65035a499d21877a800b724a89a588e0.png)](https://gyazo.com/65035a499d21877a800b724a89a588e0)
+[![Image from Gyazo](https://i.gyazo.com/b2e8f4ae97b4589359d96218fb601b12.png)](https://gyazo.com/b2e8f4ae97b4589359d96218fb601b12)
 
 ## 開発スケジュール
 企画〜技術調査：6/25〆切<br>
 README〜ER図作成：6/25 〆切<br>
-メイン機能実装：6/25 - 8/15<br>
-β版をRUNTEQ内リリース（MVP）：8/20〆切<br>
-本番リリース：8月末<br>
+メイン機能実装：6/25 - 8/30<br>
+β版をRUNTEQ内リリース（MVP）：8/30〆切<br>
+本番リリース：9月上旬<br>
