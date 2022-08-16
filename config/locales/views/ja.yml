@@ -40,6 +40,7 @@ ja:
       no_result: '登録されているスポットがありません'
       map_view: 'マップ表示'
       list_view: 'リスト表示'
+      search_by_facility: '駅名・施設名で検索'
     new:
       title: 'スポット情報'
     show:
