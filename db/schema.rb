@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_12_022607) do
+ActiveRecord::Schema.define(version: 2022_08_16_081835) do
 
   create_table "equipment", force: :cascade do |t|
     t.integer "spot_id", null: false
@@ -64,6 +64,14 @@ ActiveRecord::Schema.define(version: 2022_08_12_022607) do
     t.index ["user_id"], name: "index_spots_on_user_id"
   end
 
+  create_table "tags", force: :cascade do |t|
+    t.string "content", null: false
+    t.integer "target_person_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["target_person_id"], name: "index_tags_on_target_person_id"
+  end
+
   create_table "target_people", force: :cascade do |t|
     t.string "target", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -91,4 +99,5 @@ ActiveRecord::Schema.define(version: 2022_08_12_022607) do
   add_foreign_key "likes", "spots"
   add_foreign_key "likes", "users"
   add_foreign_key "spots", "users"
+  add_foreign_key "tags", "target_people"
 end
