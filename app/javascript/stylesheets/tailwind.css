@@ -21,7 +21,7 @@
     @apply border border-mitsuboshi-gray bg-white hover:bg-mitsuboshi-gray;
   }
   .custom-icon {
-    @apply w-5 h-5 text-white py-1 px-3 hover:text-mitsuboshi-blue;
+    @apply text-white py-1 px-3 hover:text-mitsuboshi-blue;
   },
   .icon-text {
     @apply font-yusei text-xs text-white;
