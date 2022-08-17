@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_16_081835) do
+ActiveRecord::Schema.define(version: 2022_08_17_001356) do
 
   create_table "equipment", force: :cascade do |t|
     t.integer "spot_id", null: false
@@ -28,6 +28,16 @@ ActiveRecord::Schema.define(version: 2022_08_16_081835) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "target_person_id"
     t.index ["target_person_id"], name: "index_equipment_details_on_target_person_id"
+  end
+
+  create_table "feedback_tags", force: :cascade do |t|
+    t.integer "feedback_id", null: false
+    t.integer "tag_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["feedback_id", "tag_id"], name: "index_feedback_tags_on_feedback_id_and_tag_id", unique: true
+    t.index ["feedback_id"], name: "index_feedback_tags_on_feedback_id"
+    t.index ["tag_id"], name: "index_feedback_tags_on_tag_id"
   end
 
   create_table "feedbacks", force: :cascade do |t|
@@ -94,6 +104,8 @@ ActiveRecord::Schema.define(version: 2022_08_16_081835) do
   add_foreign_key "equipment", "equipment_details"
   add_foreign_key "equipment", "spots"
   add_foreign_key "equipment_details", "target_people"
+  add_foreign_key "feedback_tags", "feedbacks"
+  add_foreign_key "feedback_tags", "tags"
   add_foreign_key "feedbacks", "spots"
   add_foreign_key "feedbacks", "users"
   add_foreign_key "likes", "spots"
