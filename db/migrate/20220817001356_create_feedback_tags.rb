@@ -6,5 +6,6 @@ class CreateFeedbackTags < ActiveRecord::Migration[6.1]
 
       t.timestamps
     end
+    add_index :feedback_tags, [:feedback_id, :tag_id], unique: true
   end
 end
