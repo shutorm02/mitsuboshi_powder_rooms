@@ -17,4 +17,30 @@ Class FeedbackForm
     validates :user_id
     validates :spot_id
   end
+
+  def save
+    return false if invalid?
+
+    ActiveRecord::Base.transation do
+      feedback = Feedback.new(feedback_params)
+      feedback.save!
+
+      tag_ids.each do |tag_id|
+        feedback.equipments.create!(tag_id: tag_id)
+      end
+
+      true
+    end
+  end
+
+  private
+
+  def feedback_params
+    {
+      rate: rate,
+      feedback_comment: feedback_comment,
+      user_id: user_id,
+      spot_id: spot_id,
+    }
+  end
 end
