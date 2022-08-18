@@ -49,20 +49,20 @@
 
   $('#star > img').click(function() {
     let score = $('#star > input').attr('value')
-    let feedbackComments = $('#feedback_feedback_comment')
+    let feedbackComments = '#feedback_form_feedback_comment'
     let commentValue = []
 
-      if (score == 3) {
-        commentValue = ['まさに三つ星！', 'もはやカワセミが住めるレベル', '掃除してくれる方に感謝しかない…！', '感動した！']
+    if (score == 3) {
+      commentValue = ['まさに三つ星！', 'もはやカワセミが住めるレベル', '掃除してくれる方に感謝しかない…！', '感動した！']
       } else if (1 <= score && score < 3) {
         commentValue = ['キレイだった！', '安心して入れる', '設備が多くてうれしい!']
       } else {
         commentValue = ['思ってたほどではなかったかも…']
       }
     
-    $('#feedback_feedback_comment > option').remove()
+    $(`${feedbackComments} > option`).remove()
     $.each(commentValue, function(key, value) {
-      $('#feedback_feedback_comment').append($('<option>').html(value).val(value))
+      $(`${feedbackComments}`).append($('<option>').html(value).val(value))
     })
   })
 </script>
