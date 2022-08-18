@@ -21,7 +21,7 @@ class FeedbackForm
   def save
     return false if invalid?
 
-    ActiveRecord::Base.transation do
+    ActiveRecord::Base.transaction do
       feedback = Feedback.new(feedback_params)
       feedback.save!
 
