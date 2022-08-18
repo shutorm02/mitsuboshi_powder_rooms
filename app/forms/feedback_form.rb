@@ -27,7 +27,7 @@ class FeedbackForm
 
       if tag_ids.present?
         tag_ids.each do |tag_id|
-          feedback.equipments.create!(tag_id: tag_id)
+          feedback.feedback_tags.create!(tag_id: tag_id)
         end
       end
 

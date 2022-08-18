@@ -23,11 +23,23 @@
           <%= f.hidden_field :rate, id: :review_star %>
         </div>
       </div>
-      <div class="flex py-5">
+      <div class="py-5">
         <%= f.label :feedback_comment %>
       </div>
       <div class="flex justify-center">
         <%= f.select :feedback_comment, [[]], {}, class: 'w-full p-2 border border-gray-200' %>
+      </div>
+      <div class="mt-3 py-5">
+        <%= f.label :tag_ids %>
+        <div class="text-sm mt-1 mb-5">
+          <%= t('defaults.multiple_choices_allowed') %>
+        </div>
+        <div>
+        <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :content, include_hidden: false) do |b| %>
+          <div class="flex">
+            <%= b.label { b.check_box + b.text } %>
+          </div>
+        <% end %>
       </div>
       <div class="my-8 flex justify-center">
         <%= f.submit t('spots.show.give_feedback'), class: 'btn nomal-btn' %>

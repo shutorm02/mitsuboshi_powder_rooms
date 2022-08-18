@@ -26,7 +26,7 @@
       <button class="btn nomal-btn"><%= t('defaults.edit') %></button>
     </div>
   <% end %>
-  <%= render 'feedbacks/form', { spot: @spot, feedback: @feedback_form } %>
+  <%= render 'feedbacks/form', { spot: @spot } %>
   <%= render 'feedbacks/feedbacks', { feedbacks: @feedbacks } %>
 </div>
 
