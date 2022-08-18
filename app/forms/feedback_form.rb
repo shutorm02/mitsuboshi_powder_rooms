@@ -1,4 +1,4 @@
-Class FeedbackForm
+class FeedbackForm
   include ActiveModel::Model
   include ActiveModel::Attributes
 
@@ -25,8 +25,10 @@ Class FeedbackForm
       feedback = Feedback.new(feedback_params)
       feedback.save!
 
-      tag_ids.each do |tag_id|
-        feedback.equipments.create!(tag_id: tag_id)
+      if tag_ids.present?
+        tag_ids.each do |tag_id|
+          feedback.equipments.create!(tag_id: tag_id)
+        end
       end
 
       true
