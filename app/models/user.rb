@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :like_spots, through: :likes, source: :spot
   has_many :feedbacks, dependent: :destroy
+  has_many :spot_feedbacks, through: :spots, source: :feedback
 
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
   validates :password, confirmation: true, if: -> { new_record? || changes[:crypted_password] }
