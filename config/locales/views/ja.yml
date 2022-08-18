@@ -14,6 +14,7 @@ ja:
     contact: 'お問い合わせ'
     here: 'こちら'
     reviews: '件の評価'
+    multiple_choices_allowed: '※複数選択可'
     message:
       require_login: 'ログインしてください'
       created: "%{item}を作成しました"

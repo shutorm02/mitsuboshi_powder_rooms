@@ -28,6 +28,5 @@ ja:
         rate: '総合点'
         feedback_comment: '評価コメント'
         tag_ids: 'ここを評価したい！'
-        multiple_choices_allowed: '複数選択可'
         
 
