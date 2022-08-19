@@ -1,0 +1,24 @@
+<% feedback.tags.each do |tag| %>
+  <% case tag.target_person_id %>
+  <% when 1 %>
+    <span class="equipment-tag bg-mitsuboshi-gray">
+      <%= tag.content %>
+    </span>
+  <% when 2 %>
+    <span class="equipment-tag bg-powder-pink">
+      <%= tag.content %>
+    </span>
+  <% when 3 %>
+    <span class="equipment-tag bg-baby-blue">
+      <%= tag.content %>
+    </span>
+  <% when 4 %>
+    <span class="equipment-tag bg-fitting-pink">
+      <%= tag.content %>
+    </span>
+  <% else %>
+    <span class="equipment-tag bg-mitsuboshi-gray">
+      <%= tag.content %>
+    </span>
+  <% end %>
+<% end %>
