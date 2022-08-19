@@ -1,4 +1,11 @@
 class FeedbacksController < ApplicationController
+  skip_before_action :require_login, only: %i[index]
+
+  def index
+    @spot = Spot.find(params[:spot_id])
+    @feedbacks = @spot.feedbacks.includes(:user, :feedback_tags, :tags).order(created_at: :desc)
+  end
+
   def create
     feedback_form = FeedbackForm.new(feedback_params)
     if feedback_form.save

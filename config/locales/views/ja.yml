@@ -48,6 +48,10 @@ ja:
       address: '住所'
       equipment_details: '設備詳細'
       none: 'なし'
-      feedbacks: '評価一覧'
+      latest_feedbacks: '最近の評価'
       give_feedback: '評価する'
+      see_all_feedbacks: 'すべての評価を見る'
+  feedbacks:
+    index:
+      title: 'すべての評価'
 
