@@ -54,4 +54,4 @@ ja:
   feedbacks:
     index:
       title: 'すべての評価'
-
+      no_result: '評価がありません'

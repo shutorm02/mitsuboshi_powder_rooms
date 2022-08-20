@@ -1,13 +1,17 @@
 <div class="flex relative items-center text-xl">
-  <i class="fa-solid fa-location-dot text-fitting-pink text-2xl pr-1.5"></i>
-  <div class="font-bold tracking-wider"><%= spot.name %></div>
+  <i class="fa-solid fa-location-dot text-fitting-pink pr-1.5"></i>
+  <div class="font-bold tracking-wider">
+    <%= link_to spot.name, spot_path(spot) %>
+  </div>
   <% if logged_in? && current_user.not_own(spot) %>
     <%= render 'like_button', spot: spot %>
   <% end %>
 </div>
-<div class="flex flex-row ml-5">
-  <div id="star-rate-average-<%= spot.id %>" class="px-1"></div>
-  <p class="text-sm pt-1">( <%= spot.feedbacks.count %><%= t('defaults.reviews') %> )</p>
+<div class="flex flex-row ml-4">
+  <%= link_to spot_feedbacks_path(spot) do %>
+    <div id="star-rate-average-<%= spot.id %>" class="px-1"></div>
+  <% end %>
+  <p class="text-sm pt-1">( <%= spot.feedbacks.count %> <%= t('defaults.reviews') %> )</p>
 </div>
 
 <script>
