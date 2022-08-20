@@ -4,7 +4,7 @@
     <%= link_to spot.name, spot_path(spot) %>
   </div>
   <% if logged_in? && current_user.not_own(spot) %>
-    <%= render 'like_button', spot: spot %>
+    <%= render 'spots/like_button', spot: spot %>
   <% end %>
 </div>
 <div class="flex flex-row ml-4">
