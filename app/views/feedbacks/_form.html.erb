@@ -15,11 +15,11 @@
     <p class="font-bold"><%= t('spots.show.give_feedback') %></p>
     <%= form_with model: @feedback_form, url: spot_feedbacks_path(spot_id: spot.id), local: true do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
-      <div id="star" class="flex py-5">
+      <div id="star" class="py-5">
         <div>
           <%= f.label :rate %>
         </div>
-        <div class="flex ml-10">
+        <div>
           <%= f.hidden_field :rate, id: :review_star %>
         </div>
       </div>
@@ -78,3 +78,10 @@
     })
   })
 </script>
+
+<style>
+ #star img { 
+   display: inline;
+   margin-top: 1.25rem;
+ } 
+</style>
