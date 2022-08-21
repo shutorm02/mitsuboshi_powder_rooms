@@ -1,11 +1,19 @@
 <div class="border-t-2 border-bg-mitsuboshi-gray">
-  <div class="px-5 py-5">
-    <p class="tracking-wider font-bold pb-2.5"><%= t('spots.show.feedbacks') %></p>
+  <div class="px-5 pt-5 pb-2">
+    <p class="tracking-wider font-bold pb-2.5"><%= t('spots.show.latest_feedbacks') %></p>
     <div class="pt-2">
-      <% if @spot.feedbacks.present? %>
+      <% if spot.feedbacks.present? %>
         <%= render feedbacks %>
       <% else %>
         <%= t('spots.show.none') %> 
+      <% end %>
+    </div>
+    <div class="flex justify-end pt-2">
+      <%= link_to spot_feedbacks_path(spot) do %>
+        <div class="flex inline-flex items-center hover:underline">
+          <p><%= t('spots.show.see_all_feedbacks') %></p>
+          <i class="fa-solid fa-right-long fa-lg pl-2"></i>
+        </div>
       <% end %>
     </div>
   </div>

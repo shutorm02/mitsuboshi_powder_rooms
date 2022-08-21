@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_08_12_022607) do
+ActiveRecord::Schema.define(version: 2022_08_21_132353) do
 
   create_table "equipment", force: :cascade do |t|
     t.integer "spot_id", null: false
@@ -28,6 +28,16 @@ ActiveRecord::Schema.define(version: 2022_08_12_022607) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "target_person_id"
     t.index ["target_person_id"], name: "index_equipment_details_on_target_person_id"
+  end
+
+  create_table "feedback_tags", force: :cascade do |t|
+    t.integer "feedback_id", null: false
+    t.integer "tag_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["feedback_id", "tag_id"], name: "index_feedback_tags_on_feedback_id_and_tag_id", unique: true
+    t.index ["feedback_id"], name: "index_feedback_tags_on_feedback_id"
+    t.index ["tag_id"], name: "index_feedback_tags_on_tag_id"
   end
 
   create_table "feedbacks", force: :cascade do |t|
@@ -64,6 +74,15 @@ ActiveRecord::Schema.define(version: 2022_08_12_022607) do
     t.index ["user_id"], name: "index_spots_on_user_id"
   end
 
+  create_table "tags", force: :cascade do |t|
+    t.string "content", null: false
+    t.integer "target_person_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["content"], name: "index_tags_on_content", unique: true
+    t.index ["target_person_id"], name: "index_tags_on_target_person_id"
+  end
+
   create_table "target_people", force: :cascade do |t|
     t.string "target", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -86,9 +105,12 @@ ActiveRecord::Schema.define(version: 2022_08_12_022607) do
   add_foreign_key "equipment", "equipment_details"
   add_foreign_key "equipment", "spots"
   add_foreign_key "equipment_details", "target_people"
+  add_foreign_key "feedback_tags", "feedbacks"
+  add_foreign_key "feedback_tags", "tags"
   add_foreign_key "feedbacks", "spots"
   add_foreign_key "feedbacks", "users"
   add_foreign_key "likes", "spots"
   add_foreign_key "likes", "users"
   add_foreign_key "spots", "users"
+  add_foreign_key "tags", "target_people"
 end

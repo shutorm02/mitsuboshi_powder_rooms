@@ -1,19 +1,7 @@
 <div class="max-w-md bg-white rounded-2xl overflow-hidden shadow-lg mb-5">
   <div id="spot-id-<%= spot.id %>">
     <div class="px-6 py-4">
-      <div class="flex relative items-center text-xl">
-        <i class="fa-solid fa-location-dot text-fitting-pink pr-1.5"></i>
-        <div class="font-bold tracking-wider">
-          <%= link_to spot.name, spot_path(spot) %>
-        </div>
-        <% if logged_in? && current_user.not_own(spot) %>
-          <%= render 'like_button', spot: spot %>
-        <% end %>
-      </div>
-      <div class="flex flex-row ml-5">
-        <div id="star-rate-average-<%= spot.id %>" class="px-1"></div>
-        <p class="text-sm pt-1">( <%= spot.feedbacks.count %><%= t('defaults.reviews') %> )</p>
-      </div>
+      <%= render 'spot_title', spot: spot %>
       <p class="ml-5 pt-3"><%= spot.address %></p>
     </div>
     <div class="flex flex-wrap text-sm ml-4 px-6 mb-4">
@@ -21,23 +9,3 @@
     </div>
   </div>
 </div>
-
-<script>
-  $('#star-rate-average-<%= spot.id %>').raty({
-    starOff: '<%= asset_pack_path 'media/images/mini-star-off.svg' %>',
-    starOn : '<%= asset_pack_path 'media/images/mini-star-on.svg' %>',
-    starHalf: '<%= asset_pack_path 'media/images/mini-star-half.svg' %>',
-    scoreName: 'feedback[rate]',
-    half: true,
-    readOnly: true,
-    number: 3,
-    score: <%= spot.feedbacks.average(:rate).to_f.round(1) %>
-  })
-</script>
-
-<style>
- #star-rate-average-<%= spot.id %> img { 
-   display: inline;
-   margin: -2px;
- } 
-</style>

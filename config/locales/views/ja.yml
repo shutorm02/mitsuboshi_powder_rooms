@@ -14,6 +14,7 @@ ja:
     contact: 'お問い合わせ'
     here: 'こちら'
     reviews: '件の評価'
+    multiple_choices_allowed: '※複数選択可'
     message:
       require_login: 'ログインしてください'
       created: "%{item}を作成しました"
@@ -47,6 +48,10 @@ ja:
       address: '住所'
       equipment_details: '設備詳細'
       none: 'なし'
-      feedbacks: '評価一覧'
+      latest_feedbacks: '最近の評価'
       give_feedback: '評価する'
-
+      see_all_feedbacks: 'すべての評価を見る'
+  feedbacks:
+    index:
+      title: 'すべての評価'
+      no_result: '評価がありません'

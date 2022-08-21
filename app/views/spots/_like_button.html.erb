@@ -1,5 +1,5 @@
 <% if current_user.like?(spot) %>
-  <%= render 'unlike', { spot: spot } %>
+  <%= render 'spots/unlike', { spot: spot } %>
 <% else %>
-  <%= render 'like', { spot: spot } %>
+  <%= render 'spots/like', { spot: spot } %>
 <% end %>

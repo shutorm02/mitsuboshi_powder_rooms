@@ -1,6 +1,6 @@
-<div class="w-full max-w-sm my-24">
-  <div class="border-b-2 border-bg-mitsuboshi-gray pb-2">
-    <%= render 'shared/spot_title', { spot: @spot } %>
+<div class="w-full max-w-md my-24">
+  <div class="border-b-2 border-bg-mitsuboshi-gray pb-3">
+    <%= render 'spot_title', { spot: @spot } %>
   </div>
   <div class="px-5 py-5">
     <div class="mb-3">
@@ -26,8 +26,8 @@
       <button class="btn nomal-btn"><%= t('defaults.edit') %></button>
     </div>
   <% end %>
-  <%= render 'feedbacks/form', { spot: @spot, feedback: @feedback } %>
-  <%= render 'feedbacks/feedbacks', { feedbacks: @feedbacks } %>
+  <%= render 'feedbacks/form', { spot: @spot } %>
+  <%= render 'feedbacks/feedbacks', { spot: @spot, feedbacks: @feedbacks } %>
 </div>
 
 <script>

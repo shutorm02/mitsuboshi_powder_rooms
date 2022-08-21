@@ -1,12 +1,3 @@
-require('dotenv').config()
-
-const googleMapsApi = process.env.GOOGLE_MAPS_API_KEY
-const scriptMaps = document.createElement('script')
-
-scriptMaps.src = `https://maps.googleapis.com/maps/api/js?key=${googleMapsApi}&callback=initMap`
-scriptMaps.async = true
-document.head.appendChild(scriptMaps)
-
 let defaultLocation
 let map
 let spotLatLng

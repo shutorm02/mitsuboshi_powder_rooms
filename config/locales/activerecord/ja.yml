@@ -24,4 +24,9 @@ ja:
         name: 'スポット名'
         address: '住所'
         equipment_detail_ids: 'こだわりポイント'
+      feedback_form:
+        rate: '総合点'
+        feedback_comment: '評価コメント'
+        tag_ids: 'ここを評価したい！'
+        
 
