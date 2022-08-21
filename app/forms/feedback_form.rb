@@ -27,7 +27,7 @@ class FeedbackForm
 
       if tag_ids.present?
         tag_ids.each do |tag_id|
-          feedback.feedback_tags.create!(tag_id: tag_id)
+          feedback.feedback_tags.create!(tag_id:)
         end
       end
 
@@ -39,10 +39,10 @@ class FeedbackForm
 
   def feedback_params
     {
-      rate: rate,
-      feedback_comment: feedback_comment,
-      user_id: user_id,
-      spot_id: spot_id,
+      rate:,
+      feedback_comment:,
+      user_id:,
+      spot_id:,
     }
   end
 end
