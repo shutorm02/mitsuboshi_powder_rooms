@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "SourceHanSans";
+  src: url('../fonts/SourceHanSans-VF.otf');
+}
+
+
+body {
+  font-family: "SourceHanSans";
+  font-size: 14px;
+  color: #2d3748;
+}
