@@ -6,10 +6,6 @@ class FeedbacksController < ApplicationController
     @feedbacks = @spot.feedbacks.includes(:user, :feedback_tags, :tags).order(created_at: :desc)
   end
 
-  def new
-    @feedback_form = FeedbackForm.new
-  end
-
   def create
     feedback_form = FeedbackForm.new(feedback_params)
     if feedback_form.save
