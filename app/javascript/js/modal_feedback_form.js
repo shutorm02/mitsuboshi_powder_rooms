@@ -1,8 +1,8 @@
 $(function () {
   $('#openFeedbackForm').click(function(){
-      $('#modalArea').fadeIn();
+      $('#modalFormArea').fadeIn();
   });
-  $('#closeModal , #modalBg').click(function(){
-    $('#modalArea').fadeOut();
+  $('#closeModalForm , #modalFormBg').click(function(){
+    $('#modalFormArea').fadeOut();
   });
 });
