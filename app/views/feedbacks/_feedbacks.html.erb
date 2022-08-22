@@ -18,11 +18,9 @@
     </div>
   </div>
   <% if logged_in? %>
-    <%= link_to new_spot_feedback_path(spot), remote: true do %>
-      <div class="flex justify-center mt-3 pb-5">
-        <button class="btn nomal-btn"><%= t('spots.show.give_feedback') %></button>
-      </div>
-    <% end %>
+    <div class="flex justify-center mt-3 pb-5">
+      <button id="openFeedbackForm" class="btn nomal-btn"><%= t('spots.show.give_feedback') %></button>
+    </div>
   <% end %>
 </div>
 
