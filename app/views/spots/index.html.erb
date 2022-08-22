@@ -1,17 +1,17 @@
 <div class="w-full max-w-md mt-10 mb-32">
   <div class="pt-4 pb-5">
-    <span id="btnMap" class="hidden inline-block bg-white rounded-full border border-gray-200 align-middle px-3 py-1 text-sm mr-2 mb-2 hover:bg-gray-200">
+    <span id="btnMap" class="hidden inline-block bg-white rounded-full border border-gray-200 align-middle px-3 py-1 text-xs mr-2 mb-2 hover:bg-gray-200">
       <i class="fa-solid fa-location-dot"></i>
       <%= t('.map_view') %>
     </span>
-    <span id="btnList" class="inline-block bg-white rounded-full border border-gray-200 align-middle px-3 py-1 text-sm mr-2 mb-2 hover:bg-gray-200">
+    <span id="btnList" class="inline-block bg-white rounded-full border border-gray-200 align-middle px-3 py-1 text-xs mr-2 mb-2 hover:bg-gray-200">
       <i class="fas fa-list"></i>
       <%= t('.list_view') %>
     </span>
     <div class="flex mb-5">
       <div class="relative w-full">
         <div class="flex border rounded border-gray-200">
-          <input type="text" id="keyword" class="block p-2.5 w-full z-20 text-sm" placeholder="<%= t('.search_by_facility') %>">
+          <input type="text" id="keyword" class="block p-2.5 w-full z-20" placeholder="<%= t('.search_by_facility') %>">
           <button id="search" class="flex items-center px-4 border-l bg-gray-200 hover:bg-mitsuboshi-blue" >
             <i class="fas fa-search text-white"></i>
           </button>
