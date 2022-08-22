@@ -16,7 +16,7 @@
     @apply text-white py-1 px-3 hover:text-mitsuboshi-blue;
   }
   .equipment-tag {
-    @apply inline-block rounded-full px-2 py-1 text-sm mr-2 mb-2 text-white;
+    @apply inline-block rounded-full font-semibold px-2 py-1 mr-2 mb-2 text-white;
   }
 }
 
