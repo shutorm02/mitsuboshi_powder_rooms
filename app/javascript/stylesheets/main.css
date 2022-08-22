@@ -33,8 +33,10 @@ body {
   transform:translate(-50%,-50%);
   width: 80%;
   max-width: 28rem;
+  height: 80%;
+  overflow: auto;
   padding: 30px;
-  background-color: #fff;
+  background-color: #FFF5E9;
   border-radius: 0.25rem;
 }
 

@@ -32,11 +32,10 @@
   <div id="modalFormBg" class="modalFormBg"></div>
   <div class="modalFormWrapper">
     <div class="modalFormContents">
-      <h1>Here are modal contents!</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+      <%= render 'feedbacks/form', { spot: @spot, feedback_form: @feedback_form } %>
     </div>
     <div id="closeModalForm" class="closeModalForm">
-      ×
+      <i class="fa-solid fa-x"></i>
     </div>
   </div>
 </section>
