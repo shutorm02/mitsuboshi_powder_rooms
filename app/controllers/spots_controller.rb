@@ -29,9 +29,20 @@ class SpotsController < ApplicationController
     @feedbacks = @spot.feedbacks.includes(:user, :feedback_tags, :tags).order(created_at: :desc).limit(3)
   end
 
-  def edit; end
+  def edit
+    @form = SpotsForm.new(spot: @spot)
+  end
 
-  def update; end
+  def update
+    @form = SpotsForm.new(spot_params, spot: @spot)
+
+    if @form.save
+      redirect_to @spot, success: 'The spot has been updated!'
+    else
+      flash.now['danger'] = 'The spot has not been updated'
+      render :edit
+    end
+  end
 
   def destroy; end
 
