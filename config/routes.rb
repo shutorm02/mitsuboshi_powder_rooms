@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[new create destroy]
   resources :spots do
-    resources :feedbacks, only: %i[index create destroy], shallow: true 
+    resources :feedbacks, only: %i[index new create destroy], shallow: true 
     collection do
       get :likes
     end
