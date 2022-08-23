@@ -1,15 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  html {
-    font-size: 14px;
-    color: #2d3748;
-  }
-}
 @layer components {
   .btn {
     @apply text-center rounded shadow py-2 px-4 w-32;
@@ -22,12 +14,9 @@
   }
   .custom-icon {
     @apply text-white py-1 px-3 hover:text-mitsuboshi-blue;
-  },
-  .icon-text {
-    @apply font-yusei text-xs text-white;
   }
   .equipment-tag {
-    @apply inline-block rounded-full px-2 py-1 text-sm font-semibold mr-2 mb-2 text-white;
+    @apply inline-block rounded-full font-semibold px-2 py-1 mr-2 mb-2 text-white;
   }
 }
 

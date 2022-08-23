@@ -26,9 +26,19 @@
       <button class="btn nomal-btn"><%= t('defaults.edit') %></button>
     </div>
   <% end %>
-  <%= render 'feedbacks/form', { spot: @spot } %>
   <%= render 'feedbacks/feedbacks', { spot: @spot, feedbacks: @feedbacks } %>
 </div>
+<section id="modalFormArea" class="modalFormArea">
+  <div id="modalFormBg" class="modalFormBg"></div>
+  <div class="modalFormWrapper">
+    <div class="modalFormContents">
+      <%= render 'feedbacks/form', { spot: @spot, feedback_form: @feedback_form } %>
+    </div>
+    <div id="closeModalForm" class="closeModalForm">
+      <i class="fa-solid fa-x fa-lg"></i>
+    </div>
+  </div>
+</section>
 
 <script>
   function initMap() {

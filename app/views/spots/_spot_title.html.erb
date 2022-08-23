@@ -1,4 +1,4 @@
-<div class="flex relative items-center text-xl">
+<div class="flex relative items-center text-lg">
   <i class="fa-solid fa-location-dot text-fitting-pink pr-1.5"></i>
   <div class="font-bold tracking-wider">
     <%= link_to spot.name, spot_path(spot) %>
@@ -11,7 +11,7 @@
   <%= link_to spot_feedbacks_path(spot) do %>
     <div id="star-rate-average-<%= spot.id %>" class="px-1"></div>
   <% end %>
-  <p class="text-sm pt-1">( <%= spot.feedbacks.count %> <%= t('defaults.reviews') %> )</p>
+  <p class="text-xs pt-1">( <%= spot.feedbacks.count %> <%= t('defaults.reviews') %> )</p>
 </div>
 
 <script>

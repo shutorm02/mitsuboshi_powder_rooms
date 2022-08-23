@@ -7,9 +7,11 @@ import Rails from '@rails/ujs'
 import * as ActiveStorage from '@rails/activestorage'
 import 'channels'
 import 'stylesheets/tailwind.css'
+require('stylesheets/main.css')
 import '@fortawesome/fontawesome-free/js/all'
 window.$ = window.jQuery = require('jquery')
 require('js/jquery_raty.js')
+require('js/modal_feedback_form.js')
 
 const images = require.context('../images/', true)
 const imagePath = (name) => images(name, true)
