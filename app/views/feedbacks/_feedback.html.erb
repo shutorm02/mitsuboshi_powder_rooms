@@ -1,14 +1,14 @@
 <div class="max-w-md bg-white rounded-2xl overflow-hidden shadow-lg mb-5">
   <div id="feedback-id-<%= feedback.id %>">
-    <div class="px-6 py-4">
+    <div class="p-4">
       <div class="flex items-center">
-        <i class="fa-solid fa-circle-user fa-3x text-fitting-pink"></i>
+        <i class="fa-solid fa-circle-user text-fitting-pink h-8 w-8"></i>
         <p class="mx-2.5"><%= feedback.user.name %></p>
         <div id="star-rate-<%= feedback.id %>" class="ml-auto"></div>
       </div>
-      <p class="ml-12 pt-3"><%= feedback.feedback_comment %></p>
+      <p class="ml-10 pt-3"><%= feedback.feedback_comment %></p>
     </div>
-    <div class="flex flex-wrap ml-10 pl-7 pr-6 mb-4">
+    <div class="flex flex-wrap ml-10 pl-4 pr-6 mb-4">
       <%= render 'feedbacks/feedback_tags', feedback: feedback %>
     </div>
   </div>

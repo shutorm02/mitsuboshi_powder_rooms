@@ -1,11 +1,8 @@
-<div class="border-b-2 border-bg-mitsuboshi-gray pt-3 pb-2">
-  <div class="flex relative items-center text-lg mb-1">
-    <i class="fa-solid fa-location-dot text-fitting-pink text-2xl pr-1.5"></i>
-    <div class="font-bold tracking-wider"><%= spot.name %></div>
-  </div>
+<div class="border-b-2 border-bg-mitsuboshi-gray pb-3">
+  <%= render 'spots/spot_title', spot: @spot %>
 </div>
 <div class="px-5 pt-5">
-  <p class="font-bold"><%= t('spots.show.give_feedback') %></p>
+  <p class="font-bold"><%= t('defaults.give_feedback') %></p>
   <%= form_with model: @feedback_form, url: spot_feedbacks_path(spot_id: spot.id), local: true do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <div id="star" class="py-5">
@@ -19,7 +16,7 @@
     <div class="py-5">
       <%= f.label :feedback_comment %>
     </div>
-    <div class="flex justify-center">
+    <div class="flex">
       <%= f.select :feedback_comment, [[]], {}, class: 'w-full p-2 border border-gray-200' %>
     </div>
     <div class="mt-3 pt-5">
@@ -35,7 +32,7 @@
       <% end %>
     </div>
     <div class="my-8 flex justify-center">
-      <%= f.submit t('spots.show.give_feedback'), class: 'btn nomal-btn' %>
+      <%= f.submit t('defaults.give_feedback'), class: 'btn nomal-btn' %>
     </div>
   <% end %>
 </div>
