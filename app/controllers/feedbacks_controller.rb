@@ -1,6 +1,6 @@
 class FeedbacksController < ApplicationController
   skip_before_action :require_login, only: %i[index]
-  before_action :set_spot, only: %i[index new]
+  before_action :set_spot, only: %i[index new create]
 
   def index
     @feedbacks = @spot.feedbacks.includes(:user, :feedback_tags, :tags).order(created_at: :desc)
@@ -16,8 +16,8 @@ class FeedbacksController < ApplicationController
       redirect_to spot_path(@feedback_form.spot_id),
                   success: t('defaults.message.created', item: Feedback.model_name.human)
     else
-      redirect_to spot_path(@feedback_form.spot_id),
-                  danger: t('defaults.message.not_created', item: Feedback.model_name.human)
+      flash.now['danger'] = t('defaults.message.not_created', item: Feedback.model_name.human)
+      render :new
     end
   end
 
