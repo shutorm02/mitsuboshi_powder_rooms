@@ -2,7 +2,7 @@
   <%= render 'spots/spot_title', spot: @spot %>
 </div>
 <div class="px-5 pt-5">
-  <p class="font-bold"><%= t('spots.show.give_feedback') %></p>
+  <p class="font-bold"><%= t('defaults.give_feedback') %></p>
   <%= form_with model: @feedback_form, url: spot_feedbacks_path(spot_id: spot.id), local: true do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <div id="star" class="py-5">
@@ -32,7 +32,7 @@
       <% end %>
     </div>
     <div class="my-8 flex justify-center">
-      <%= f.submit t('spots.show.give_feedback'), class: 'btn nomal-btn' %>
+      <%= f.submit t('defaults.give_feedback'), class: 'btn nomal-btn' %>
     </div>
   <% end %>
 </div>
