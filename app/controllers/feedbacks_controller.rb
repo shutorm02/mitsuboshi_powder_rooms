@@ -8,7 +8,7 @@ class FeedbacksController < ApplicationController
 
   def new
     @spot = Spot.find(params[:spot_id])
-    @feedback_form = FeedbackForm.new(feedback_params)
+    @feedback_form = FeedbackForm.new
   end
 
   def create
