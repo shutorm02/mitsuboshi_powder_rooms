@@ -8,11 +8,11 @@ class SpotsController < ApplicationController
   end
 
   def new
-    @form = SpotsForm.new
+    @form = SpotForm.new
   end
 
   def create
-    @form = SpotsForm.new(spot_params)
+    @form = SpotForm.new(spot_params)
 
     if @form.save
       redirect_to spots_path, success: t('defaults.message.created', item: Spot.model_name.human)
@@ -30,11 +30,11 @@ class SpotsController < ApplicationController
   end
 
   def edit
-    @form = SpotsForm.new(spot: @spot)
+    @form = SpotForm.new(spot: @spot)
   end
 
   def update
-    @form = SpotsForm.new(spot_params, spot: @spot)
+    @form = SpotForm.new(spot_params, spot: @spot)
 
     if @form.save
       redirect_to @spot, success: 'The spot has been updated!'
@@ -53,7 +53,7 @@ class SpotsController < ApplicationController
   private
 
   def spot_params
-    params.require(:spots_form).permit(
+    params.require(:spot_form).permit(
       :name,
       :address,
       { equipment_detail_ids: [] },

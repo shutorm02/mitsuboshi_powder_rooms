@@ -1,4 +1,4 @@
-class SpotsForm
+class SpotForm
   include ActiveModel::Model
   include ActiveModel::Attributes
 
