@@ -1,6 +1,6 @@
 class SpotsController < ApplicationController
   skip_before_action :require_login, only: %i[index show]
-  before_action :find_spot, only %i[edit, update, destroy]
+  before_action :find_spot, only: %i[edit, update, destroy]
 
   def index
     @spots = Spot.all.includes(:equipment_details).order(created_at: :desc).page(params[:page])
