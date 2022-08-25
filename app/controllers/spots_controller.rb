@@ -30,6 +30,7 @@ class SpotsController < ApplicationController
   end
 
   def edit
+    binding.pry
     @form = SpotForm.new(spot: @spot)
   end
 
