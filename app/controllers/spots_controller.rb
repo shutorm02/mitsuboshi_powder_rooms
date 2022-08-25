@@ -36,7 +36,7 @@ class SpotsController < ApplicationController
   def update
     @form = SpotForm.new(spot_params, spot: @spot)
 
-    if @form.save
+    if @form.update
       redirect_to @spot, success: 'The spot has been updated!'
     else
       flash.now['danger'] = 'The spot has not been updated'
@@ -44,7 +44,10 @@ class SpotsController < ApplicationController
     end
   end
 
-  def destroy; end
+  def destroy
+    @spot.destroy
+    redirect_to spots_path, success: t('defaults.message.deleted', item: Spot.model_name.human)
+  end
 
   def likes
     @like_spots = current_user.like_spots.include(:user).arder(created_at: :desc)
