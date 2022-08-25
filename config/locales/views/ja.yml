@@ -8,6 +8,7 @@ ja:
     search: '検索'
     post: '投稿'
     edit: '編集'
+    destroy: '削除'
     cancel: 'キャンセル'
     terms: '利用規約'
     privacy: 'プライバシーポリシー'

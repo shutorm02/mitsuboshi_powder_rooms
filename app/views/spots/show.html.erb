@@ -23,8 +23,10 @@
   </div>
   <% if logged_in? %>
     <div class="flex justify-center pb-5">
-      <button class="btn nomal-btn"><%= t('defaults.edit') %></button>
+      <button class="btn nomal-btn mr-3"><%= t('defaults.edit') %></button>
+      <button class="btn delete-btn"><%= t('defaults.destroy') %></button>
     </div>
+    <div>
   <% end %>
   <%= render 'feedbacks/feedbacks', { spot: @spot, feedbacks: @feedbacks } %>
 </div>

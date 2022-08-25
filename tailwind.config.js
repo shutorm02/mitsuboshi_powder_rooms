@@ -7,6 +7,9 @@ module.exports = {
   ],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    fontFamily: {
+      'hans': ['SourceHanSans', 'sans-serif']
+    },
     extend: {
       colors: {
         'base-color': '#FFF5E9',
