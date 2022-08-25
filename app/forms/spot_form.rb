@@ -13,7 +13,7 @@ class SpotForm
     validates :user_id
   end
 
-  delegate :presisted?, to: :spot
+  delegate :persisted?, :new_record?, to: :spot
 
   def initialize(attributes = nil, spot: Spot.new)
     @spot = spot
@@ -26,26 +26,16 @@ class SpotForm
 
     ActiveRecord::Base.transaction do
       
-      spot = Spot.new(spot_params)
-      spot.save!
+      spot.update!(spot_params)
 
       if equipment_detail_ids.present?
         equipment_detail_ids.each do |equipment_detail_id|
-          spot.equipments.create!(equipment_detail_id:)
+          spot.equipments.find_or_create_by!(equipment_detail_id:)
         end
       end
     end
-
-    true
-  end
-
-  def update
-    return false if invalid?
-
-    ActiveRecord::Base.transaction do
-      spot.update!(spot_params)
-      spot.equipment_detail_ids = equipment_detail_ids if equipment_detail_ids.present?
-    end
+  rescue ActiveRecord::RecordInvalid
+    false
   end
 
   def to_model
@@ -59,8 +49,8 @@ class SpotForm
   def default_attributes
     {
       name: spot.name,
-      address: spot.name,
-      equipment_detail_ids: spot.equipment_details
+      address: spot.address,
+      equipment_detail_ids: spot.equipment_detail_ids
     }
   end
 

@@ -30,14 +30,13 @@ class SpotsController < ApplicationController
   end
 
   def edit
-    binding.pry
     @form = SpotForm.new(spot: @spot)
   end
 
   def update
     @form = SpotForm.new(spot_params, spot: @spot)
 
-    if @form.update
+    if @form.save
       redirect_to @spot, success: 'The spot has been updated!'
     else
       flash.now['danger'] = 'The spot has not been updated'
