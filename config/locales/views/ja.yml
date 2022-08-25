@@ -21,6 +21,8 @@ ja:
       require_login: 'ログインしてください'
       created: "%{item}を作成しました"
       not_created: "%{item}を作成できませんでした"
+      updated: "%{item}を編集しました"
+      not_updated: "%{item}を編集できませんでした"
       deleted: "%{item}を削除しました"
   users:
     new:
