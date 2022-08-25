@@ -25,16 +25,27 @@ class SpotForm
     return false if invalid?
 
     ActiveRecord::Base.transaction do
+      
+      spot = Spot.new(spot_params)
+      spot.save!
+
       if equipment_detail_ids.present?
         equipment_detail_ids.each do |equipment_detail_id|
           spot.equipments.create!(equipment_detail_id:)
         end
       end
-      spot.update!(name: name, addrss: address, equipment_detail_ids)
     end
 
-    resque ActiveRecord::RecordInvalid
-      false
+    true
+  end
+
+  def update
+    return false if invalid?
+
+    ActiveRecord::Base.transaction do
+      spot.update!(spot_params)
+      spot.equipment_detail_ids = equipment_detail_ids if equipment_detail_ids.present?
+    end
   end
 
   def to_model
@@ -42,6 +53,8 @@ class SpotForm
   end
 
   private
+
+  attr_reader :spot
 
   def default_attributes
     {

@@ -56,7 +56,7 @@ class SpotsController < ApplicationController
   private
 
   def spot_params
-    params.require(:spot_form).permit(
+    params.require(:spot).permit(
       :name,
       :address,
       { equipment_detail_ids: [] },
