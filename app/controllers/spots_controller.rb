@@ -37,9 +37,9 @@ class SpotsController < ApplicationController
     @form = SpotForm.new(spot_params, spot: @spot)
 
     if @form.save
-      redirect_to @spot, success: 'The spot has been updated!'
+      redirect_to @spot, success: t('defaults.message.updated', item: Spot.model_name.human) 
     else
-      flash.now['danger'] = 'The spot has not been updated'
+      flash.now['danger'] = t('defaults.message.not_updated', item: Spot.model_name.human)
       render :edit
     end
   end

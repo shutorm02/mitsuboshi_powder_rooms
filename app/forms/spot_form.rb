@@ -27,15 +27,17 @@ class SpotForm
     ActiveRecord::Base.transaction do
       
       spot.update!(spot_params)
-
+      
+      spot.equipments.destroy_all if spot.equipments.present?
+      
       if equipment_detail_ids.present?
         equipment_detail_ids.each do |equipment_detail_id|
           spot.equipments.find_or_create_by!(equipment_detail_id:)
         end
       end
     end
-  rescue ActiveRecord::RecordInvalid
-    false
+
+    true
   end
 
   def to_model
