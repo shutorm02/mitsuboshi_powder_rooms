@@ -21,7 +21,7 @@
       </div>
     </div>
   </div>
-  <% if current_user.own?(@spot) %>
+  <% if logged_in? && current_user.own?(@spot) %>
     <div class="flex justify-center pb-5">
       <%= link_to edit_spot_path(@spot), id: "button-edit-#{@spot.id}" do %> 
         <button class="btn nomal-btn mr-3"><%= t('defaults.edit') %></button>
