@@ -8,6 +8,8 @@ ja:
     search: '検索'
     post: '投稿'
     edit: '編集'
+    destroy: '削除'
+    save: '保存'
     cancel: 'キャンセル'
     terms: '利用規約'
     privacy: 'プライバシーポリシー'
@@ -20,6 +22,9 @@ ja:
       require_login: 'ログインしてください'
       created: "%{item}を作成しました"
       not_created: "%{item}を作成できませんでした"
+      updated: "%{item}を編集しました"
+      not_updated: "%{item}を編集できませんでした"
+      deleted: "%{item}を削除しました"
   users:
     new:
       title: 'ユーザー登録'
@@ -51,6 +56,8 @@ ja:
       none: 'なし'
       latest_feedbacks: '最近の評価'
       see_all_feedbacks: 'すべての評価を見る'
+    edit:
+      title: 'スポット編集'
   feedbacks:
     index:
       title: 'すべての評価'

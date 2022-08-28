@@ -1,5 +1,6 @@
 class SpotsController < ApplicationController
   skip_before_action :require_login, only: %i[index show]
+  before_action :find_spot, only: %i[edit update destroy]
 
   def index
     @spots = Spot.all.includes(:equipment_details).order(created_at: :desc).page(params[:page])
@@ -7,11 +8,11 @@ class SpotsController < ApplicationController
   end
 
   def new
-    @form = SpotsForm.new
+    @form = SpotForm.new
   end
 
   def create
-    @form = SpotsForm.new(spot_params)
+    @form = SpotForm.new(spot_params)
 
     if @form.save
       redirect_to spots_path, success: t('defaults.message.created', item: Spot.model_name.human)
@@ -28,6 +29,26 @@ class SpotsController < ApplicationController
     @feedbacks = @spot.feedbacks.includes(:user, :feedback_tags, :tags).order(created_at: :desc).limit(3)
   end
 
+  def edit
+    @form = SpotForm.new(spot: @spot)
+  end
+
+  def update
+    @form = SpotForm.new(spot_params, spot: @spot)
+
+    if @form.save
+      redirect_to @spot, success: t('defaults.message.updated', item: Spot.model_name.human)
+    else
+      flash.now['danger'] = t('defaults.message.not_updated', item: Spot.model_name.human)
+      render :edit
+    end
+  end
+
+  def destroy
+    @spot.destroy
+    redirect_to spots_path, success: t('defaults.message.deleted', item: Spot.model_name.human)
+  end
+
   def likes
     @like_spots = current_user.like_spots.include(:user).arder(created_at: :desc)
   end
@@ -35,10 +56,14 @@ class SpotsController < ApplicationController
   private
 
   def spot_params
-    params.require(:spots_form).permit(
+    params.require(:spot).permit(
       :name,
       :address,
       { equipment_detail_ids: [] },
     ).merge(user_id: current_user.id)
+  end
+
+  def find_spot
+    @spot = current_user.spots.find(params[:id])
   end
 end

@@ -20,10 +20,10 @@ ja:
 
   activemodel:
     attributes:
-      spots_form:
+      spot_form:
         name: 'スポット名'
         address: '住所'
-        equipment_detail_ids: 'こだわりポイント'
+        equipment_detail_ids: '設備詳細'
       feedback_form:
         rate: '総合点'
         feedback_comment: '評価コメント'

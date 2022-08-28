@@ -1,0 +1,29 @@
+<%= form_with model: form, local: true do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="mb-2">
+    <div class="pt-5 pb-3">
+      <%= f.label :name %>
+    </div>
+    <%= f.text_field :name, class: 'w-full rounded border border-gray-200 py-1.5 px-3' %>
+  </div>
+  <div class="mb-2">
+    <div class="pt-5 pb-3">
+      <%= f.label :address %>
+    </div>
+    <%= f.text_field :address, class: 'w-full rounded border border-gray-200 py-1.5 px-3' %>
+  </div>
+  <div class="mb-5">
+    <div class="pt-5 pb-3">
+      <p><%= t('activemodel.attributes.spot_form.equipment_detail_ids') %></p>
+    </div>
+    <%= f.collection_check_boxes(:equipment_detail_ids, EquipmentDetail.all, :id, :content, include_hidden: false) do |b| %>
+      <div class="flex">
+        <%= b.label { b.check_box + b.text } %>
+      </div>
+    <% end %>
+  </div>
+  <div class="my-8 flex justify-center">
+    <%= f.submit t('defaults.save'), class: 'btn nomal-btn' %>
+  </div>
+<% end %>
+

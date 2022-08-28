@@ -21,9 +21,14 @@
       </div>
     </div>
   </div>
-  <% if logged_in? %>
+  <% if logged_in? && current_user.own?(@spot) %>
     <div class="flex justify-center pb-5">
-      <button class="btn nomal-btn"><%= t('defaults.edit') %></button>
+      <%= link_to edit_spot_path(@spot), id: "button-edit-#{@spot.id}" do %> 
+        <button class="btn nomal-btn mr-3"><%= t('defaults.edit') %></button>
+      <% end %> 
+      <%= link_to spot_path(@spot), id: "button-delete=#{@spot.id}", method: :delete, data: { confirm: "「スポット: #{@spot.name}」を削除しますか？" } do %>
+        <button class="btn delete-btn"><%= t('defaults.destroy') %></button>
+      <% end %>
     </div>
   <% end %>
   <%= render 'feedbacks/feedbacks', { spot: @spot, feedbacks: @feedbacks } %>
