@@ -1,6 +1,6 @@
 <div class="flex relative items-center text-lg">
-  <i class="fa-solid fa-location-dot text-fitting-pink pr-1.5"></i>
-  <div class="font-bold tracking-wider">
+  <i class="fa-solid fa-location-dot text-fitting-pink"></i>
+  <div class="font-bold tracking-wider ml-2">
     <%= link_to spot.name, spot_path(spot) %>
   </div>
   <% if logged_in? && current_user.not_own(spot) %>
