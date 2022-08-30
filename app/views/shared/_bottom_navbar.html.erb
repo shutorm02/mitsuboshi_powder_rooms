@@ -1,9 +1,11 @@
-<nav class="fixed bottom-0 left-0 right-0 bg-fitting-pink px-2 py-2">
+<nav id="buttom-navbar" class="fixed bottom-0 left-0 right-0 bg-fitting-pink px-2 py-2">
   <ul class="flex justify-center items-center">
     <li class="mx-2">
+      <%= link_to root_path do %>
       <button class="inline-block text-center m-2">
         <i class="custom-icon fa-solid fa-house fa-xl hover:text-mitsuboshi-blue"></i>
       </button>
+    <% end %>
     </li>
     <li class="mx-2">
       <%= link_to spots_path do %>
