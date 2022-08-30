@@ -9,3 +9,6 @@ body {
   color: #2d3748;
 }
 
+#buttom-navbar {
+  box-shadow: 0 0 3px white; 
+}
