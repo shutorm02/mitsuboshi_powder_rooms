@@ -1,22 +1,30 @@
 <div class="w-full max-w-sm my-24">
-  <h1 class="font-bold mb-6"><%= t('.title') %></h1>
+  <h1 class="font-bold mb-4"><%= t('.title') %></h1>
   <%= form_with model: @user, local: true do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
     <div class="mb-4">
-      <%= f.label :name, class: 'block mb-1 pr-4' %>
-      <%= f.text_field :name, class: 'w-full rounded py-1 px-2' %>
+      <div class="pt-5 pb-3">
+        <%= f.label :name %>
+      </div>
+      <%= f.text_field :name, class: 'w-full rounded border border-gray-200 p-2' %>
     </div>
     <div class="mb-4">
-      <%= f.label :email, class: 'block mb-1 pr-4' %>
-      <%= f.email_field :email, class: 'w-full rounded py-1 px-2' %>
+      <div class="pt-5 pb-3">
+        <%= f.label :email, class: 'block mb-1 pr-4' %>
+      </div>
+      <%= f.email_field :email, class: 'w-full rounded border border-gray-200 p-2' %>
     </div>
     <div class="mb-4">
-      <%= f.label :password, class: 'block mb-1 pr-4' %>
-      <%= f.password_field :password, class: 'w-full rounded py-1 px-2' %>
+      <div class="pt-5 pb-3">
+        <%= f.label :password, class: 'block mb-1 pr-4' %>
+      </div>
+      <%= f.password_field :password, class: 'w-full rounded border border-gray-200 p-2' %>
     </div>
     <div class="mb-4">
-      <%= f.label :password_confirmation, class: 'block mb-1 pr-4' %>
-      <%= f.password_field :password_confirmation, class: 'w-full rounded py-1 px-2' %>
+      <div class="pt-5 pb-3">
+        <%= f.label :password_confirmation, class: 'block mb-1 pr-4' %>
+      </div>
+      <%= f.password_field :password_confirmation, class: 'w-full rounded border border-gray-200 p-2' %>
     </div>
     <div class="my-8 md:text-center">
       <%= f.submit t('defaults.register'), class: 'btn nomal-btn' %>

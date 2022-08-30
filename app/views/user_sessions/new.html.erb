@@ -1,13 +1,17 @@
 <div class="w-full max-w-sm my-24">
-  <h1 class="font-bold mb-6"><%= t('.title') %></h1>
+  <h1 class="font-bold mb-4"><%= t('.title') %></h1>
     <%= form_with url: login_path, local: true do |f| %>
       <div class="mb-4">
-        <%= f.label :email, User.human_attribute_name(:email), class: 'block mb-1 pr-4' %>
-        <%= f.email_field :email, class: 'w-full rounded py-1 px-2' %>
+        <div class="pt-5 pb-3">
+          <%= f.label :email, User.human_attribute_name(:email), class: 'block mb-1 pr-4' %>
+        </div>
+        <%= f.email_field :email, class: 'w-full rounded border border-gray-200 p-2' %>
       </div>
       <div class="mb-4">
-        <%= f.label :password, User.human_attribute_name(:password), class: 'block mb-1 pr-4' %>
-        <%= f.password_field :password, class: 'w-full rounded py-1 px-2' %>
+        <div class="pt-5 pb-3">
+          <%= f.label :password, User.human_attribute_name(:password), class: 'block ' %>
+        </div>
+        <%= f.password_field :password, class: 'w-full rounded  border border-gray-200 p-2' %>
       </div>
       <div class="my-8 md:text-center">
         <%= f.submit t('defaults.login'), class: 'btn nomal-btn' %>
