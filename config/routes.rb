@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  namespace :admin do
-    get 'user_sessions/new'
-  end
-  namespace :admin do
-    get 'dashboards/index'
-  end
   root to: 'home#index'
 
   get 'login', to: 'user_sessions#new'
@@ -19,6 +13,7 @@ Rails.application.routes.draw do
     end
   end
   resources :likes, only: %i[create destroy]
+
   namespace :admin do
     root to: 'dashboards#index'
     get 'login', to: 'user_sessions#new'
