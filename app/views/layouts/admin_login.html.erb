@@ -11,7 +11,10 @@
     <%= stylesheet_pack_tag 'admin', media: 'all' %>
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   </head>
-  <body class="text-gray-600 antialiased">
-    <%= yield %>
+  <body>
+    <%= render 'shared/flash_message' %>
+    <div  class="text-gray-600 antialiased">
+      <%= yield %>
+    </div>
   </body>
 </html>  

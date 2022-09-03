@@ -30,38 +30,20 @@
               </div>
             </div>
             <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-              <form>
+              <%= form_with url: admin_login_path, local: true do |f| %>
                 <div class="relative w-full mb-3">
-                  <label
-                    class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                    for="grid-password"
-                    >Email</label
-                  ><input
-                    type="email"
-                    class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                    placeholder="Email"
-                  />
+                  <%= f.label :email, User.human_attribute_name(:email), class: 'block uppercase text-xs font-bold mb-2' %>
+                  <%= f.text_field :email, class: 'border-0 px-3 py-3 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150', placeholder: :email %>
                 </div>
                 <div class="relative w-full mb-3">
-                  <label
-                    class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-                    for="grid-password"
-                    >Password</label
-                  ><input
-                    type="password"
-                    class="border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                    placeholder="Password"
-                  />
+                  <%= f.label :password, User.human_attribute_name(:password), class: 'block uppercase text-xs font-bold mb-2' %>
+                  <%= f.password_field :password, class: 'border-0 px-3 py-3 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150', placeholder: :password %>
                 </div>
                 <div class="text-center mt-6">
-                  <button
-                    class="bg-blueGray-800 text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
-                    type="button"
-                  >
-                    Sign In
-                  </button>
+                  <%= f.submit t('defaults.login'), class: 'bg-gray-800 text-white active:bg-gray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150' 
+                  %>
                 </div>
-              </form>
+              <% end %> 
             </div>
           </div>
         </div>
@@ -77,47 +59,8 @@
             <div
               class="text-sm text-white font-semibold py-1 text-center md:text-left"
             >
-              Copyright © <span id="get-current-year"></span>
-              <a
-                href="https://www.creative-tim.com?ref=njs-login"
-                class="text-white hover:text-blueGray-300 text-sm font-semibold py-1"
-                >Creative Tim</a
-              >
+              Copyright © 三つ星トイレ - Mistuboshi Powder Rooms -
             </div>
-          </div>
-          <div class="w-full md:w-8/12 px-4">
-            <ul
-              class="flex flex-wrap list-none md:justify-end justify-center"
-            >
-              <li>
-                <a
-                  href="https://www.creative-tim.com?ref=njs-login"
-                  class="text-white hover:text-blueGray-300 text-sm font-semibold block py-1 px-3"
-                  >Creative Tim</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://www.creative-tim.com/presentation?ref=njs-login"
-                  class="text-white hover:text-blueGray-300 text-sm font-semibold block py-1 px-3"
-                  >About Us</a
-                >
-              </li>
-              <li>
-                <a
-                  href="http://blog.creative-tim.com?ref=njs-login"
-                  class="text-white hover:text-blueGray-300 text-sm font-semibold block py-1 px-3"
-                  >Blog</a
-                >
-              </li>
-              <li>
-                <a
-                  href="https://github.com/creativetimofficial/notus-js/blob/main/LICENSE.md?ref=njs-login"
-                  class="text-white hover:text-blueGray-300 text-sm font-semibold block py-1 px-3"
-                  >MIT License</a
-                >
-              </li>
-            </ul>
           </div>
         </div>
       </div>
