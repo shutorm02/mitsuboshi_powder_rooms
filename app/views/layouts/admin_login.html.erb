@@ -12,8 +12,10 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   </head>
   <body>
-    <%= render 'shared/flash_message' %>
-    <div  class="text-gray-600 antialiased">
+    <div class="text-gray-600 antialiased">
+      <div class="mt-16"> 
+        <%= render 'shared/flash_message' %>
+      </div>
       <%= yield %>
     </div>
   </body>

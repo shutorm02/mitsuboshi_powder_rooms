@@ -1,11 +1,11 @@
 <% flash.each do |message_type, message| %>
   <% if message_type == 'success' %>
-    <div class="text-green-700 bg-green-100 rounded-lg p-4 mb-4"><%= message %></div>
+    <div class="text-green-700 bg-green-100 rounded-lg p-4"><%= message %></div>
   <% elsif message_type == 'danger' %>
-    <div class="text-red-700 bg-red-100 rounded-lg p-4 mb-4"><%= message %></div>
+    <div class="text-red-700 bg-red-100 rounded-lg p-4"><%= message %></div>
   <% elsif message_type == 'warning' %>
-    <div class="text-yellow-700 bg-yellow-100 rounded-lg p-4 mb-4"><%= message %></div>
+    <div class="text-yellow-700 bg-yellow-100 rounded-lg p-4"><%= message %></div>
   <% else %>
-    <div class="text-blue-700 bg-blue-100 rounded-lg p-4 mb-4"><%= message %></div>
+    <div class="text-blue-700 bg-blue-100 rounded-lg p-4"><%= message %></div>
   <% end %>
 <% end %>
