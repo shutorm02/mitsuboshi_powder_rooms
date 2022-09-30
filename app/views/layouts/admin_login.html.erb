@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta lang='ja'>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <title>Login | Mistuboshi-powder-rooms</title>
+    <%= csrf_meta_tags %>
+    <%= javascript_pack_tag 'admin' %>
+    <%= stylesheet_pack_tag 'admin', media: 'all' %>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  </head>
+  <body>
+    <div class="text-gray-600 antialiased">
+      <div class="mt-16"> 
+        <%= render 'shared/flash_message' %>
+      </div>
+      <%= yield %>
+    </div>
+  </body>
+</html>  

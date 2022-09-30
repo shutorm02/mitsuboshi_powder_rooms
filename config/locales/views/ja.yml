@@ -25,6 +25,7 @@ ja:
       updated: "%{item}を編集しました"
       not_updated: "%{item}を編集できませんでした"
       deleted: "%{item}を削除しました"
+      not_authorized: '権限がありません'
   users:
     new:
       title: 'ユーザー登録'
@@ -62,3 +63,16 @@ ja:
     index:
       title: 'すべての評価'
       no_result: '評価がありません'
+
+  admin:
+    user_sessions: 
+      new:
+        title: 'ログイン'
+      create:
+        success: 'ログインしました'
+        fail: 'ログインに失敗しました'
+      destroy:
+        success: 'ログアウトしました'
+    dashboards:
+      index:
+        title: 'ダッシュボード'
