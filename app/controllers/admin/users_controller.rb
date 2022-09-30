@@ -1,4 +1,20 @@
 class Admin::UsersController < Admin::BaseController
+  before_action :set_user, only: %i[show destroy]
+
   def index
+    @users = User.all.order(created_at: :desc).page(params[:page])
+  end
+
+  def show; end
+
+  def destroy
+    @user.destroy!
+    redirect_to admin_users_path, success: t('defaults.message.delete')
+  end
+
+  private
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end
