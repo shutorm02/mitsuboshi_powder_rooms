@@ -7,6 +7,7 @@ ja:
     mypage: 'マイページ'
     search: '検索'
     post: '投稿'
+    show: '詳細'
     edit: '編集'
     destroy: '削除'
     save: '保存'

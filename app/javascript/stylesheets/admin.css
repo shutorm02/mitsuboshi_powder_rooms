@@ -8,7 +8,7 @@
   }
 
   .admin-nomal-btn {
-    @apply text-white bg-pink-600; hover:bg-pink-800;
+    @apply bg-white border-none hover:text-white hover:bg-pink-600;
   }
 
   .admin-delete-btn {

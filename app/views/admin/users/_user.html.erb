@@ -25,8 +25,10 @@
     <%= user.created_at %>
   </td>
   <td>
-    <button class="admin-btn admin-nomal-btn"><%= t('defaults.show') %></button>
-    <button class="admin-btn admin-nomal-btn"><%= t('defaults.edit') %></button>
-    <button class="admin-btn admin-delete-btn"><%= t('defaults.destroy') %></button>
+    <div class="flex">
+      <button class="admin-btn admin-nomal-btn mr-2"><%= t('defaults.show') %></button>
+      <button class="admin-btn admin-nomal-btn mr-2"><%= t('defaults.edit') %></button>
+      <button class="admin-btn admin-delete-btn mr-2"><%= t('defaults.destroy') %></button>
+    </div>
   </td>
 </tr>
