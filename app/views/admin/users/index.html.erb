@@ -60,37 +60,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td
-                  class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                >
-                  1
-                </td>
-                <td
-                  class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                >
-                  pending
-                </td>
-                <td
-                  class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                >
-                  example.com
-                </td>
-                <td
-                  class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                >
-                  role
-                </td>
-                <td
-                  class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
-                >
-                  1
-                </td>
-                <td>
-                  <button class="admin-btn admin-nomal-btn"><%= t('defaults.edit') %></button>
-                  <button class="admin-btn admin-delete-btn"><%= t('defaults.destroy') %></button>
-                </td>
-              </tr>
+              <%= render @users %>
             </tbody>
           </table>
         </div>

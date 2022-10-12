@@ -1,0 +1,32 @@
+<tr>
+  <td
+    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+  >
+    <%= user.id %>
+  </td>
+  <td
+    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+  >
+    <%= user.name %>
+  </td>
+  <td
+    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+  >
+    <%= user.email %>
+  </td>
+  <td
+    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+  >
+    <%= user.role %>
+  </td>
+  <td
+    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+  >
+    <%= user.created_at %>
+  </td>
+  <td>
+    <button class="admin-btn admin-nomal-btn"><%= t('defaults.show') %></button>
+    <button class="admin-btn admin-nomal-btn"><%= t('defaults.edit') %></button>
+    <button class="admin-btn admin-delete-btn"><%= t('defaults.destroy') %></button>
+  </td>
+</tr>
