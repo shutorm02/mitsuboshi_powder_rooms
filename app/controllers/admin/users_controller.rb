@@ -2,7 +2,7 @@ class Admin::UsersController < Admin::BaseController
   before_action :set_user, only: %i[edit update show destroy]
 
   def index
-    @users = User.all.order(id: :asc).page(params[:page])
+    @users = User.all.order(id: :asc)
   end
 
   def edit; end
@@ -20,7 +20,7 @@ class Admin::UsersController < Admin::BaseController
 
   def destroy
     @user.destroy!
-    redirect_to admin_users_path, success: t('defaults.message.delete')
+    redirect_to admin_users_path, success: t('defaults.message.deleted', item: User.model_name.human)
   end
 
   private
