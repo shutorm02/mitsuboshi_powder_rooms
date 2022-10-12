@@ -11,6 +11,7 @@ ja:
         password: 'パスワード'
         password_confirmation: 'パスワード確認'
         avator: 'アバター'
+        role: '権限'
       spot:
         name: 'スポット名'
         address: '住所'

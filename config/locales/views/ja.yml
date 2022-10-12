@@ -18,6 +18,7 @@ ja:
     reviews: '件の評価'
     give_feedback: '評価する'
     multiple_choices_allowed: '※複数選択可'
+    created_at: '作成日時'
     message:
       require_login: 'ログインしてください'
       created: "%{item}を作成しました"
@@ -76,3 +77,7 @@ ja:
     dashboards:
       index:
         title: 'ダッシュボード'
+    users:
+      index:
+        title: 'ユーザー一覧'
+
