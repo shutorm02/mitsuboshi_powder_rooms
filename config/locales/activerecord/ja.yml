@@ -30,4 +30,8 @@ ja:
         feedback_comment: '評価コメント'
         tag_ids: 'ここを評価したい！'
         
-
+  enums:
+    user:
+      role:
+        general: 一般
+        admin: 管理者

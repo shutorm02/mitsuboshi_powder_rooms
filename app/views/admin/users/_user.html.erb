@@ -17,7 +17,7 @@
   <td
     class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
   >
-    <%= user.role %>
+    <%= user.role_i18n %>
   </td>
   <td
     class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
@@ -27,7 +27,7 @@
   <td>
     <div class="flex">
       <button class="admin-btn admin-nomal-btn mr-2"><%= t('defaults.show') %></button>
-      <button class="admin-btn admin-nomal-btn mr-2"><%= t('defaults.edit') %></button>
+      <%= link_to t('defaults.edit'), edit_admin_user_path(user), class: 'admin-btn admin-nomal-btn mr-2' %>
       <button class="admin-btn admin-delete-btn mr-2"><%= t('defaults.destroy') %></button>
     </div>
   </td>
