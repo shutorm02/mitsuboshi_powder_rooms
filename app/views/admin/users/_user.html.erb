@@ -26,7 +26,7 @@
   </td>
   <td>
     <div class="flex">
-      <button class="admin-btn text-white font-bold bg-pink-600 hover:bg-pink-800 mr-2"><%= t('defaults.show') %></button>
+      <%= link_to t('defaults.show'), admin_user_path(user), class: 'admin-btn text-white bg-pink-600 hover:bg-pink-800 font-bold mr-2' %>
       <%= link_to t('defaults.edit'), edit_admin_user_path(user), class: 'admin-btn text-white bg-pink-600 hover:bg-pink-800 font-bold mr-2' %>
       <%= link_to t('defaults.destroy'), admin_user_path(user), method: :delete, data: { confirm: t('defaults.message.delete_confirm') }, class: 'admin-btn admin-delete-btn font-bold mr-2' %>
     </div>
