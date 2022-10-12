@@ -81,4 +81,9 @@ ja:
     users:
       index:
         title: 'ユーザー一覧'
+      show:
+        title: 'ユーザー詳細'
+      edit:
+        title: 'ユーザー編集'
+        about_user: 'ユーザー情報'
 
