@@ -39,7 +39,7 @@ class Admin::SpotsController < Admin::BaseController
       :address,
       :latitude,
       :longitude,
-      { equipment_detail_ids: [] }
+      { equipment_detail_ids: [] },
     ).merge(user_id: @spot.user_id)
   end
 end
