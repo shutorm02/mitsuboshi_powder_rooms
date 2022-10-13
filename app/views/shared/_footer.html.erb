@@ -1,7 +1,11 @@
 <footer class="bg-base-color px-2 mb-20">
   <div class="flex justify-center items-center">
-    <a href="#" class="inline-block align-middle mx-2 py-0.5"><%= t 'defaults.terms' %></a>
-    <a href="#" class="inline-block align-middle mx-2 py-0.5"><%= t 'defaults.privacy' %></a>
+    <div class="inline-block align-middle px-2"> 
+      <%= link_to t('defaults.terms'), page_path('terms_of_use') %>
+    </div>
+    <div class="inline-block align-middle px-2"> 
+      <%= link_to t('defaults.privacy'), page_path('privacy_policy') %>
+    </div>
     <a href="#" class="inline-block align-middle mx-2 py-0.5"><%= t 'defaults.contact' %></a>
   </div>
 </footer>
