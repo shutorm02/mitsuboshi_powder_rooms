@@ -5,10 +5,14 @@ class Admin::SpotsController < Admin::BaseController
     @spots = Spot.all.includes(:user).order(id: :asc)
   end
 
-  def edit; end
+  def edit
+    @admin_spot_form = AdminSpotForm.new(spot: @spot)
+  end
 
   def update
-    if @spot.update(spot_params)
+    @admin_spot_form = AdminSpotForm.new(spot_params, spot: @spot)
+
+    if @admin_spot_form.save
       redirect_to admin_spot_path(@spot), success: t('defaults.message.updated', item: Spot.model_name.human)
     else
       flash.now['danger'] = t('defaults.message.not_updated', item: Spot.model_name.human)
@@ -33,7 +37,9 @@ class Admin::SpotsController < Admin::BaseController
     params.require(:spot).permit(
       :name,
       :address,
+      :latitude,
+      :longitude,
       { equipment_detail_ids: [] }
-    )
+    ).merge(user_id: @spot.user_id)
   end
 end

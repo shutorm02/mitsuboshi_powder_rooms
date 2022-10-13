@@ -20,6 +20,8 @@ ja:
     give_feedback: '評価する'
     multiple_choices_allowed: '※複数選択可'
     created_at: '作成日時'
+    about_spot: '基本情報'
+    equipment_details: '設備詳細'
     message:
       require_login: 'ログインしてください'
       created: "%{item}を作成しました"
@@ -92,8 +94,6 @@ ja:
         latitude_and_longitude: '緯度・経度'
       show:
         title: 'スポット詳細'
-        about_spot: '基本情報'
-        equipment_details: '設備詳細'
         none: 'なし'
       edit:
         title: 'スポット編集'
