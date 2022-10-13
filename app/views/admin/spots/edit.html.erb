@@ -28,6 +28,18 @@
                   <%= f.text_field :address, class: 'border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150' %>
                 </div>
               </div>
+              <div class="w-full px-4 pt-3">
+                <div class="relative w-full mb-3">
+                  <%= f.label :latitude, class: 'block text-blueGray-600 text-xs font-bold mb-2' %>
+                  <%= f.number_field :latitude, step: :any, class: 'border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150' %>
+                </div>
+              </div>
+              <div class="w-full px-4 pt-3">
+                <div class="relative w-full mb-3">
+                  <%= f.label :longitude, class: 'block text-blueGray-600 text-xs font-bold mb-2' %>
+                  <%= f.number_field :longitude, step: :any, class: 'border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150' %>
+                </div>
+              </div>
             </div>
             <hr class="mt-6 border-b-1 border-blueGray-300" />
             <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">

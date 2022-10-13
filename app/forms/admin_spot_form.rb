@@ -53,6 +53,8 @@ class AdminSpotForm
     {
       name: spot.name,
       address: spot.address,
+      latitude: spot.latitude,
+      longitude: spot.longitude,
       equipment_detail_ids: spot.equipment_detail_ids,
     }
   end
