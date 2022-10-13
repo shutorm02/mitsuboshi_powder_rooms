@@ -66,6 +66,7 @@
           </div>
           <div class="text-right pt-5 pr-4">
             <%= link_to t('defaults.edit'), edit_admin_spot_path(@spot), class: 'admin-btn text-white font-bold bg-pink-600 hover:bg-pink-800' %>
+              <%= link_to t('defaults.destroy'), admin_spot_path(@spot), method: :delete, data: { confirm: t('defaults.message.delete_confirm') }, class: 'admin-btn admin-delete-btn font-bold mr-2' %>
           </div>
         </div>
       </div>

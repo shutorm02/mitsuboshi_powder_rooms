@@ -22,6 +22,7 @@ ja:
     created_at: '作成日時'
     about_spot: '基本情報'
     equipment_details: '設備詳細'
+    back: '戻る'
     message:
       require_login: 'ログインしてください'
       created: "%{item}を作成しました"
