@@ -12,39 +12,38 @@
           </div>
         </div>
         <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-          <%= form_with model: @spot, url: admin_spot_path(@spot), local: true do |f| %>
-            <%= render 'shared/error_messages', object: f.object %>
-            <h6 class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase">
-              <%= t('.about_spot') %>
-            </h6>
-            <div class="flex flex-wrap">
-              <div class="w-full px-4">
-                <div class="relative w-full mb-3">
-                  <%= f.label :name, class: 'block text-blueGray-600 text-xs font-bold mb-2' %>
-                  <p><%= @spot.name %></p>
-                </div>
-              </div>
-              <div class="w-full px-4 pt-3">
-                <div class="relative w-full mb-3">
-                  <%= f.label :address, class: 'block text-blueGray-600 text-xs font-bold mb-2' %>
-                  <p><%= @spot.address %></p>
-                </div>
-              </div>
-              <div class="w-full px-4 pt-3">
-                <div class="relative w-full">
-                  <%= f.label :created_at, class: 'block text-blueGray-600 text-xs font-bold mb-2' %>
-                  <p><%= l @spot.created_at, format: :long %></p>
-                </div>
-              </div>
-            </div>
-            <hr class="mt-6 border-b-1 border-blueGray-300" />
-            <h6 class="text-blueGray-400 text-sm my-6 font-bold uppercase">
+          <div class="flex flex-wrap">
+            <h6
+              class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase"
+            >
               <%= t('.equipment_details') %>
             </h6>
-            <div class="text-right pt-5 pr-4">
-              <%= link_to t('defaults.edit'), edit_admin_spot_path(@spot), class: 'admin-btn text-white font-bold bg-pink-600 hover:bg-pink-800' %>
+            <div class="w-full px-4">
+              <div class="relative w-full mb-3">
+                <div class="block text-blueGray-600 text-xs font-bold mb-2">
+                  <%= Spot.human_attribute_name('name') %>
+                </div>
+                <p><%= @spot.name %></p>
+              </div>
             </div>
-          <% end %>
+            <div class="w-full px-4 pt-3">
+              <div class="relative w-full mb-3">
+                <div class="block text-blueGray-600 text-xs font-bold mb-2">
+                  <%= Spot.human_attribute_name('address') %>
+                </div>
+                <p><%= @spot.address %></p>
+              </div>
+            </div>
+          </div>
+          <hr class="mt-6 border-b-1 border-blueGray-300" />
+          <h6
+            class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase"
+          >
+            <%= t('.equipment_details') %>
+          </h6>
+          <div class="text-right pt-5 pr-4">
+            <%= link_to t('defaults.edit'), edit_admin_spot_path(@spot), class: 'admin-btn text-white font-bold bg-pink-600 hover:bg-pink-800' %>
+          </div>
         </div>
       </div>
     </div>

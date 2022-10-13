@@ -92,6 +92,8 @@ ja:
         latitude_and_longitude: '緯度・経度'
       show:
         title: 'スポット詳細'
+        about_spot: '基本情報'
+        equipment_details: '設備詳細'
       edit:
         title: 'スポット編集'
 
