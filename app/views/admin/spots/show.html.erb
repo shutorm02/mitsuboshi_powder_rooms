@@ -16,7 +16,7 @@
             <h6
               class="text-blueGray-400 text-sm mt-3 mb-6 font-bold uppercase"
             >
-              <%= t('.equipment_details') %>
+              <%= t('.about_spot') %>
             </h6>
             <div class="w-full px-4">
               <div class="relative w-full mb-3">
@@ -41,6 +41,13 @@
           >
             <%= t('.equipment_details') %>
           </h6>
+          <div class="pt-2 px-4">
+            <% if @spot.equipment_details.present? %>
+              <%= render 'equipment_tags', spot: @spot %>
+            <% else %>
+              <%= t('.none') %> 
+            <% end %>
+          </div>
           <div class="text-right pt-5 pr-4">
             <%= link_to t('defaults.edit'), edit_admin_spot_path(@spot), class: 'admin-btn text-white font-bold bg-pink-600 hover:bg-pink-800' %>
           </div>

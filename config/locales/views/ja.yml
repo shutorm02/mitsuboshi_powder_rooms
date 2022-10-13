@@ -94,6 +94,7 @@ ja:
         title: 'スポット詳細'
         about_spot: '基本情報'
         equipment_details: '設備詳細'
+        none: 'なし'
       edit:
         title: 'スポット編集'
 
