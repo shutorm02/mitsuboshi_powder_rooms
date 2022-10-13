@@ -125,6 +125,7 @@ GEM
       i18n (>= 0.7)
       multi_json
       request_store (>= 1.0)
+    high_voltage (3.1.2)
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.4)
@@ -393,6 +394,7 @@ DEPENDENCIES
   foreman
   geocoder
   gon
+  high_voltage (~> 3.1)
   jbuilder (~> 2.7)
   kaminari
   listen (~> 3.3)
