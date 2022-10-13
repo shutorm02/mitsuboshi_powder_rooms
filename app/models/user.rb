@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
 
-  has_many :spots
+  has_many :spots, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :like_spots, through: :likes, source: :spot
   has_many :feedbacks, dependent: :destroy

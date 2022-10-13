@@ -11,9 +11,13 @@ ja:
         password: 'パスワード'
         password_confirmation: 'パスワード確認'
         avator: 'アバター'
+        role: '権限'
       spot:
         name: 'スポット名'
         address: '住所'
+        latitude: '緯度'
+        longitude: '経度'
+        user_id: 'ユーザー名'
       feedback:
         rate: '総合点'
         feedback_comment: '評価コメント'
@@ -29,4 +33,8 @@ ja:
         feedback_comment: '評価コメント'
         tag_ids: 'ここを評価したい！'
         
-
+  enums:
+    user:
+      role:
+        general: 一般
+        admin: 管理者

@@ -1,0 +1,34 @@
+<tr>
+  <td
+    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+  >
+    <%= user.id %>
+  </td>
+  <td
+    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+  >
+    <%= user.name %>
+  </td>
+  <td
+    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+  >
+    <%= user.email %>
+  </td>
+  <td
+    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+  >
+    <%= user.role_i18n %>
+  </td>
+  <td
+    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+  >
+    <%= l user.created_at, format: :long %>
+  </td>
+  <td>
+    <div class="flex">
+      <%= link_to t('defaults.show'), admin_user_path(user), class: 'admin-btn text-white bg-pink-600 hover:bg-pink-800 font-bold mr-2' %>
+      <%= link_to t('defaults.edit'), edit_admin_user_path(user), class: 'admin-btn text-white bg-pink-600 hover:bg-pink-800 font-bold mr-2' %>
+      <%= link_to t('defaults.destroy'), admin_user_path(user), method: :delete, data: { confirm: t('defaults.message.delete_confirm') }, class: 'admin-btn admin-delete-btn font-bold mr-2' %>
+    </div>
+  </td>
+</tr>

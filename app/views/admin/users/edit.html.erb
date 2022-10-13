@@ -1,0 +1,46 @@
+<div class="px-4 md:px-10 mx-auto w-full">
+  <div class="flex flex-wrap">
+    <div class="w-full lg:w-8/12 px-4">
+      <div
+        class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0"
+      >
+        <div class="rounded-t bg-white mb-0 px-6 py-6">
+          <div class="text-center flex justify-between">
+            <h6 class="text-blueGray-700 text-xl font-bold">
+              <%= t('.title') %>
+            </h6>
+          </div>
+        </div>
+        <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+          <%= form_with model: @user, url: admin_user_path(@user), local: true do |f| %>
+            <%= render 'shared/error_messages', object: f.object %>
+            <div class="flex flex-wrap pt-5">
+              <div class="w-full px-4">
+                <div class="relative w-full mb-3">
+                  <%= f.label :name, class: 'block text-blueGray-600 text-xs font-bold mb-2' %>
+                  <%= f.text_field :name, class: 'border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150' %>
+                </div>
+              </div>
+              <div class="w-full px-4 pt-3">
+                <div class="relative w-full mb-3">
+                  <%= f.label :email, class: 'block text-blueGray-600 text-xs font-bold mb-2' %>
+                  <%= f.email_field :email, class: 'border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150' %>
+                </div>
+              </div>
+              <div class="w-full px-4 pt-3">
+                <div class="relative w-full mb-3">
+                  <%= f.label :role, class: 'block text-blueGray-600 text-xs font-bold mb-2' %>
+                  <%= f.select :role, User.roles_i18n.invert, {}, class: 'border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150' %>
+                </div>
+              </div>
+            </div>
+            <div class="text-right pt-5 pr-4">
+              <%= link_to t('defaults.back'), admin_users_path, class: 'admin-btn bg-white hover:bg-gray-600 hover:text-white font-bold mr-2' %>
+              <%= f.submit t('defaults.edit'), class: 'admin-btn text-white font-bold bg-pink-600 hover:bg-pink-800' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
