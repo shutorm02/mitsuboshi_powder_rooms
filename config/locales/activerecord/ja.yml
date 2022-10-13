@@ -15,6 +15,7 @@ ja:
       spot:
         name: 'スポット名'
         address: '住所'
+        user_id: 'ユーザー名'
       feedback:
         rate: '総合点'
         feedback_comment: '評価コメント'

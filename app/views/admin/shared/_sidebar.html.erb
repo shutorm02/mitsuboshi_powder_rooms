@@ -108,13 +108,10 @@
         </li>
 
         <li class="items-center">
-          <a
-            href="./tables.html"
-            class="text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-blueGray-500"
-          >
+          <%= link_to admin_spots_path, class: 'text-xs uppercase py-3 font-bold block text-blueGray-700 hover:text-pink-600' do %>
             <i class="fas fa-table mr-2 text-sm text-blueGray-300"></i>
-            Tables
-          </a>
+            <%= t('admin.spots.index.title') %>
+          <% end %>
         </li>
 
       </ul>

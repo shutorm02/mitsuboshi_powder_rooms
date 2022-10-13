@@ -86,5 +86,12 @@ ja:
         title: 'ユーザー詳細'
       edit:
         title: 'ユーザー編集'
-        about_user: 'ユーザー情報'
+    spots:
+      index:
+        title: 'スポット一覧'
+        latitude_and_longitude: '緯度・経度'
+      show:
+        title: 'スポット詳細'
+      edit:
+        title: 'スポット編集'
 

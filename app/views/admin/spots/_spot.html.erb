@@ -1,0 +1,29 @@
+<tr>
+  <td
+    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+  >
+    <%= spot.id %>
+  </td>
+  <td
+    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+  >
+    <%= spot.name %>
+  </td>
+  <td
+    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+    >
+    <%= spot.user.name %>
+  </td>
+  <td
+    class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+  >
+    <%= spot.created_at %>
+  </td>
+  <td>
+    <div class="flex">
+      <%= link_to t('defaults.show'), admin_spot_path(spot), class: 'admin-btn text-white bg-pink-600 hover:bg-pink-800 font-bold mr-2' %>
+      <%= link_to t('defaults.edit'), edit_admin_spot_path(spot), class: 'admin-btn text-white bg-pink-600 hover:bg-pink-800 font-bold mr-2' %>
+      <%= link_to t('defaults.destroy'), admin_spot_path(spot), method: :delete, data: { confirm: t('defaults.message.delete_confirm') }, class: 'admin-btn admin-delete-btn font-bold mr-2' %>
+    </div>
+  </td>
+</tr>
