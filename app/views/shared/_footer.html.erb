@@ -1,11 +1,13 @@
 <footer class="bg-base-color px-2 mb-20">
   <div class="flex justify-center items-center">
     <div class="inline-block align-middle px-2"> 
-      <%= link_to t('defaults.terms'), page_path('terms_of_use') %>
+      <%= link_to t('defaults.terms'), page_path('terms_of_use'), class: 'hover:underline hover:text-gray-600 hover:decoration-gray-600' %>
     </div>
     <div class="inline-block align-middle px-2"> 
-      <%= link_to t('defaults.privacy'), page_path('privacy_policy') %>
+      <%= link_to t('defaults.privacy'), page_path('privacy_policy'), class: 'hover:underline hover:text-gray-600 hover:decoration-gray-600' %>
     </div>
-    <a href="#" class="inline-block align-middle mx-2 py-0.5"><%= t 'defaults.contact' %></a>
+    <div class="inline-block align-middle px-2"> 
+      <%= link_to t('defaults.contact'), 'https://forms.gle/9hByvo3VPg84TReh7', class: 'hover:underline hover:text-gray-600 hover:decoration-gray-600' %>
+    </div>
   </div>
 </footer>
