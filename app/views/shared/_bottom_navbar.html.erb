@@ -15,9 +15,11 @@
       <% end %>
     </li>
     <li class="mx-2">
-      <button class="inline-block text-center m-2">
-        <i class="custom-icon fa-solid fa-user fa-xl hover:text-mitsuboshi-blue"></i>
-      </button>
+      <%= link_to profile_path do %>
+        <button class="inline-block text-center m-2">
+          <i class="custom-icon fa-solid fa-user fa-xl hover:text-mitsuboshi-blue"></i>
+        </button>
+      <% end %>
     </li>
     <li class="mx-2">
       <%= link_to new_spot_path do %>
