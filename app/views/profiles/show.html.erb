@@ -1,2 +1,18 @@
-<h1>Profiles#show</h1>
-<p>Find me in app/views/profiles/show.html.erb</p>
+<div class="w-full max-w-md my-24">
+  <div class="flex items-center space-x-4 px-20 py-4">
+    <div class="flex-shrink-0">
+      <%= image_pack_tag 'media/images/default_avatar.svg', class: 'mb-3 w-24 h-24 rounded-full shadow-lg' %>
+    </div>
+    <div class="flex-1 min-w-0 pl-2">
+      <p class="text-lg truncate">
+        <%= current_user.name %> 
+      </p>
+      <p class="truncate">
+        <%= current_user.email %> 
+      </p>
+      <button class="text-center rounded shadow mt-3 py-1 px-4 w-2/3 nomal-btn truncate ">
+        <%= t('defaults.edit') %>
+      </button>
+    </div>
+  </div>
+</div>
