@@ -10,7 +10,7 @@ ja:
         email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: 'パスワード確認'
-        avator: 'アバター'
+        avatar: 'アバター'
         role: '権限'
       spot:
         name: 'スポット名'

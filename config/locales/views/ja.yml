@@ -77,6 +77,8 @@ ja:
       no_favorite: 'お気に入りしているスポットはありません'
       no_feedback: '評価しているスポットはありません'
       no_posts: '投稿したスポットはありません'
+    edit:
+      title: 'プロフィール編集'
 
   admin:
     user_sessions: 
