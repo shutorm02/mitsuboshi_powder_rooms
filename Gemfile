@@ -37,6 +37,7 @@ gem 'gon'
 gem 'geocoder'
 gem 'enum_help'
 gem 'high_voltage', '~> 3.1'
+gem 'carrierwave', '~> 2.0'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
