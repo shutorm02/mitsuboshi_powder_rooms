@@ -36,7 +36,19 @@
         <%= t('.no_favorite') %>
       <% end %>
     </div>
-    <div class="panel tab-feedbacks">feedbacks</div>
-    <div class="panel tab-posts">posts</div>
+    <div class="panel tab-feedbacks">
+      <% if @feedbacks.present? %>
+        <%= render partial: 'feedbacks/feedback', collection: @feedbacks, remote: true %>
+      <% else %>
+        <%= t('.no_feedback') %>
+      <% end %>
+    </div>
+    <div class="panel tab-posts">
+      <% if @post_spots.present? %>
+        <%= render partial: 'spots/spot', collection: @post_spots, remote: true %>
+      <% else %>
+        <%= t('.no_post') %>
+      <% end %>
+    </div>
   </div>
 </div>

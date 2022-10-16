@@ -15,6 +15,8 @@ class ProfilesController < ApplicationController
 
   def show
     @like_spots = current_user.like_spots.order(created_at: :desc)
+    @feedbacks = current_user.feedbacks.order(created_at: :desc)
+    @post_spots = current_user.spots.includes(:equipment_details).order(created_at: :desc) 
   end
 
   private
