@@ -1,11 +1,11 @@
 <div class="max-w-md bg-white rounded-2xl overflow-hidden shadow-lg mb-5">
   <div id="spot-id-<%= spot.id %>">
     <div class="px-6 py-4">
-      <%= render 'spot_title', spot: spot %>
+      <%= render 'spots/spot_title', spot: spot %>
       <p class="ml-5 pt-3"><%= spot.address %></p>
     </div>
     <div class="flex flex-wrap text-sm ml-4 px-6 mb-4">
-      <%= render 'equipment_tags', spot: spot %>
+      <%= render 'spots/equipment_tags', spot: spot %>
     </div>
   </div>
 </div>
