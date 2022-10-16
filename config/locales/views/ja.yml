@@ -74,6 +74,9 @@ ja:
       favorites: 'お気に入り'
       feedbacks: '評価'
       posts: '投稿'
+      no_favorite: 'お気に入りしているスポットはありません'
+      no_feedback: '評価しているスポットはありません'
+      no_posts: '投稿したスポットはありません'
 
   admin:
     user_sessions: 

@@ -28,8 +28,14 @@
       </li>
     </ul>
   </div>
-  <div class="py-4">
-    <div class="panel tab-favorites is-show">favorite</div>
+  <div class="px-5 py-5">
+    <div class="panel tab-favorites is-show">
+      <% if @like_spots.present? %>
+        <%= render partial: 'spots/spot', collection: @like_spots, remote: true %>
+      <% else %>
+        <%= t('.no_favorite') %>
+      <% end %>
+    </div>
     <div class="panel tab-feedbacks">feedbacks</div>
     <div class="panel tab-posts">posts</div>
   </div>

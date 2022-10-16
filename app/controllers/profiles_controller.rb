@@ -1,4 +1,5 @@
 class ProfilesController < ApplicationController
+  before_action :require_login
   before_action :set_user, only: %i[edit update]
 
   def edit; end
@@ -12,7 +13,9 @@ class ProfilesController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @like_spots = current_user.like_spots.order(created_at: :desc)
+  end
 
   private
 
