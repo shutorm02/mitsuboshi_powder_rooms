@@ -18,13 +18,13 @@
       <div class="pt-5 pb-3">
         <%= f.label :avatar, class: 'block mb-1 pr-4' %>
       </div>
-      <%= f.file_field :avatar, onchange: 'previewFileWithId(preview)', class: 'w-full rounded border border-gray-200 p-2', accept: 'image/*' %>
+      <%= f.file_field :avatar, id: 'image_select_btn', class: 'w-full rounded border border-gray-200 p-2', accept: 'image/*' %>
       <%= f.hidden_field :avatar_cache %>
     </div>
     <div class="mb-4">
       <%= image_tag @user.avatar.url,
                     class: 'mb-3 w-24 h-24 rounded-full shadow-lg',
-                    id: 'preview' %>
+                    id: 'preview_image' %>
     </div>
     <div class="my-8 md:text-center">
       <%= f.submit t('defaults.edit'), class: 'btn nomal-btn' %>

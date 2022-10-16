@@ -12,6 +12,7 @@ import '@fortawesome/fontawesome-free/js/all'
 window.$ = window.jQuery = require('jquery')
 require('js/jquery_raty.js')
 require('js/profile_tabs.js')
+require('js/preview.js')
 
 const images = require.context('../images/', true)
 const imagePath = (name) => images(name, true)
