@@ -69,6 +69,16 @@ ja:
     index:
       title: 'すべての評価'
       no_result: '評価がありません'
+  profiles:
+    show:
+      favorites: 'お気に入り'
+      feedbacks: '評価'
+      posts: '投稿'
+      no_favorite: 'お気に入りしているスポットはありません'
+      no_feedback: '評価しているスポットはありません'
+      no_posts: '投稿したスポットはありません'
+    edit:
+      title: 'プロフィール編集'
 
   admin:
     user_sessions: 

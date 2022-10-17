@@ -49,10 +49,6 @@ class SpotsController < ApplicationController
     redirect_to spots_path, success: t('defaults.message.deleted', item: Spot.model_name.human)
   end
 
-  def likes
-    @like_spots = current_user.like_spots.include(:user).arder(created_at: :desc)
-  end
-
   private
 
   def spot_params

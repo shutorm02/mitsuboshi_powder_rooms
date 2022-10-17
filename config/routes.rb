@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     end
   end
   resources :likes, only: %i[create destroy]
+  resource :profile, only: %i[show edit update]
 
   namespace :admin do
     root to: 'dashboards#index'

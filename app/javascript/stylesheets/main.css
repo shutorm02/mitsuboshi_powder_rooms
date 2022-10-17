@@ -12,3 +12,29 @@ body {
 #buttom-navbar {
   box-shadow: 0 0 3px white; 
 }
+
+.panel {
+  display: none;
+}
+
+.tab {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border-bottom-width: 2px;
+  border-color: transparent;
+}
+
+.tab:hover {
+  color: rgb(75 85 99);
+  border-color: rgb(209 213 219);
+}
+
+.tab.is-active {
+  border-color: rgb(117 204 232);
+  transition: all 0.2s ease-out;
+}
+
+.panel.is-show {
+  display: block;
+}
+  

@@ -2,7 +2,8 @@
   <div id="feedback-id-<%= feedback.id %>">
     <div class="p-4">
       <div class="flex items-center">
-        <i class="fa-solid fa-circle-user text-fitting-pink h-8 w-8"></i>
+        <%= image_tag feedback.user.avatar.url,
+                      class: 'w-8 h-8 rounded-full shadow-lg' %>
         <p class="mx-2 text-xs"><%= feedback.user.name %></p>
         <div id="star-rate-<%= feedback.id %>" class="ml-auto"></div>
       </div>
