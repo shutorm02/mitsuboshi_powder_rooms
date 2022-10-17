@@ -9,11 +9,11 @@ import 'channels'
 import 'stylesheets/tailwind.css'
 require('stylesheets/main.css')
 import '@fortawesome/fontawesome-free/js/all'
-window.$ = window.jQuery = require('jquery')
 require('js/jquery_raty.js')
 require('js/profile_tabs.js')
 require('js/preview.js')
 
+window.$ = window.jQuery = require('jquery')
 const images = require.context('../images/', true)
 const imagePath = (name) => images(name, true)
 

@@ -15,5 +15,5 @@ document.addEventListener('DOMContentLoaded', function(){
     const arrayTabs = Array.prototype.slice.call(tabs);
     const index = arrayTabs.indexOf(this);
     document.getElementsByClassName('panel')[index].classList.add('is-show');
-  };
+  }
 }, false);
