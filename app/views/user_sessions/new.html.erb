@@ -1,31 +1,40 @@
 <div class="w-full max-w-sm my-24">
-  <h1 class="font-bold mb-4"><%= t('.title') %></h1>
-    <%= form_with url: login_path, local: true do |f| %>
-      <div class="mb-4">
-        <div class="pt-5 pb-3">
-          <%= f.label :email, User.human_attribute_name(:email), class: 'block mb-1 pr-4' %>
-        </div>
-        <%= f.email_field :email, class: 'w-full rounded border border-gray-200 p-2' %>
+  <h1 class="font-bold mb-10"><%= t('.title') %></h1>
+  <%= link_to auth_at_provider_path(provider: :twitter) do %>
+    <button class="w-full text-white bg-twitter-blue hover:bg-mitsuboshi-blue text-center rounded shadow mb-5 py-2 px-4">
+      <p><i class="fab fa-twitter"></i> <%= t('.login_with_twitter') %></p>
+    </button>
+  <% end %>
+  <div class="inline-flex justify-center items-center w-full">
+    <hr class="my-8 w-full h-px bg-mitsuboshi-gray border-0">
+    <span class="absolute px-3 bg-base-color"><%= t('.or') %></span>
+  </div>
+  <%= form_with url: login_path, local: true do |f| %>
+    <div class="mb-2">
+      <div class="pt-4 pb-3">
+        <%= f.label :email, User.human_attribute_name(:email), class: 'block mb-1 pr-4' %>
       </div>
-      <div class="mb-4">
-        <div class="pt-5 pb-3">
-          <%= f.label :password, User.human_attribute_name(:password), class: 'block ' %>
-        </div>
-        <%= f.password_field :password, class: 'w-full rounded  border border-gray-200 p-2' %>
-      </div>
-      <div class="my-8 md:text-center">
-        <%= f.submit t('defaults.login'), class: 'btn nomal-btn' %>
-      </div>
-    <% end %>
-    <div class="mt-6 text-center">
-      <div class="mb-2">
-        <%= t('.to_register_page') %>
-        <%= link_to t('defaults.here'), new_user_path, class: 'underline' %>
-      </div>
-      <div>
-        <%= t('.password_forget') %>
-        <a href="#", class="underline"><%= t('defaults.here') %></a>
-      </div>
+      <%= f.email_field :email, class: 'w-full rounded border border-gray-200 p-2' %>
     </div>
+    <div class="mb-2">
+      <div class="pt-5 pb-3">
+        <%= f.label :password, User.human_attribute_name(:password), class: 'block ' %>
+      </div>
+      <%= f.password_field :password, class: 'w-full rounded  border border-gray-200 p-2' %>
+    </div>
+    <div class="my-8 md:text-center">
+      <%= f.submit t('defaults.login'), class: 'btn nomal-btn' %>
+    </div>
+  <% end %>
+  <div class="mt-6 text-center">
+    <div class="mb-2">
+      <%= t('.to_register_page') %>
+      <%= link_to t('defaults.here'), new_user_path, class: 'hover:underline hover:text-gray-600 hover:decoration-gray-600' %>
+    </div>
+    <div>
+      <%= t('.password_forget') %>
+      <a href="#", class="hover:underline hover:text-gray-600 hover:decoration-gray-600"><%= t('defaults.here') %></a>
+    </div>
+  </div>
 </div>
 
