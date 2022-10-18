@@ -81,7 +81,7 @@ ja:
       title: 'プロフィール編集'
   oauths:
     callback:
-      success: "%{item}でログインしました'
+      success: "%{item}でログインしました"
 
   admin:
     user_sessions: 
