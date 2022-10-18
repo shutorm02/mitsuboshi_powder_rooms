@@ -1,7 +1,7 @@
 <div class="w-full max-w-sm my-24">
   <h1 class="font-bold mb-10"><%= t('.title') %></h1>
   <%= link_to auth_at_provider_path(provider: :twitter) do %>
-    <button class="w-full text-white bg-twitter-blue hover:bg-mitsuboshi-blue text-center rounded shadow mb-5 py-2 px-4">
+    <button class="w-full text-white font-bold bg-twitter-blue hover:bg-mitsuboshi-blue text-center rounded shadow mb-5 py-2 px-4">
       <p><i class="fab fa-twitter"></i> <%= t('.login_with_twitter') %></p>
     </button>
   <% end %>
