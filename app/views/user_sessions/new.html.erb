@@ -1,4 +1,5 @@
 <div class="w-full max-w-sm my-24">
+  <h1 class="font-bold mb-10"><%= t('.title') %></h1>
   <%= link_to auth_at_provider_path(provider: :twitter) do %>
     <button class="w-full text-white bg-twitter-blue hover:bg-mitsuboshi-blue text-center rounded shadow mb-5 py-2 px-4">
       <p><i class="fab fa-twitter"></i> <%= t('.login_with_twitter') %></p>
@@ -28,11 +29,11 @@
   <div class="mt-6 text-center">
     <div class="mb-2">
       <%= t('.to_register_page') %>
-      <%= link_to t('defaults.here'), new_user_path, class: 'underline' %>
+      <%= link_to t('defaults.here'), new_user_path, class: 'hover:underline hover:text-gray-600 hover:decoration-gray-600' %>
     </div>
     <div>
       <%= t('.password_forget') %>
-      <a href="#", class="underline"><%= t('defaults.here') %></a>
+      <a href="#", class="hover:underline hover:text-gray-600 hover:decoration-gray-600"><%= t('defaults.here') %></a>
     </div>
   </div>
 </div>
