@@ -2,25 +2,25 @@
   <h1 class="font-bold mb-4"><%= t('.title') %></h1>
   <%= form_with model: @user, local: true do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
-    <div class="mb-4">
+    <div class="mb-2">
       <div class="pt-5 pb-3">
         <%= f.label :name %>
       </div>
       <%= f.text_field :name, class: 'w-full rounded border border-gray-200 p-2' %>
     </div>
-    <div class="mb-4">
+    <div class="mb-2">
       <div class="pt-5 pb-3">
         <%= f.label :email, class: 'block mb-1 pr-4' %>
       </div>
       <%= f.email_field :email, class: 'w-full rounded border border-gray-200 p-2' %>
     </div>
-    <div class="mb-4">
+    <div class="mb-2">
       <div class="pt-5 pb-3">
         <%= f.label :password, class: 'block mb-1 pr-4' %>
       </div>
       <%= f.password_field :password, class: 'w-full rounded border border-gray-200 p-2' %>
     </div>
-    <div class="mb-4">
+    <div class="mb-2">
       <div class="pt-5 pb-3">
         <%= f.label :password_confirmation, class: 'block mb-1 pr-4' %>
       </div>
