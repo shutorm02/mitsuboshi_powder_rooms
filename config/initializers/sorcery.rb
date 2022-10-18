@@ -117,7 +117,7 @@ Rails.application.config.sorcery.configure do |config|
   #
   config.twitter.key = ENV['TWITTER_KEY_ID']
   config.twitter.secret = ENV['TWITTER_SECRET_KEY_ID']
-  config.twitter.callback_url = "https://www.mitsuboshi-powder-rooms.jp/oauth/callback"
+  config.twitter.callback_url = "https://www.mitsuboshi-powder-rooms.jp/oauth/callback?provider=twitter"
   config.twitter.user_info_mapping = {
     email: 'screen_name',
     name: 'name'
