@@ -79,6 +79,9 @@ ja:
       no_posts: '投稿したスポットはありません'
     edit:
       title: 'プロフィール編集'
+  oauths:
+    callback:
+      success: "%{item}でログインしました'
 
   admin:
     user_sessions: 
