@@ -44,6 +44,8 @@ ja:
       title: 'ログイン'
       to_register_page: 'ユーザー登録の方は'
       password_forget: 'パスワードをお忘れの方は'
+      login_with_twitter: 'Twitterアカウントで登録・ログイン'
+      or: 'もしくは'
     create:
       success: 'ログインしました'
       fail: 'ログインに失敗しました'
