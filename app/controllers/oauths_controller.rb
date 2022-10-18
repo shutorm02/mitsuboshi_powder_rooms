@@ -9,7 +9,7 @@ class OauthsController < ApplicationController
     provider = auth_params[:provider]
     if auth_params[:denied].present?
       redirect_to root_path, success: t('.success', item: provider.titleize)
-      return
+      nil
     else
       create_user_from(provider) unless (@user = login_from(provider))
       redirect_to root_path, success: t('.success', item: provider.titleize)
