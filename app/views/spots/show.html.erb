@@ -26,7 +26,7 @@
       <%= link_to edit_spot_path(@spot), id: "button-edit-#{@spot.id}" do %> 
         <button class="btn nomal-btn mr-3"><%= t('defaults.edit') %></button>
       <% end %> 
-      <%= link_to spot_path(@spot), id: "button-delete=#{@spot.id}", method: :delete, data: { confirm: "「スポット: #{@spot.name}」を削除しますか？" } do %>
+      <%= link_to spot_path(@spot), id: "button-delete-#{@spot.id}", method: :delete, data: { confirm: "「スポット: #{@spot.name}」を削除しますか？" } do %>
         <button class="btn delete-btn"><%= t('defaults.destroy') %></button>
       <% end %>
     </div>
@@ -41,7 +41,20 @@
         <% end %>
       </div>
     </div>
-    <% if logged_in? && current_user.own?(@spot) %>
+    <% if logged_in? && current_user.own?(@spot) && @spot.image.present? %>
+      <div class="flex justify-center pb-5">
+        <%= link_to edit_spot_spot_image_path(@spot),
+                    id: "button-edit-image-#{@spot.image.id}" do %> 
+          <button class="btn nomal-btn mr-3"><%= t('defaults.edit') %></button>
+        <% end %> 
+        <%= link_to spot_spot_image_path(@spot),
+                    id: "button-delete-image-#{@spot.image.id}",
+                    method: :delete,
+                    data: { confirm: t('defaults.message.delete_confirm') } do %>
+          <button class="btn delete-btn"><%= t('defaults.destroy') %></button>
+        <% end %>
+      </div>
+    <% elsif logged_in? && current_user.own?(@spot) %>
       <div class="flex justify-center pb-5">
         <%= link_to new_spot_spot_image_path(@spot), id: "button-add-image-#{@spot.id}" do %> 
           <button class="text-center rounded shadow py-2 px-4 w-40 nomal-btn"><%= t('defaults.add-image') %></button>
