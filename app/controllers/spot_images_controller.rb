@@ -3,18 +3,18 @@ class SpotImagesController < ApplicationController
   before_action :set_spot
 
   def new
-    @image = @spot.image.new
+    @image = SpotImage.new
   end
 
   def edit; end
 
   def create
-    @image = @spot.image.new(image_params)
+    @image = @spot.build_image(image_params)
 
     if @image.save
-      redirect_to spot_path(@spot), success: t('.success')
+      redirect_to spot_path(@spot), success: t('defaults.message.added', item: SpotImage.model_name.human)
     else
-      flash.now['danger'] = t('.fail', item: SpotImage.model_name.human)
+      flash.now['danger'] = t('defaults.message.not_added', item: SpotImage.model_name.human)
       render :new
     end
   end
@@ -32,6 +32,6 @@ class SpotImagesController < ApplicationController
   end
   
   def image_params
-    params.require(:spot_image).permit(:spot_image, :spot_image_cache)
+    params.require(:spot_image).permit(:image, :image_cache)
   end
 end

@@ -4,7 +4,7 @@ ja:
       user: 'ユーザー'
       spot: 'スポット'
       feedback : '評価'
-      spot_image: '画像'
+      spot_image: '写真'
     attributes:
       user:
         name: 'アカウント名'
