@@ -4,6 +4,7 @@ ja:
       user: 'ユーザー'
       spot: 'スポット'
       feedback : '評価'
+      spot_image: '画像'
     attributes:
       user:
         name: 'アカウント名'
@@ -21,6 +22,8 @@ ja:
       feedback:
         rate: '総合点'
         feedback_comment: '評価コメント'
+      spot_image:
+        image: '画像'
 
   activemodel:
     attributes:

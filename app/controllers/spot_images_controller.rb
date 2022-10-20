@@ -16,6 +16,7 @@ class SpotImagesController < ApplicationController
     else
       flash.now['danger'] = t('.fail', item: SpotImage.model_name.human)
       render :new
+    end
   end
 
   def destroy

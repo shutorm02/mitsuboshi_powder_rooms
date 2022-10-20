@@ -1,0 +1,13 @@
+<%= form_with model: [@spot, @image], local: true do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="mb-5">
+    <div class="pt-5 pb-3">
+      <%= f.label :image %>
+    </div>
+    <%= f.file_field :image, class: 'w-full rounded border border-gray-200 p-2' %>
+  </div>
+  <div class="my-8 flex justify-center">
+    <%= f.submit t('defaults.save'), class: 'btn nomal-btn' %>
+  </div>
+<% end %>
+
