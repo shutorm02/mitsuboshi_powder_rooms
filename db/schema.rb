@@ -72,8 +72,8 @@ ActiveRecord::Schema.define(version: 2022_10_20_014854) do
   end
 
   create_table "spot_images", force: :cascade do |t|
-    t.string "image"
-    t.integer "spot_id", null: false
+    t.string "image", null: false
+    t.integer "spot_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["spot_id"], name: "index_spot_images_on_spot_id"
