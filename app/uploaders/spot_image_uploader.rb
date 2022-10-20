@@ -23,5 +23,5 @@ class SpotImageUploader < CarrierWave::Uploader::Base
     0..8.megabytes
   end
 
-  process resize_to_fill: [1100, 1000]
+  process resize_to_fill: [1200, 1000]
 end
