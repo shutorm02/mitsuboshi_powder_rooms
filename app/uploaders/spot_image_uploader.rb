@@ -1,4 +1,6 @@
 class SpotImageUploader < CarrierWave::Uploader::Base
+  include CarrierWave::MiniMagick
+
   if Rails.env.development? || Rails.env.test?
     storage :file
   else
@@ -16,4 +18,10 @@ class SpotImageUploader < CarrierWave::Uploader::Base
   def extension_allowlist
     %w[jpg jpeg gif png]
   end
+
+  def size_range
+    0..8.megabytes
+  end
+
+  process resize_to_fill: [1100, 1000]
 end
