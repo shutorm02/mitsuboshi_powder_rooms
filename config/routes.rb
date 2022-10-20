@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     collection do
       get :likes
     end
-    resources :spot_images, only: %i[new create edit update destroy]
+    resources :spot_images, only: %i[new create edit update destroy], shallow: true
   end
   resources :likes, only: %i[create destroy]
   resource :profile, only: %i[show edit update]
