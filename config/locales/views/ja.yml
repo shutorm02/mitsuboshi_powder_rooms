@@ -16,7 +16,7 @@ ja:
     privacy: 'プライバシーポリシー'
     contact: 'お問い合わせ'
     here: 'こちら'
-    add-image: '画像を追加する'
+    add-image: '写真を追加する'
     reviews: '件の評価'
     give_feedback: '評価する'
     multiple_choices_allowed: '※複数選択可'
@@ -33,6 +33,8 @@ ja:
       deleted: "%{item}を削除しました"
       delete_confirm: "本当に削除しますか？"
       not_authorized: '権限がありません'
+      added: '%{item}を追加しました'
+      not_added: '%{item}を追加できませんでした'
   users:
     new:
       title: 'ユーザー登録'
