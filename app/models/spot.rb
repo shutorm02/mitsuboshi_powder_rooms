@@ -4,7 +4,7 @@ class Spot < ApplicationRecord
   has_many :equipment_details, through: :equipments
   has_many :likes, dependent: :destroy
   has_many :feedbacks, dependent: :destroy
-  has_one :spot_image, dependent: :destroy
+  has_one :image, dependent: :destroy, class_name: 'SpotImage', inverse_of: :spot
 
   validates :name, uniqueness: true
   validates :address, uniqueness: true
