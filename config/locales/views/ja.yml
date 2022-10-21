@@ -17,6 +17,7 @@ ja:
     contact: 'お問い合わせ'
     here: 'こちら'
     add-image: '写真を追加する'
+    delete-image: '写真を削除する'
     reviews: '件の評価'
     give_feedback: '評価する'
     multiple_choices_allowed: '※複数選択可'

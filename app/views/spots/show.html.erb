@@ -45,15 +45,11 @@
     </div>
     <% if logged_in? && current_user.own?(@spot) && @spot.image.present? %>
       <div class="flex justify-center pb-5">
-        <%= link_to edit_spot_image_path(@spot),
-                    id: "button-edit-image-#{@spot.image.id}" do %> 
-          <button class="btn nomal-btn mr-3"><%= t('defaults.edit') %></button>
-        <% end %> 
         <%= link_to spot_image_path(@spot),
                     id: "button-delete-image-#{@spot.image.id}",
                     method: :delete,
                     data: { confirm: t('defaults.message.delete_confirm') } do %>
-          <button class="btn delete-btn"><%= t('defaults.destroy') %></button>
+          <button class="text-center rounded shadow py-2 px-4 w-40 delete-btn"><%= t('defaults.delete-image') %></button>
         <% end %>
       </div>
     <% elsif logged_in? && current_user.own?(@spot) %>
