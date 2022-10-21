@@ -20,7 +20,7 @@ class SpotImageUploader < CarrierWave::Uploader::Base
   end
 
   def size_range
-    0..8.megabytes
+    (0.megabytes)..(8.megabytes)
   end
 
   process resize_to_fill: [1200, 1000]
