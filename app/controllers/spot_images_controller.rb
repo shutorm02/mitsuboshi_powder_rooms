@@ -1,13 +1,10 @@
 class SpotImagesController < ApplicationController
   before_action :require_login
   before_action :set_spot, only: %i[new create]
-  before_action :find_spot, only: %i[edit update destroy]
 
   def new
     @image = SpotImage.new
   end
-
-  def edit; end
 
   def create
     @image = @spot.build_image(image_params)
@@ -21,6 +18,7 @@ class SpotImagesController < ApplicationController
   end
 
   def destroy
+    @spot = current_user.spots.find(params[:id])
     @spot.image.destroy!
     redirect_to spot_path(@spot), success: t('defaults.message.deleted', item: SpotImage.model_name.human)
   end
@@ -29,10 +27,6 @@ class SpotImagesController < ApplicationController
 
   def set_spot
     @spot = current_user.spots.find(params[:spot_id])
-  end
-  
-  def find_spot
-    @spot = current_user.spots.find(params[:id])
   end
 
   def image_params
