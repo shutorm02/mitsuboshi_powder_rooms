@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :spot_image do
-    image { "MyString" }
+    image { 'MyString' }
     spot { nil }
   end
 end
