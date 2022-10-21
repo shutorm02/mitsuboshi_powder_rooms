@@ -38,3 +38,12 @@ body {
   display: block;
 }
   
+.spot-image {
+  height: 300px;
+  width: 100%;
+} 
+
+.spot-image-mini {
+  height: 250px;
+  width: 100%;
+}

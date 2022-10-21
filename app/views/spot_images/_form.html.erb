@@ -1,0 +1,23 @@
+<div class="border-b-2 border-bg-mitsuboshi-gray pb-3">
+  <%= render 'spots/spot_title', spot: @spot %>
+</div>
+<div class="px-5 pt-5">
+  <%= form_with model: @image, url: [@spot, @image], local: true do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="mb-4">
+      <div class="pt-5 pb-3">
+        <%= f.label :image %>
+      </div>
+      <%= f.file_field :image, id: 'image_select_btn', class: 'w-full rounded border border-gray-200 p-2' %>
+      <%= f.hidden_field :image_cache %>
+    </div>
+    <div class="mb-4">
+      <%= image_tag 'spot_placeholder.png',
+                    class: 'spot-image border border-gray-200',
+                    id: 'preview_image' %>
+    </div>
+    <div class="my-8 flex justify-center">
+      <%= f.submit t('defaults.add-image'), class: 'text-center rounded shadow py-2 px-4 w-40 nomal-btn' %>
+    </div>
+  <% end %>
+</div>

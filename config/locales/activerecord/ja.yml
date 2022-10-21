@@ -4,6 +4,7 @@ ja:
       user: 'ユーザー'
       spot: 'スポット'
       feedback : '評価'
+      spot_image: '写真'
     attributes:
       user:
         name: 'アカウント名'
@@ -18,6 +19,8 @@ ja:
         latitude: '緯度'
         longitude: '経度'
         user_id: 'ユーザー名'
+      spot_image:
+        image: '写真'
       feedback:
         rate: '総合点'
         feedback_comment: '評価コメント'

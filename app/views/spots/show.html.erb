@@ -26,11 +26,40 @@
       <%= link_to edit_spot_path(@spot), id: "button-edit-#{@spot.id}" do %> 
         <button class="btn nomal-btn mr-3"><%= t('defaults.edit') %></button>
       <% end %> 
-      <%= link_to spot_path(@spot), id: "button-delete=#{@spot.id}", method: :delete, data: { confirm: "「スポット: #{@spot.name}」を削除しますか？" } do %>
+      <%= link_to spot_path(@spot), id: "button-delete-#{@spot.id}", method: :delete, data: { confirm: "「スポット: #{@spot.name}」を削除しますか？" } do %>
         <button class="btn delete-btn"><%= t('defaults.destroy') %></button>
       <% end %>
     </div>
   <% end %>
+  <div class="border-t-2 border-bg-mitsuboshi-gray">
+    <div class="px-5 py-5">
+      <div class="pt-2 pb-2">
+        <% if @spot.image.present? %>
+          <%= image_tag @spot.image.image.url,
+                        class: 'spot-image border border-gray-200' %>
+        <% else %>
+          <%= image_tag 'spot_placeholder.png',
+                         class: 'spot-image' %>
+        <% end %>
+      </div>
+    </div>
+    <% if logged_in? && current_user.own?(@spot) && @spot.image.present? %>
+      <div class="flex justify-center pb-7">
+        <%= link_to spot_image_path(@spot),
+                    id: "button-delete-image-#{@spot.image.id}",
+                    method: :delete,
+                    data: { confirm: t('defaults.message.delete_confirm') } do %>
+          <button class="text-center rounded shadow py-2 px-4 w-40 delete-btn"><%= t('defaults.delete-image') %></button>
+        <% end %>
+      </div>
+    <% elsif logged_in? && current_user.own?(@spot) %>
+      <div class="flex justify-center pb-5">
+        <%= link_to new_spot_spot_image_path(@spot), id: "button-add-image-#{@spot.id}" do %> 
+          <button class="text-center rounded shadow py-2 px-4 w-40 nomal-btn"><%= t('defaults.add-image') %></button>
+        <% end %> 
+      </div>
+    <% end %>
+  </div>
   <%= render 'feedbacks/feedbacks', { spot: @spot, feedbacks: @feedbacks } %>
 </div>
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_18_054340) do
+ActiveRecord::Schema.define(version: 2022_10_20_014854) do
 
   create_table "authentications", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -71,6 +71,14 @@ ActiveRecord::Schema.define(version: 2022_10_18_054340) do
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
+  create_table "spot_images", force: :cascade do |t|
+    t.string "image", null: false
+    t.integer "spot_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["spot_id"], name: "index_spot_images_on_spot_id"
+  end
+
   create_table "spots", force: :cascade do |t|
     t.string "name", null: false
     t.string "address", null: false
@@ -121,6 +129,7 @@ ActiveRecord::Schema.define(version: 2022_10_18_054340) do
   add_foreign_key "feedbacks", "users"
   add_foreign_key "likes", "spots"
   add_foreign_key "likes", "users"
+  add_foreign_key "spot_images", "spots"
   add_foreign_key "spots", "users"
   add_foreign_key "tags", "target_people"
 end
