@@ -8,7 +8,8 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
-      'hans': ['SourceHanSans', 'sans-serif']
+      'hans': ['SourceHanSans', 'sans-serif'],
+        'kaisei': ['Kaisei Decol', 'sans-serif']
     },
     extend: {
       colors: {
