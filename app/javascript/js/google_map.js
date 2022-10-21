@@ -25,11 +25,32 @@ window.initMap = () => {
   // Map上に「現在地を取得」ボタンを表示
   const locationButton = document.createElement('button');
 
-  locationButton.textContent = '現在地に移動する'
+  locationButton.textContent = '現在地へ移動する'
   locationButton.classList.add('block', 'text-center', 'rounded', 'shadow', 'mx-2', 'py-2', 'px-4', 'text-white', 'font-bold', 'text-base', 'bg-mitsuboshi-blue', 'hover:bg-baby-blue')
 　map.controls[google.maps.ControlPosition.LEFT_TOP].push(locationButton);
 
+  locationButton.addEventListener('click', () => {
   
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        let currentLocation = new window.google.maps.LatLng(
+          position.coords.latitude,
+          position.coords.longitude
+        )
+
+        map = new window.google.maps.Map(document.getElementById('spotsMap'), {
+          center: currentLocation,
+          zoom: 14,
+        })
+
+        setCurrentLocation(currentLocation)
+
+        createMarker()
+      })
+    } else {
+      alert('現在地を取得できませんでした。')
+    }
+  });
 
   geocoder = new window.google.maps.Geocoder()
 
