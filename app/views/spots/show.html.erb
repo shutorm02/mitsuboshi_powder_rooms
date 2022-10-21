@@ -35,9 +35,11 @@
     <div class="px-5 py-5">
       <div class="pt-2 pb-2">
         <% if @spot.image.present? %>
-          <%= image_tag @spot.image.image.url, class: 'spot-image' %>
+          <%= image_tag @spot.image.image.url,
+                        class: 'spot-image border border-gray-200' %>
         <% else %>
-          <%= image_tag 'spot_placeholder.png', class: 'spot-image' %>
+          <%= image_tag 'spot_placeholder.png',
+                         class: 'spot-image' %>
         <% end %>
       </div>
     </div>
