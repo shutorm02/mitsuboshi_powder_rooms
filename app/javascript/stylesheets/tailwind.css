@@ -13,7 +13,7 @@
     @apply border border-mitsuboshi-gray bg-white hover:bg-mitsuboshi-gray;
   }
   .delete-btn {
-    @apply bg-white text-gray-500 border-none hover:text-white hover:bg-black;
+    @apply bg-white border-none hover:text-white hover:bg-black;
   }
   .custom-icon {
     @apply text-white py-1 px-3 hover:text-mitsuboshi-blue;

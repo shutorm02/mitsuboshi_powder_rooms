@@ -44,7 +44,7 @@
       </div>
     </div>
     <% if logged_in? && current_user.own?(@spot) && @spot.image.present? %>
-      <div class="flex justify-center pb-5">
+      <div class="flex justify-center pb-7">
         <%= link_to spot_image_path(@spot),
                     id: "button-delete-image-#{@spot.image.id}",
                     method: :delete,
