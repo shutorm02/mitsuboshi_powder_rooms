@@ -7,11 +7,11 @@
       <p class="text-base truncate">
         <%= current_user.name %> 
       </p>
-      <p class="truncate">
+      <p class="text-gray-500 truncate">
         <%= current_user.email %> 
       </p>
       <%= link_to edit_profile_path do %>
-      <div class="text-center rounded shadow mt-3 py-1 px-4 w-2/3 nomal-btn truncate">
+      <div class="text-center rounded shadow mt-3 py-1 px-4 w-1/2 nomal-btn truncate">
         <%= t('defaults.edit') %>
       </div>
       <% end %>

@@ -82,7 +82,7 @@ ja:
       posts: '投稿'
       no_favorite: 'お気に入りしているスポットはありません'
       no_feedback: '評価しているスポットはありません'
-      no_posts: '投稿したスポットはありません'
+      no_post: '投稿したスポットはありません'
     edit:
       title: 'プロフィール編集'
   oauths:
