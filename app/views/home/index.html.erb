@@ -1,6 +1,49 @@
 <div>
-  <div class="max-w-md">
+  <div class="max-w-md pb-24">
   <%= image_pack_tag 'media/images/top.png' %>
+    <div class="text-center border-dotted border-t-2 border-fitting-pink py-20">
+      <h1 class="font-kaisei text-3xl title-font text-gray-900 mb-4">三つ星トイレの使い方</h1>
+      <div class="text-base leading-relaxed mx-auto text-gray-500">
+        <p>　三つ星トイレは、キレイで設備も豊富で、まるで三つ星ホテルのようなトイレを投稿・共有するトイレ検索サービスです。</p>
+      </div>
+      <div class="flex mt-6 justify-center">
+        <div class="w-16 h-1 rounded-full bg-fitting-pink inline-flex"></div>
+      </div>
+    </div>
+    <div class="flex flex-wrap">
+      <div class="mb-6 p-4 flex flex-col text-center items-center">
+        <div class="inline-flex items-center justify-center justify-center mb-5 flex-shrink-0">
+          <%= image_pack_tag 'media/images/search.svg' %>
+        </div>
+        <div class="flex-grow">
+          <h2 class="font-kaisei text-gray-900 text-lg title-font font-medium mb-3">その1. スポットを検索してみよう</h2>
+          <p class="leading-relaxed text-base text-gray-500">　まずは、ページ下部の「検索」ボタンから、スポットを検索・閲覧してみましょう。 スポットの検索方法は、「現在地から検索」と「住所・スポット名から検索」の二種類。リスト表示にすると、現在投稿されているすべてのスポットの情報を閲覧することができます。</p>
+        </div>
+      </div>
+      <div class="mb-6 p-4 flex flex-col text-center items-center">
+        <div class="inline-flex items-center justify-center mb-5 flex-shrink-0">
+          <%= image_pack_tag 'media/images/login.svg' %>
+        </div>
+        <div class="flex-grow">
+          <h2 class="font-kaisei text-gray-900 text-lg title-font font-medium mb-3">その2. ユーザー登録をしてみよう</h2>
+          <p class="leading-relaxed text-base text-gray-500">　三つ星トイレにユーザー登録すると、「スポット情報の投稿」や「投稿されたスポットへの三つ星評価」、「お気に入りのスポットの登録」などができるようになります。</p>
+        </div>
+      </div>
+      <div class="mb-6 p-4 flex flex-col text-center items-center">
+        <div class="inline-flex items-center justify-center mb-5 flex-shrink-0">
+          <%= image_pack_tag 'media/images/post.svg' %>
+        </div>
+        <div class="flex-grow">
+          <h2 class="font-kaisei text-gray-900 text-lg title-font font-medium mb-3">その3. お気に入りのスポットを投稿・評価しよう</h2>
+          <p class="leading-relaxed text-base text-gray-500">　ユーザー登録を済ませたら、ページ下部の「投稿」ボタンから、あなたが見つけたお気に入りのスポットを投稿してみましょう。投稿後、スポット情報の詳細から、三段階の三つ星評価をすることができます。</p>
+        </div>
+      </div>
+    </div>
+    <div class="flex justify-center py-5">
+      <%= link_to new_user_path do %> 
+        <button class="text-center rounded shadow py-2 px-4 nomal-btn mr-3"><%= t('defaults.start_using_the_service') %></button>
+      <% end %> 
+    </div>
   </div>
   <%= render 'shared/footer' %>
 </div>

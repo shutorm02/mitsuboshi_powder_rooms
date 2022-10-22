@@ -1,30 +1,34 @@
-<nav id="buttom-navbar" class="fixed bottom-0 left-0 right-0 bg-fitting-pink px-2 py-2">
+<nav id="buttom-navbar" class="fixed bottom-0 left-0 right-0 bg-fitting-pink px-2 py-1">
   <ul class="flex justify-center items-center">
     <li class="mx-2">
       <%= link_to root_path do %>
-      <button class="inline-block text-center m-2">
-        <i class="custom-icon fa-solid fa-house fa-xl hover:text-mitsuboshi-blue"></i>
+      <button class="group inline-block text-center m-2">
+        <i class="custom-icon fa-solid fa-house fa-xl group-hover:text-mitsuboshi-blue"></i>
+        <p class="icon-text group-hover:text-mitsuboshi-blue"><%= t('defaults.home') %></p>
       </button>
     <% end %>
     </li>
     <li class="mx-2">
       <%= link_to spots_path do %>
-        <button class="inline-block text-center m-2">
-          <i class="custom-icon fa-solid fa-magnifying-glass fa-xl hover:text-mitsuboshi-blue"></i>
+        <button class="group inline-block text-center m-2">
+          <i class="custom-icon fa-solid fa-magnifying-glass fa-xl group-hover:text-mitsuboshi-blue"></i>
+          <p class="icon-text group-hover:text-mitsuboshi-blue"><%= t('defaults.search') %></p>
         </button>
       <% end %>
     </li>
     <li class="mx-2">
       <%= link_to profile_path do %>
-        <button class="inline-block text-center m-2">
-          <i class="custom-icon fa-solid fa-user fa-xl hover:text-mitsuboshi-blue"></i>
+        <button class="group inline-block text-center m-2">
+          <i class="custom-icon fa-solid fa-circle-user fa-xl group-hover:text-mitsuboshi-blue"></i>
+          <p class="icon-text group-hover:text-mitsuboshi-blue"><%= t('defaults.mypage') %></p>
         </button>
       <% end %>
     </li>
     <li class="mx-2">
       <%= link_to new_spot_path do %>
-        <button class="inline-block text-center m-2">
-          <i class="custom-icon fa-solid fa-pen-to-square fa-xl hover:text-mitsuboshi-blue"></i>
+        <button class="group inline-block text-center m-2">
+          <i class="custom-icon fa-solid fa-plus fa-xl group-hover:text-mitsuboshi-blue"></i>
+          <p class="icon-text group-hover:text-mitsuboshi-blue"><%= t('defaults.post') %></p>
         </button>
       <% end %>
     </li>

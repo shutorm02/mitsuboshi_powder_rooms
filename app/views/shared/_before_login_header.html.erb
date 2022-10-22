@@ -6,7 +6,10 @@
   </div>
   <button class="flex items-center">
     <%= link_to login_path do %>
-      <i class="fa-solid fa-right-to-bracket fa-xl custom-icon flex-shrink-0 hover:text-mitsuboshi-blue"></i>
+      <div class="group inline-block text-center mx-3">
+        <i class="fa-solid fa-right-to-bracket fa-xl custom-icon flex-shrink-0 group-hover:text-mitsuboshi-blue"></i>
+        <p class="icon-text group-hover:text-mitsuboshi-blue"><%= t('defaults.login') %></p>
+      </div>
     <% end %>
   </button>
 </header>

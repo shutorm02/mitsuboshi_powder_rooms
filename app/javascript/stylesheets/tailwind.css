@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -17,6 +19,9 @@
   }
   .custom-icon {
     @apply text-white py-1 px-3 hover:text-mitsuboshi-blue;
+  }
+  .icon-text {
+    @apply font-kaisei text-xs text-white;
   }
   .equipment-tag {
     @apply inline-block rounded-full font-semibold px-2 py-1 mr-2 mb-2 text-white;
