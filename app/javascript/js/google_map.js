@@ -27,10 +27,10 @@ window.initMap = () => {
 
   locationButton.textContent = '現在地へ移動する'
   locationButton.classList.add('block', 'text-center', 'rounded', 'shadow', 'mx-2', 'py-2', 'px-4', 'text-white', 'font-bold', 'text-base', 'bg-mitsuboshi-blue', 'hover:bg-baby-blue')
-　map.controls[google.maps.ControlPosition.LEFT_TOP].push(locationButton);
+  map.controls[google.maps.ControlPosition.LEFT_TOP].push(locationButton);
 
   locationButton.addEventListener('click', () => {
-  
+
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
         let currentLocation = new window.google.maps.LatLng(
