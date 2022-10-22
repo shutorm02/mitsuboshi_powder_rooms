@@ -39,6 +39,11 @@
         </div>
       </div>
     </div>
+    <div class="flex justify-center py-5">
+      <%= link_to new_user_path do %> 
+        <button class="text-center rounded shadow py-2 px-4 nomal-btn mr-3"><%= t('defaults.start_using_the_service') %></button>
+      <% end %> 
+    </div>
   </div>
   <%= render 'shared/footer' %>
 </div>

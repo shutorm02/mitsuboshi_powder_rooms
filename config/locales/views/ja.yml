@@ -25,6 +25,7 @@ ja:
     about_spot: '基本情報'
     equipment_details: '設備詳細'
     back: '戻る'
+    start_using_the_service: 'ユーザー登録して、三つ星トイレをはじめる'
     message:
       require_login: 'ログインしてください'
       created: "%{item}を作成しました"
