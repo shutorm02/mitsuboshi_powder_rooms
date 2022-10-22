@@ -44,8 +44,6 @@ window.initMap = () => {
 
         setCurrentLocation(currentLocation)
 
-        alert('現在地を取得しました！');
-
         createMarker()
       })
     } else {
