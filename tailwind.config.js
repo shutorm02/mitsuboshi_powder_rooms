@@ -9,7 +9,7 @@ module.exports = {
   theme: {
     fontFamily: {
       'hans': ['SourceHanSans', 'sans-serif'],
-        'kaisei': ['Kaisei Decol', 'sans-serif']
+      'kaisei': ['Kaisei Decol', 'sans-serif']
     },
     extend: {
       colors: {
