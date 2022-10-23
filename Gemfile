@@ -40,6 +40,7 @@ gem 'high_voltage', '~> 3.1'
 gem 'carrierwave', '~> 2.0'
 gem 'fog-aws'
 gem 'mini_magick'
+gem 'meta-tags'
 
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
