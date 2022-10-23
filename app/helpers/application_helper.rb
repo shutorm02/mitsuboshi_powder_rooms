@@ -1,7 +1,7 @@
 module ApplicationHelper
   def default_meta_tags
     {
-      site: '三つ星トイレ'
+      site: '三つ星トイレ',
       title: '日本各地のキレイで設備豊富なトイレが探せる検索サービス',
       reverse: true,
       separator: '|',
@@ -15,7 +15,7 @@ module ApplicationHelper
         { href: image_url('icon.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/png' },
       ],
       og: {
-        site_name: '三つ星トイレ'
+        site_name: '三つ星トイレ',
         title: '日本各地のキレイで設備豊富なトイレが探せる検索サービス',
         description: '「三つ星トイレ」は、家の外でもキレイなトイレを使いたい…！という人のためのトイレ検索サービス。現在地やお近くのスポット・こだわりや評価から、あなたのお気に入りのトイレを見つけよう！',
         type: 'website',
