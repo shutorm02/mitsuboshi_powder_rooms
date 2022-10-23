@@ -3,6 +3,7 @@ let map
 let spotLatLng
 let markerCurrentLocation
 let geocoder
+let currentInfoWindow
 
 const marker = []
 const infoWindow = []
@@ -29,9 +30,7 @@ window.initMap = () => {
   locationButton.classList.add('custom-map-control-button')
   map.controls[google.maps.ControlPosition.LEFT_TOP].push(locationButton);
 
-  let clickEventType = window.ontouchstart === null ? 'touchstart': 'click';
-
-  locationButton.addEventListener(clickEventType, () => {
+  locationButton.addEventListener('click', () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
         let currentLocation = new window.google.maps.LatLng(
@@ -102,7 +101,11 @@ function createMarker() {
     })
 
     marker[i].addListener('click', function () {
+      if (currentInfoWindow) {
+        currentInfoWindow.close();
+      }
       infoWindow[i].open(map, marker[i])
-    })
+      currentInfoWindow = infoWindow[i]
+    });
   }
 }
