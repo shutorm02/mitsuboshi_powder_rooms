@@ -81,5 +81,11 @@ URLは[こちら](https://www.figma.com/file/xYW06Nc9itu7CjivC8X40y/%E4%B8%89%E3
 README〜ER図作成：6/25 〆切<br>
 メイン機能実装：6/25 - 8/30<br>
 β版をRUNTEQ内リリース（MVP）：8/30〆切<br>
-RUNTEQ内リリース（MVP）後、機能実装：10/12<br>
+RUNTEQ内リリース（MVP）後、機能実装：10/12　　- 10/23<br>
 本番リリース：10/23
+
+## サイト内で使用している素材
+こちらからお借りしています。
+- [Wartercolor Design Site.](https://watercolor.paintmarks.com/)
+- [農民イラスト](https://nawmin.com)
+- [Loose Drawing](https://loosedrawing.com/)
