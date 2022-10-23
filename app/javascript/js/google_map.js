@@ -29,9 +29,7 @@ window.initMap = () => {
   locationButton.classList.add('custom-map-control-button')
   map.controls[google.maps.ControlPosition.LEFT_TOP].push(locationButton);
 
-  let clickEventType = (( window.ontouchstart!==null) ? 'click' : 'touchend');
-
-  locationButton.addEventListener(clickEventType, () => {
+  locationButton.addEventListener('click', () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
         let currentLocation = new window.google.maps.LatLng(
