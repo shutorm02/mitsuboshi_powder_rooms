@@ -3,6 +3,7 @@ let map
 let spotLatLng
 let markerCurrentLocation
 let geocoder
+let currentInfoWindow
 
 const marker = []
 const infoWindow = []
@@ -100,7 +101,11 @@ function createMarker() {
     })
 
     marker[i].addListener('click', function () {
+      if (currentInfoWindow) {
+        currentInfoWindow.close();
+      }
       infoWindow[i].open(map, marker[i])
-    })
+      currentInfoWindow = infoWindow[i]
+    });
   }
 }
