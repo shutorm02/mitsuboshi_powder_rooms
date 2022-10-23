@@ -9,14 +9,14 @@ module ApplicationHelper
       noindex: !Rails.env.production?,
       icon: [
         { href: image_url('favicon.png'), sizes: '32x32' },
-        { href: image_url('icon.svg'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/svg' },
+        { href: image_url('icon.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/png' },
       ],
       og: {
         title: '三つ星トイレ - 日本各地のキレイなトイレが探せるトイレ検索サービス',
         description: '「三つ星トイレ」は、家の外でもトイレ選びに妥協したくない人のためのトイレ検索サービスです。現在地やお近くのスポット・こだわり設備などから、あなたのお気に入りのトイレを見つけよう！',
         type: 'website',
         url: request.original_url,
-        image: image_url('ogp.svg'),
+        image: image_url('ogp.png'),
         locale: 'ja_JP',
       },
       twitter: {
