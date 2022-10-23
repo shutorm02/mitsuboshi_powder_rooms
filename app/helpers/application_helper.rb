@@ -1,8 +1,11 @@
 module ApplicationHelper
   def default_meta_tags
     {
-      title: '三つ星トイレ - 日本各地のキレイで設備豊富なトイレが探せる、トイレ検索サービス',
-      description: '「三つ星トイレ」は、家の外でもトイレ選びに妥協したくない人のためのトイレ検索サービスです。現在地やお近くのスポット・こだわり設備などから、あなたのお気に入りのトイレを見つけよう！',
+      site: '三つ星トイレ'
+      title: '日本各地のキレイで設備豊富なトイレが探せる検索サービス',
+      reverse: true,
+      separator: '|',
+      description: '「三つ星トイレ」は、家の外でもキレイなトイレを使いたい…！という人のためのトイレ検索サービス。現在地やお近くのスポット・こだわりや評価から、あなたのお気に入りのトイレを見つけよう！',
       keywords: '三つ星トイレ, キレイなトイレ',
       charset: 'UTF-8',
       canonical: request.original_url,
@@ -12,8 +15,9 @@ module ApplicationHelper
         { href: image_url('icon.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/png' },
       ],
       og: {
-        title: '三つ星トイレ - 日本各地のキレイなトイレが探せるトイレ検索サービス',
-        description: '「三つ星トイレ」は、家の外でもトイレ選びに妥協したくない人のためのトイレ検索サービスです。現在地やお近くのスポット・こだわり設備などから、あなたのお気に入りのトイレを見つけよう！',
+        site_name: '三つ星トイレ'
+        title: '日本各地のキレイで設備豊富なトイレが探せる検索サービス',
+        description: '「三つ星トイレ」は、家の外でもキレイなトイレを使いたい…！という人のためのトイレ検索サービス。現在地やお近くのスポット・こだわりや評価から、あなたのお気に入りのトイレを見つけよう！',
         type: 'website',
         url: request.original_url,
         image: image_url('ogp.png'),
