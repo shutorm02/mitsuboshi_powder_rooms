@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root to: 'home#index'
 
+  get 'terms_of_use', to: 'home#terms_of_use'
+  get 'privacy_policy', to: 'home#privacy_policy'
+
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
@@ -11,7 +14,7 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[new create destroy]
   resources :spots do
-    resources :feedbacks, only: %i[index new create destroy], shallow: true 
+    resources :feedbacks, only: %i[index new create destroy], shallow: true
     collection do
       get :likes
     end
