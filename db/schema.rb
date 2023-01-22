@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_20_014854) do
+ActiveRecord::Schema.define(version: 2023_01_22_081222) do
 
   create_table "authentications", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -88,6 +88,7 @@ ActiveRecord::Schema.define(version: 2022_10_20_014854) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["address"], name: "index_spots_on_address", unique: true
+    t.index ["created_at"], name: "index_spots_on_created_at"
     t.index ["name"], name: "index_spots_on_name", unique: true
     t.index ["user_id"], name: "index_spots_on_user_id"
   end
