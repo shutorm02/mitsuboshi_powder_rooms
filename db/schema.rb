@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_22_081222) do
+ActiveRecord::Schema.define(version: 2023_01_22_082313) do
 
   create_table "authentications", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2023_01_22_081222) do
     t.integer "spot_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["created_at"], name: "index_feedbacks_on_created_at"
     t.index ["spot_id"], name: "index_feedbacks_on_spot_id"
     t.index ["user_id"], name: "index_feedbacks_on_user_id"
   end
