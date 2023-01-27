@@ -9,6 +9,7 @@ class SpotsController < ApplicationController
 
   def new
     @form = SpotForm.new
+    @equipment_details = EquipmentDetail.all.order(id: :asc)
   end
 
   def create
