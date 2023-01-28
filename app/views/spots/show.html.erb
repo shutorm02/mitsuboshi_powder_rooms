@@ -1,4 +1,12 @@
-<div class="w-full max-w-md my-24">
+<div class="w-full max-w-md mt-14 mb-24">
+  <div class="flex justify-start pt-5 pb-5">
+    <a href="/spots#list">
+      <div class="flex inline-flex items-center hover:underline">
+        <i class="fa-solid fa-left-long fa-lg pr-2"></i>
+        <p><%= t('defaults.back') %></p>
+      </div>
+    </a>
+  </div>
   <div class="border-b-2 border-bg-mitsuboshi-gray pb-3">
     <%= render 'spot_title', { spot: @spot } %>
   </div>
