@@ -1,3 +1,7 @@
-<div class="w-full max-w-sm my-24">
+<div class="w-full max-w-md mt-14 mb-24">
+  <%= render 'spots/back_button' %>
+  <div class="border-b-2 border-bg-mitsuboshi-gray pb-3">
+    <%= render 'spots/spot_title', spot: @spot %>
+  </div>
   <%= render 'form', form: @form %>
 </div>
