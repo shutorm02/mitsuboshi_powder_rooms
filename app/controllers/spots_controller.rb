@@ -1,6 +1,7 @@
 class SpotsController < ApplicationController
   skip_before_action :require_login, only: %i[index show]
   before_action :find_spot, only: %i[edit update destroy]
+  before_action :set_equipment_details, only: %i[new edit]
 
   def index
     @spots = Spot.all.includes(:equipment_details).order(created_at: :desc).page(params[:page])
@@ -9,7 +10,6 @@ class SpotsController < ApplicationController
 
   def new
     @form = SpotForm.new
-    @equipment_details = EquipmentDetail.all.order(id: :asc)
   end
 
   def create
@@ -61,5 +61,9 @@ class SpotsController < ApplicationController
 
   def find_spot
     @spot = current_user.spots.find(params[:id])
+  end
+
+  def set_equipment_details
+    @equipment_details = EquipmentDetail.all.order(target_person_id: :asc, id: :asc)
   end
 end

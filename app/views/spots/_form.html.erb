@@ -16,7 +16,7 @@
     <div class="pt-5 pb-3">
       <p><%= t('activemodel.attributes.spot_form.equipment_detail_ids') %></p>
     </div>
-    <%= f.collection_check_boxes(:equipment_detail_ids, EquipmentDetail.all, :id, :content, include_hidden: false) do |b| %>
+    <%= f.collection_check_boxes(:equipment_detail_ids, @equipment_details, :id, :content, include_hidden: false) do |b| %>
       <div class="flex">
         <%= b.label { b.check_box + b.text } %>
       </div>
