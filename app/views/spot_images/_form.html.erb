@@ -1,6 +1,3 @@
-<div class="border-b-2 border-bg-mitsuboshi-gray pb-3">
-  <%= render 'spots/spot_title', spot: @spot %>
-</div>
 <div class="px-5 pt-5">
   <%= form_with model: @image, url: [@spot, @image], local: true do |f| %>
     <%= render 'shared/error_messages', object: f.object %>

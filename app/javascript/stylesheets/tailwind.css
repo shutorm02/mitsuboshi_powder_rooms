@@ -24,7 +24,7 @@
     @apply font-kaisei text-xs text-white;
   }
   .equipment-tag {
-    @apply inline-block rounded-full font-semibold px-2 py-1 mr-2 mb-2 text-white;
+    @apply inline-block rounded-full font-semibold px-2 py-1 mr-1 mb-2 text-white;
   }
   .chapter {
     @apply text-base font-bold my-2;
