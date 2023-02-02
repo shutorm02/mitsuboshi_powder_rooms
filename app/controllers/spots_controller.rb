@@ -4,6 +4,7 @@ class SpotsController < ApplicationController
   before_action :set_equipment_details, only: %i[new edit]
 
   def index
+    @equipment_details = EquipmentDetail.all
     @spots = Spot.all.includes(:equipment_details).order(created_at: :desc).page(params[:page])
     gon.spots = Spot.all
   end

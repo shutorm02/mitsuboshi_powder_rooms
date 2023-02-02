@@ -29,6 +29,7 @@ ja:
     map_view: 'マップ表示'
     list_view: 'リスト表示'
     search_by_facility: '駅名・施設名で検索'
+    search_by_these_condition: 'この条件で検索'
     message:
       require_login: 'ログインしてください'
       created: "%{item}を作成しました"
