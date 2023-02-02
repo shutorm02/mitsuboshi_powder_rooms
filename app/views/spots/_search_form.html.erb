@@ -1,0 +1,18 @@
+<a id="btnMap" href="spots#map" class="hidden inline-block bg-white rounded-full border border-gray-200 align-middle px-3 py-1 text-xs mr-2 mb-2 hover:bg-gray-200">
+  <i class="fa-solid fa-location-dot"></i>
+  <%= t('defaults.map_view') %>
+</a>
+<a id="btnList" href="spots#list" class="inline-block bg-white rounded-full border border-gray-200 align-middle px-3 py-1 text-xs mr-2 mb-2 hover:bg-gray-200">
+  <i class="fas fa-list"></i>
+  <%= t('defaults.list_view') %>
+</a>
+<div class="flex mb-5">
+  <div class="relative w-full">
+    <div class="flex border rounded border-gray-200">
+      <input type="text" id="keyword" class="block p-2 w-full z-20" placeholder="<%= t('defaults.search_by_facility') %>">
+      <button id="search" class="flex items-center px-4 border-l bg-gray-200 hover:bg-mitsuboshi-blue" >
+        <i class="fas fa-search text-white"></i>
+      </button>
+    </div>
+  </div>
+</div>
