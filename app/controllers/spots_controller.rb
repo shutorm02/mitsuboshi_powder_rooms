@@ -5,7 +5,7 @@ class SpotsController < ApplicationController
 
   def index
     @search_spots_form = SearchSpotsForm.new(search_params)
-    @spots = @search_spots_form.search.order(created_at: :desc).page(params[:page])
+    @spots = @search_spots_form.search.order(created_at: :desc)
     gon.spots = Spot.all
   end
 
