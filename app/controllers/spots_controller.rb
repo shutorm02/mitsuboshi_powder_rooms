@@ -4,8 +4,8 @@ class SpotsController < ApplicationController
   before_action :set_equipment_details, only: %i[new edit]
 
   def index
-    @equipment_details = EquipmentDetail.all
-    @spots = Spot.all.includes(:equipment_details).order(created_at: :desc).page(params[:page])
+    @search_spots_form = SearchSpotsForm.new(search_params)
+    @spots = @search_spots_form.search.order(created_at: :desc).page(params[:page])
     gon.spots = Spot.all
   end
 
@@ -58,6 +58,10 @@ class SpotsController < ApplicationController
       :address,
       { equipment_detail_ids: [] },
     ).merge(user_id: current_user.id)
+  end
+
+  def search_params
+    params[:q]&.permit({ equipment_detail_ids: [] })
   end
 
   def find_spot
