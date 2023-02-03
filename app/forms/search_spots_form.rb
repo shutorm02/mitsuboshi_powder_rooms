@@ -9,12 +9,11 @@ class SearchSpotsForm
     relation = Spot.includes(:equipment_details).distinct
 
     if equipment_detail_ids.present?
-      relation = relation.where(equipment_details: {id: equipment_detail_ids}) if equipment_detail_ids.present?
+      relation = relation.by_equipments(equipment_detail_ids)
       spot_ids = relation.ids
       relation = Spot.includes(:equipment_details).where(id: spot_ids)
     end
 
     relation
   end
-
 end

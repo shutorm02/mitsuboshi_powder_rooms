@@ -11,4 +11,8 @@ class Spot < ApplicationRecord
 
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
+
+  scope :by_equipments, ->(equipment_detail_ids) {
+    where(equipment_details: {id: equipment_detail_ids})
+  }
 end
