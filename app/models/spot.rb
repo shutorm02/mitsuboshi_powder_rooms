@@ -14,5 +14,6 @@ class Spot < ApplicationRecord
 
   scope :by_equipments, ->(equipment_detail_ids) {
     where(equipment_details: {id: equipment_detail_ids})
+      .group('spots.id').having('count(*) = ?', equipment_detail_ids.count)
   }
 end
