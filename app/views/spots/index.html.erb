@@ -8,19 +8,21 @@
     <i class="fas fa-list"></i>
     <%= t('defaults.list_view') %>
   </a>
-  <div id="mapSearchForm" class="flex mb-5">
-    <div class="relative w-full">
-      <div class="flex border rounded border-gray-200">
-        <input type="text" id="keyword" class="block p-2 w-full z-20" placeholder="<%= t('defaults.search_by_facility') %>">
-        <button id="search" class="flex items-center px-4 border-l bg-gray-200 hover:bg-mitsuboshi-blue" >
-          <i class="fas fa-search text-white"></i>
-        </button>
+  <div id="spotsMap" href="#map">
+    <div id="mapSearchForm" class="flex mb-5">
+      <div class="relative w-full">
+        <div class="flex border rounded border-gray-200">
+          <input type="text" id="keyword" class="block p-2 w-full z-20" placeholder="<%= t('defaults.search_by_facility') %>">
+          <button id="search" class="flex items-center px-4 border-l bg-gray-200 hover:bg-mitsuboshi-blue" >
+            <i class="fas fa-search text-white"></i>
+          </button>
+        </div>
       </div>
     </div>
+    <div id="map"style="height:700px; width:100%;"></div>
   </div>
+  <div id="spotsList" href="#list" class="hidden">
     <%= render 'search_form' %>
-    <div id="spotsMap" href="#map" style="height:700px; width:100%;"></div>
-    <div id="spotsList" href="#list" class="hidden">
     <% if @spots.present? %>
       <%= render @spots %>
     <% else %>
