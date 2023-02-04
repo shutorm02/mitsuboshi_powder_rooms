@@ -1,7 +1,7 @@
 class SpotsController < ApplicationController
   skip_before_action :require_login, only: %i[index show]
   before_action :find_spot, only: %i[edit update destroy]
-  before_action :set_equipment_details, only: %i[new edit]
+  before_action :set_equipment_details, only: %i[index new edit]
 
   def index
     @search_spots_form = SearchSpotsForm.new(search_params)
@@ -69,6 +69,6 @@ class SpotsController < ApplicationController
   end
 
   def set_equipment_details
-    @equipment_details = EquipmentDetail.all.order(target_person_id: :asc, id: :asc)
+    @equipment_details = EquipmentDetail.all.sort_by_target_person
   end
 end

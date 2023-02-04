@@ -4,4 +4,8 @@ class EquipmentDetail < ApplicationRecord
   belongs_to :target_person
 
   validates :content, presence: true
+
+  scope :sort_by_target_person, -> {
+    order(target_person_id: :asc, id: :asc)
+  }
 end
