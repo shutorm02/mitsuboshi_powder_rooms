@@ -73,7 +73,7 @@ body {
   width: 100%;
   cursor: pointer;
   text-align: right;
-  padding: 15px 45px 15px 0;
+  padding: 0 45px 15px 0;
   font-size: 1em;
 }
 
@@ -81,8 +81,8 @@ body {
 .accordion-btn::after {
   position: absolute;
   content:'';
-  background-color: #333;
-  top: 50%;
+  background-color: #373638;
+  top: 35%;
   width: 1.5px;
   height: 8px;
   transition: .5s;
