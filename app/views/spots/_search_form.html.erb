@@ -15,6 +15,9 @@
             </div>
           </div>
           <div class="flex justify-center mt-4 mb-8">
+            <%= link_to spots_path(@spots) do %> 
+              <button class="text-center rounded shadow bg-white mt-3 py-1 w-32 mr-3 hover:bg-gray-200"><%= t('defaults.cancel') %></button>
+            <% end %> 
             <%= f.submit t('defaults.search'), class: 'text-center rounded shadow mt-3 py-1 w-32 nomal-btn' %>
           </div>
         <% end %>
