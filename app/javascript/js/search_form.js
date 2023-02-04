@@ -2,9 +2,9 @@ $('.accordion-btn').on('click', function() {
   let body = $(this).next('.accordion-body');
   $(body).slideToggle();
 
-  if($(body).hasClass('hidden')) {
-    $(body).removeClass('hidden');
+  if($('.accordion-btn').hasClass('close')) {
+    $('.accordion-btn').removeClass('close');
   } else {
-    $(body).addClass('hidden');
+    $('.accordion-btn').addClass('close');
   }
 });

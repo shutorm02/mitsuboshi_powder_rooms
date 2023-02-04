@@ -16,28 +16,25 @@
     </div>
   </div>
 </div>
-
 <div id="spotSearchForm" class="hidden">
   <ul class="accordion-area">
     <li>
-      <section>
-        <button class="accordion-btn" type="button"><%=t('defaults.search_by_condition') %></button>
-        <div class="hidden accordion-body px-2">
-          <%= form_with model: @search_spots_form, scope: :q, url: spots_path(anchor: 'list'), method: :get do |f| %>
-            <div class="border-b-2 border-bg-mitsuboshi-gray pb-3">
-              <p><%= t('activemodel.attributes.spot_form.equipment_detail_ids') %></p>
-              <%= f.collection_check_boxes(:equipment_detail_ids, @equipment_details, :id, :content, include_hidden: false) do |b| %>
-                <div class="flex">
-                  <%= b.label { b.check_box + b.text } %>
-                </div>
-              <% end %>
-            </div>
-            <div class="my-8 flex justify-center">
-              <%= f.submit t('defaults.search_by_these_condition'), class: 'btn nomal-btn' %>
-            </div>
-          <% end %>
-        </div>
-      </section>
+      <button class="accordion-btn" type="button"><%=t('defaults.search_by_condition') %></button>
+      <div class="hidden accordion-body px-2">
+        <%= form_with model: @search_spots_form, scope: :q, url: spots_path(anchor: 'list'), method: :get do |f| %>
+          <div class="border-b-2 border-bg-mitsuboshi-gray pb-3">
+            <p><%= t('activemodel.attributes.spot_form.equipment_detail_ids') %></p>
+            <%= f.collection_check_boxes(:equipment_detail_ids, @equipment_details, :id, :content, include_hidden: false) do |b| %>
+              <div class="flex">
+                <%= b.label { b.check_box + b.text } %>
+              </div>
+            <% end %>
+          </div>
+          <div class="my-8 flex justify-center">
+            <%= f.submit t('defaults.search_by_these_condition'), class: 'btn nomal-btn' %>
+          </div>
+        <% end %>
+      </div>
     </li>
   </ul>
 </div>
