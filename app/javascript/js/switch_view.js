@@ -3,17 +3,12 @@ const btnList = document.querySelector('#btnList')
 const spotsMap = document.querySelector('#spotsMap')
 const spotsList = document.querySelector('#spotsList')
 
-const mapSearchForm = document.querySelector('#mapSearchForm')
-const spotSearchForm = document.querySelector('#spotSearchForm')
-
 const switchMapView = function() {
   btnMap.classList.add('hidden')
   spotsMap.classList.remove('hidden')
   btnList.classList.remove('hidden')
   spotsList.classList.add('hidden')
   btnList.classList.remove('hidden')
-  mapSearchForm.classList.remove('hidden')
-  spotSearchForm.classList.add('hidden')
 }
 
 const switchListView = function() {
@@ -21,8 +16,6 @@ const switchListView = function() {
   spotsMap.classList.add('hidden')
   btnList.classList.add('hidden')
   spotsList.classList.remove('hidden')
-  mapSearchForm.classList.add('hidden')
-  spotSearchForm.classList.remove('hidden')
 }
 
 window.addEventListener('DOMContentLoaded', function() {
