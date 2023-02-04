@@ -31,8 +31,6 @@
   </div>
 </div>
 <%= javascript_pack_tag 'spots_index' %>
-<%= image_pack_tag 'media/images/go-to-page.png', class: 'absolute flex justify-center align-center bottom-0 right-9 w-15 h-20' %>
-
 <script
   src="https://maps.googleapis.com/maps/api/js?key=<%= ENV['GOOGLE_MAPS_API_KEY'] %>&callback=initMap"
   defer
