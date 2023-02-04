@@ -6,7 +6,7 @@
   <i class="fas fa-list"></i>
   <%= t('defaults.list_view') %>
 </a>
-<div class="flex mb-5">
+<div id="mapSearchForm" class="flex mb-5">
   <div class="relative w-full">
     <div class="flex border rounded border-gray-200">
       <input type="text" id="keyword" class="block p-2 w-full z-20" placeholder="<%= t('defaults.search_by_facility') %>">
@@ -16,6 +16,26 @@
     </div>
   </div>
 </div>
+
+
+<ul class="accordion-area">
+  <li>
+    <section>
+      <button class="accordion-btn" type="button"><%=t('defaults.search_by_condition') %></button>
+      <div class="accordion-body p-2">
+        アコーディオンが開いたよ！
+      </div>
+    </section>
+  </li>
+</ul>
+
+
+
+
+
+
+
+
 <div class="px-2">
   <%= form_with model: @search_spots_form, scope: :q, url: spots_path(anchor: 'list'), method: :get do |f| %>
     <div class="border-b-2 border-bg-mitsuboshi-gray pb-3">
