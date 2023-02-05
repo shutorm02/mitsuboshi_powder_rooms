@@ -6,7 +6,7 @@
 body {
   font-family: "SourceHanSans";
   font-size: 14px;
-  color: #2d3748;
+  color: #373638;
 }
 
 #buttom-navbar {
@@ -74,7 +74,8 @@ body {
   cursor: pointer;
   text-align: right;
   padding: 0 45px 15px 0;
-  font-size: 1em;
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .accordion-btn::before,
