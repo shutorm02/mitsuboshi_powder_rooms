@@ -4,9 +4,15 @@ class SpotsController < ApplicationController
   before_action :set_equipment_details, only: %i[index new edit]
 
   def index
-    @search_spots_form = SearchSpotsForm.new(search_params)
-    @spots = @search_spots_form.search.order(created_at: :desc)
     gon.spots = Spot.all
+
+    @search_spots_form = SearchSpotsForm.new(search_params)
+
+    if params[:rate]
+      @spots = @search_spots_form.search.by_rating
+    else
+      @spots = @search_spots_form.search.latest
+    end
   end
 
   def new
