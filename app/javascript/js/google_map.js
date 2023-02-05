@@ -14,7 +14,7 @@ import iconCurrentLocation from '../images/icons/current_location.svg'
 window.initMap = () => {
   defaultLocation = new window.google.maps.LatLng(35.6803997, 139.7690174)
 
-  map = new window.google.maps.Map(document.getElementById('spotsMap'), {
+  map = new window.google.maps.Map(document.getElementById('map'), {
     center: defaultLocation,
     zoom: 14,
   })
@@ -38,7 +38,7 @@ window.initMap = () => {
           position.coords.longitude
         )
 
-        map = new window.google.maps.Map(document.getElementById('spotsMap'), {
+        map = new window.google.maps.Map(document.getElementById('map'), {
           center: currentLocation,
           zoom: 14,
         })

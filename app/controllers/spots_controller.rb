@@ -1,11 +1,18 @@
 class SpotsController < ApplicationController
   skip_before_action :require_login, only: %i[index show]
   before_action :find_spot, only: %i[edit update destroy]
-  before_action :set_equipment_details, only: %i[new edit]
+  before_action :set_equipment_details, only: %i[index new edit]
 
   def index
-    @spots = Spot.all.includes(:equipment_details).order(created_at: :desc).page(params[:page])
     gon.spots = Spot.all
+
+    @search_spots_form = SearchSpotsForm.new(search_params)
+
+    @spots = if params[:rate]
+               @search_spots_form.search.by_rating
+             else
+               @search_spots_form.search.latest
+             end
   end
 
   def new
@@ -59,11 +66,15 @@ class SpotsController < ApplicationController
     ).merge(user_id: current_user.id)
   end
 
+  def search_params
+    params[:q]&.permit({ equipment_detail_ids: [] })
+  end
+
   def find_spot
     @spot = current_user.spots.find(params[:id])
   end
 
   def set_equipment_details
-    @equipment_details = EquipmentDetail.all.order(target_person_id: :asc, id: :asc)
+    @equipment_details = EquipmentDetail.all.sort_by_target_person
   end
 end

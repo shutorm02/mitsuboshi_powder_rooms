@@ -1,0 +1,40 @@
+<div id="spotSearchForm" class="pt-5">
+  <%= link_to spots_path(latest: 'true', anchor: 'spots#list') do %>
+    <button class="inline-block bg-white rounded-md border border-gray-200 align-middle text-center text-xs px-3 py-1 w-1/3 mr-1 hover:bg-gray-200">
+      <i class="fa-solid fa-calendar-day"></i>
+      <%= t('defaults.sort_by_created_at') %>
+    </button>
+  <% end %>
+  <%= link_to spots_path(rate: 'true', anchor: 'spots#list') do %>
+    <button class="inline-block bg-white rounded-md border border-gray-200 align-middle text-center text-xs px-3 py-1 w-1/3 mr-2 hover:bg-gray-200">
+      <i class="fa-solid fa-star"></i>
+      <%= t('defaults.sort_by_rating') %>
+    </button>
+  <% end %>
+  <ul class="accordion-area">
+    <li>
+      <button class="accordion-btn" type="button"><%=t('defaults.search_by_condition') %></button>
+      <div class="hidden accordion-body px-2">
+        <%= form_with model: @search_spots_form, scope: :q, url: spots_path(anchor: 'list'), method: :get do |f| %>
+          <div class="border-b-2 border-bg-mitsuboshi-gray pb-3">
+            <p class="font-bold mb-2"><%= t('defaults.search_by_specialties') %></p>
+            <div class="py-2">
+              <%= f.collection_check_boxes(:equipment_detail_ids, @equipment_details, :id, :content, include_hidden: false) do |b| %>
+                <div class="flex">
+                  <%= b.label { b.check_box + b.text } %>
+                </div>
+              <% end %>
+            </div>
+          </div>
+          <div class="flex justify-center mt-4 mb-8">
+            <%= link_to spots_path(@spots) do %> 
+              <button class="text-center rounded shadow bg-white mt-3 py-1 w-32 mr-3 hover:bg-gray-200"><%= t('defaults.cancel') %></button>
+            <% end %> 
+            <%= f.submit t('defaults.search'), class: 'text-center rounded shadow mt-3 py-1 w-32 nomal-btn' %>
+          </div>
+        <% end %>
+      </div>
+    </li>
+  </ul>
+</div>
+

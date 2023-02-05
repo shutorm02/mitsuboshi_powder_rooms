@@ -8,6 +8,7 @@ const switchMapView = function() {
   spotsMap.classList.remove('hidden')
   btnList.classList.remove('hidden')
   spotsList.classList.add('hidden')
+  btnList.classList.remove('hidden')
 }
 
 const switchListView = function() {

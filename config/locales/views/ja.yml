@@ -26,6 +26,13 @@ ja:
     equipment_details: '設備詳細'
     back: '戻る'
     start_using_the_service: 'ユーザー登録して、三つ星トイレをはじめる'
+    map_view: 'マップ表示'
+    list_view: 'リスト表示'
+    search_by_facility: '駅名・施設名で検索'
+    search_by_condition: '詳細検索'
+    search_by_specialties: 'こだわり条件から検索'
+    sort_by_rating: '評価で並べ替え'
+    sort_by_created_at: '日付で並べ替え'
     message:
       require_login: 'ログインしてください'
       created: "%{item}を作成しました"
@@ -59,9 +66,6 @@ ja:
   spots:
     index:
       no_result: '登録されているスポットがありません'
-      map_view: 'マップ表示'
-      list_view: 'リスト表示'
-      search_by_facility: '駅名・施設名で検索'
     new:
       title: 'スポット情報'
     show:

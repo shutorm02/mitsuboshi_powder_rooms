@@ -6,7 +6,7 @@
 body {
   font-family: "SourceHanSans";
   font-size: 14px;
-  color: #2d3748;
+  color: #373638;
 }
 
 #buttom-navbar {
@@ -65,4 +65,46 @@ body {
   line-height: 1.5rem;
   background-color: rgb(117 204 232);
   cursor: pointer;
+}
+
+.accordion-btn {
+  position: relative;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  text-align: right;
+  padding: 0 45px 15px 0;
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
+
+.accordion-btn::before,
+.accordion-btn::after {
+  position: absolute;
+  content:'';
+  background-color: #373638;
+  top: 35%;
+  width: 1.5px;
+  height: 8px;
+  transition: .5s;
+}
+
+.accordion-btn::before {
+  transform: translateY(-50%) rotate(-45deg);
+  right: 35px;
+}
+
+.accordion-btn::after {
+  transform: translateY(-50%) rotate(45deg);
+  right: 30px;
+}
+
+.accordion-btn.close::before {
+  transform: translateY(-50%) rotate(-135deg);
+  transition:.5s;
+}
+
+.accordion-btn.close::after {
+  transform: translateY(-50%) rotate(135deg);
+  transition:.5s;
 }
