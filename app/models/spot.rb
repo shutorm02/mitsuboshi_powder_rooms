@@ -17,7 +17,8 @@ class Spot < ApplicationRecord
     left_joins(:feedbacks).group(:id).order("MAX(feedbacks.rate) DESC")
   }
   scope :by_equipments, ->(equipment_detail_ids) {
-    where(equipment_details: {id: equipment_detail_ids})
+    left_joins(:equipment_details)
+      .where(equipment_details: {id: equipment_detail_ids})
       .group('spots.id').having('count(*) = ?', equipment_detail_ids.count)
   }
 end
