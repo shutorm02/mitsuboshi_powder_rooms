@@ -5,7 +5,7 @@ class EquipmentDetail < ApplicationRecord
 
   validates :content, presence: true
 
-  scope :sort_by_target_person, -> {
+  scope :sort_by_target_person, lambda {
     order(target_person_id: :asc, id: :asc)
   }
 end

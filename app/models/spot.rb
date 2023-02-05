@@ -12,13 +12,13 @@ class Spot < ApplicationRecord
   geocoded_by :address
   after_validation :geocode, if: :address_changed?
 
-  scope :latest, -> {order(created_at: :desc)}
-  scope :by_rating, -> {
-    left_joins(:feedbacks).group(:id).order("MAX(feedbacks.rate) DESC")
+  scope :latest, -> { order(created_at: :desc) }
+  scope :by_rating, lambda {
+    left_joins(:feedbacks).group(:id).order('MAX(feedbacks.rate) DESC')
   }
-  scope :by_equipments, ->(equipment_detail_ids) {
+  scope :by_equipments, lambda { |equipment_detail_ids|
     left_joins(:equipment_details)
-      .where(equipment_details: {id: equipment_detail_ids})
+      .where(equipment_details: { id: equipment_detail_ids })
       .group('spots.id').having('count(*) = ?', equipment_detail_ids.count)
   }
 end
