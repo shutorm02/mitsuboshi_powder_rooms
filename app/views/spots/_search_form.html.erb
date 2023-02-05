@@ -1,4 +1,12 @@
-<div id="spotSearchForm">
+<div id="spotSearchForm" class="pt-5">
+  <button class="inline-block bg-white rounded-md border border-gray-200 align-middle text-center text-xs px-3 py-1 w-1/3 mr-1 hover:bg-gray-200">
+    <i class="fa-solid fa-calendar-day"></i>
+    <%= t('defaults.sort_by_created_at') %>
+  </button>
+  <button class="inline-block bg-white rounded-md border border-gray-200 align-middle text-center text-xs px-3 py-1 w-1/3 mr-2 hover:bg-gray-200">
+    <i class="fa-solid fa-star"></i>
+    <%= t('defaults.sort_by_rating') %>
+  </button>
   <ul class="accordion-area">
     <li>
       <button class="accordion-btn" type="button"><%=t('defaults.search_by_condition') %></button>
