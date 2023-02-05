@@ -9,7 +9,16 @@ class SpotsController < ApplicationController
     @search_spots_form = SearchSpotsForm.new(search_params)
 
     @spots = if params[:rate]
-               @search_spots_form.search.by_rating
+               @search_spots_form.search
+                 .includes(:feedbacks).group(:id)
+                 .sort_by do |spot|
+                   feedbacks = spot.feedbacks
+                   if feedbacks.present?
+                    feedbacks.map(&:rate).sum / feedbacks.size
+                    else
+                     0
+                    end
+                 end.reverse
              else
                @search_spots_form.search.latest
              end
