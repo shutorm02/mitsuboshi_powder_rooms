@@ -9,7 +9,7 @@ class SpotsController < ApplicationController
     @search_spots_form = SearchSpotsForm.new(search_params)
 
     @spots = if params[:rate]
-               @search_spots_form.search.by_rating
+               @search_spots_form.search.sort_by_total_rating
              else
                @search_spots_form.search.latest
              end

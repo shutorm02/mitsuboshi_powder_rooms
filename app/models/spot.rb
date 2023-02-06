@@ -13,8 +13,13 @@ class Spot < ApplicationRecord
   after_validation :geocode, if: :address_changed?
 
   scope :latest, -> { order(created_at: :desc) }
-  scope :by_rating, lambda {
-    left_joins(:feedbacks).group(:id).order('MAX(feedbacks.rate) DESC')
+  scope :sort_by_total_rating, lambda {
+    includes(:feedbacks).group(:id)
+                        .sort_by do |spot|
+                          feedbacks = spot.feedbacks
+                          feedbacks.present? ? feedbacks.sum('feedbacks.rate') / feedbacks.size : 0
+                        end
+                        .reverse
   }
   scope :by_equipments, lambda { |equipment_detail_ids|
     left_joins(:equipment_details)
