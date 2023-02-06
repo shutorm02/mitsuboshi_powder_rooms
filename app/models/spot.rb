@@ -16,13 +16,9 @@ class Spot < ApplicationRecord
   scope :sort_by_total_rating, lambda {
     includes(:feedbacks).group(:id)
                         .sort_by do |spot|
-      feedbacks = spot.feedbacks
-      if feedbacks.present?
-        feedbacks.map(&:rate).sum / feedbacks.size
-      else
-        0
-      end
-    end
+                          feedbacks = spot.feedbacks
+                          feedbacks.present? ? feedbacks.sum('feedbacks.rate') / feedbacks.size : 0
+                        end
                         .reverse
   }
   scope :by_equipments, lambda { |equipment_detail_ids|
