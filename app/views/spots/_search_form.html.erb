@@ -1,18 +1,18 @@
 <div id="spotSearchForm" class="pt-5">
   <%= link_to spots_path(latest: 'true', anchor: 'spots#list') do %>
-    <button class="inline-block bg-white rounded-md border border-gray-200 align-middle text-center text-xs px-3 py-1 w-1/3 mr-1 hover:bg-gray-200">
+    <button class="inline-block bg-white rounded-md border border-gray-200 align-middle text-center text-xs px-3 py-1 w-40 mr-1 hover:bg-gray-200">
       <i class="fa-solid fa-calendar-day"></i>
       <%= t('defaults.sort_by_created_at') %>
     </button>
   <% end %>
   <%= link_to spots_path(rate: 'true', anchor: 'spots#list') do %>
-    <button class="inline-block bg-white rounded-md border border-gray-200 align-middle text-center text-xs px-3 py-1 w-1/3 mr-2 hover:bg-gray-200">
+    <button class="inline-block bg-white rounded-md border border-gray-200 align-middle text-center text-xs px-3 py-1 w-40 hover:bg-gray-200">
       <i class="fa-solid fa-star"></i>
       <%= t('defaults.sort_by_rating') %>
     </button>
   <% end %>
   <ul class="accordion-area">
-    <li>
+    <li class="pt-2">
       <button class="accordion-btn" type="button"><%=t('defaults.search_by_condition') %></button>
       <div class="hidden accordion-body px-2">
         <%= form_with model: @search_spots_form, scope: :q, url: spots_path(anchor: 'list'), method: :get do |f| %>
