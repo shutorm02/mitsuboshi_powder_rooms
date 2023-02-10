@@ -25,7 +25,6 @@ class SpotsController < ApplicationController
     if @form.save
       redirect_to spots_path, success: t('defaults.message.created', item: Spot.model_name.human)
     else
-      binding.pry
       flash.now['danger'] = t('defaults.message.not_created', item: Spot.model_name.human)
       render :new
     end
