@@ -35,8 +35,8 @@ class SpotForm
         end
       end
     end
-
-    true
+  rescue ActiveRecord::RecordInvalid
+    false
   end
 
   def to_model
