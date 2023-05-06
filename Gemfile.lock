@@ -195,6 +195,7 @@ GEM
     mime-types-data (3.2022.0105)
     mini_magick (4.11.0)
     mini_mime (1.1.2)
+    mini_portile2 (2.8.2)
     minitest (5.16.1)
     msgpack (1.5.2)
     multi_json (1.15.0)
@@ -214,9 +215,8 @@ GEM
       net-protocol
       timeout
     nio4r (2.5.8)
-    nokogiri (1.13.6-arm64-darwin)
-      racc (~> 1.4)
-    nokogiri (1.13.6-x86_64-linux)
+    nokogiri (1.13.6)
+      mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
     oauth (0.5.10)
     oauth2 (1.4.10)
@@ -463,7 +463,7 @@ DEPENDENCIES
   webpacker (~> 5.0)
 
 RUBY VERSION
-   ruby 3.1.2p20
+   ruby 3.2.2p53
 
 BUNDLED WITH
    2.3.16
