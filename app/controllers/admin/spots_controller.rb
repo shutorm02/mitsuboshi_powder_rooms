@@ -5,6 +5,8 @@ class Admin::SpotsController < Admin::BaseController
     @spots = Spot.all.includes(:user).order(id: :asc)
   end
 
+  def show; end
+
   def edit
     @admin_spot_form = AdminSpotForm.new(spot: @spot)
   end
@@ -19,8 +21,6 @@ class Admin::SpotsController < Admin::BaseController
       render :edit
     end
   end
-
-  def show; end
 
   def destroy
     @spot.destroy!

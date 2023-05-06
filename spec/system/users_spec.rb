@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Users', type: :system do
+RSpec.describe 'Users', :system do
   describe 'ユーザー新規登録' do
     context 'フォームの入力値が正常' do
       it 'ユーザーの新規登録が成功する' do

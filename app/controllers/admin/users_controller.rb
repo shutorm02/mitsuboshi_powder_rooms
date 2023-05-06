@@ -5,6 +5,8 @@ class Admin::UsersController < Admin::BaseController
     @users = User.all.order(id: :asc)
   end
 
+  def show; end
+
   def edit; end
 
   def update
@@ -15,8 +17,6 @@ class Admin::UsersController < Admin::BaseController
       render :edit
     end
   end
-
-  def show; end
 
   def destroy
     @user.destroy!
