@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'UserSessions', type: :system do
+RSpec.describe 'UserSessions', :system do
   let(:user) { create(:user) }
 
   describe 'ログイン前' do

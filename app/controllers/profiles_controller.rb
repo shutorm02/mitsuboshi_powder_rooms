@@ -2,6 +2,12 @@ class ProfilesController < ApplicationController
   before_action :require_login
   before_action :set_user, only: %i[edit update]
 
+  def show
+    @like_spots = current_user.like_spots.includes(:equipment_details).order(created_at: :desc)
+    @feedbacks = current_user.feedbacks.includes(:tags).order(created_at: :desc)
+    @post_spots = current_user.spots.includes(:equipment_details).order(created_at: :desc)
+  end
+
   def edit; end
 
   def update
@@ -11,12 +17,6 @@ class ProfilesController < ApplicationController
       flash.now['danger'] = t('defaults.message.not_updated', item: User.model_name.human)
       render :edit
     end
-  end
-
-  def show
-    @like_spots = current_user.like_spots.includes(:equipment_details).order(created_at: :desc)
-    @feedbacks = current_user.feedbacks.includes(:tags).order(created_at: :desc)
-    @post_spots = current_user.spots.includes(:equipment_details).order(created_at: :desc)
   end
 
   private

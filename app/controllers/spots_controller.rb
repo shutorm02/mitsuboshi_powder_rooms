@@ -15,8 +15,18 @@ class SpotsController < ApplicationController
              end
   end
 
+  def show
+    @spot = Spot.find(params[:id])
+    gon.spot = @spot
+    @feedbacks = @spot.feedbacks.includes(:user, :feedback_tags, :tags).order(created_at: :desc).limit(3)
+  end
+
   def new
     @form = SpotForm.new
+  end
+
+  def edit
+    @form = SpotForm.new(spot: @spot)
   end
 
   def create
@@ -28,16 +38,6 @@ class SpotsController < ApplicationController
       flash.now['danger'] = t('defaults.message.not_created', item: Spot.model_name.human)
       render :new
     end
-  end
-
-  def show
-    @spot = Spot.find(params[:id])
-    gon.spot = @spot
-    @feedbacks = @spot.feedbacks.includes(:user, :feedback_tags, :tags).order(created_at: :desc).limit(3)
-  end
-
-  def edit
-    @form = SpotForm.new(spot: @spot)
   end
 
   def update
