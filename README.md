@@ -1,4 +1,4 @@
-[![Untitled](https://user-images.githubusercontent.com/93573830/184815454-d0f44b93-821d-438c-893c-4632c9ce7f2d.png)](https://www.mitsuboshi-powder-rooms.com)
+![Untitled](https://user-images.githubusercontent.com/93573830/184815454-d0f44b93-821d-438c-893c-4632c9ce7f2d.png)
 
 ## サービス概要
 **たとえ家の外であっても、
@@ -77,7 +77,7 @@ URLは[こちら](https://www.figma.com/file/xYW06Nc9itu7CjivC8X40y/%E4%B8%89%E3
 [![Image from Gyazo](https://i.gyazo.com/c5ef4a7c5a544ab7ecb69a88e422182a.png)](https://gyazo.com/c5ef4a7c5a544ab7ecb69a88e422182a)
 
 ## サイトURL
-URLは[こちら](https://www.mitsuboshi-powder-rooms.com/)
+2026/8 月にサービス終了
 
 ## 開発スケジュール
 企画〜技術調査：6/25〆切<br>
